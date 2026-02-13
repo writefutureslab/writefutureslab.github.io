@@ -7,16 +7,17 @@
   <title>Write Futures Lab</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
 
 
   <style>
     body {
       height: 100vh;             /* Full viewport height */
       display: flex;             /* Enable Flexbox */
-      justify-content: center;   /* Horizontal centering */
-      align-items: center;       /* Vertical centering */
+      flex-direction: column;    /* Stack children vertically */
+      justify-content: center;   /* Vertical centering */
+      align-items: center;       /* Horizontal centering */
       margin: 0;    
     }
 
@@ -32,9 +33,50 @@
       font-style: normal;
       font-size: 5em;
     }
+
+    #header pre.ascii-art {
+      font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+      white-space: pre;
+      margin: 0;
+      font-size: clamp(0.4rem, 1.5vw, 0.65rem);
+      line-height: 1.1;
+      letter-spacing: 0.03em;
+    }
 </style>
 </head>
 <body>
+  <div id="header">
+    <pre class="ascii-art">                                          ◠◠◠◠◠◠                                                                                                                      
+                                        (           )                                                                                                                   
+                                      ((               )))                                                                                                              
+                                     (                    )                                                                                                             
+                                   ((                       )                                                                                                           
+                        ◠◠◠◠◠◠◠◠◠◠                           )                                                                                                          
+                   ◠                                          ))                                                                                                        
+                 ((                                             ◠◠◠◠                                                                                                    
+              ◠◠                                                      ◠◠◠◠                                          ◠◠◠◠                                                
+            (                                                             ))                                     (       ))                                             
+        ◠◠◠                                             ◠◠◠◠                )                                  (            )                                           
+   (                            write                                        )                               ◠◠               ))                                        
+  (                                             (                            )                             (                        ◠◠◠◠◠◠◠◠◠                           
+ (                                                             )              )                   ◠◠◠◠◠◠◠◠                      ◠◠◠           ))                        
+((                                                  (         )              )                ((              (              )                   ))                     
+(                  ((             )                    ◡◡◡◡                  )               (                                    (               )                     
+(                   (                                                     )                 (                                                     ◠◠◠◠                  
+ ((                   (        )                                        ))                  (                                                         ◠◠◠◠◠             
+    (                     ◡◡                                         )))                    (                              futures                          )           
+      (    ◡◡                                                     ◡                          (                                                               )          
+              ◡◡◡  ◡                        ◡◡◡◡               )                              (             )             ◠◠                                  )         
+                     ◡      ◡◡◡◡◡◡     ◡◡           ◡◡◡◡◡◡◡◡                                   ((                                                (            )         
+                                                                                                 ((       )                     )                              )        
+                                                                                                                               )                  (            )        
+                                                                                                   (                                              (           )         
+                                                                                                    (          (              ◡◡               ◡◡◡           ))         
+                                                                                                        ◡◡◡◡◡             ◡◡    ◡◡         ◡◡◡      ◡◡◡◡◡◡◡◡            
+                                                                                                                ◡◡◡     ◡◡◡        ◡◡◡◡◡◡◡◡                             
+                                                                                                                   ◡◡◡◡◡                                                
+</pre>
+  </div>
   <h1>Write Futures Lab</h1>
 </body>
 </html>
