@@ -160,6 +160,7 @@
 
     .tab-panel {
       display: none;
+      margin-bottom: 10em;
     }
 
     .tab-panel.active {
@@ -362,14 +363,14 @@
       <h2>join the lab - PhD</h2>
       <p>If you are interested in doing a PhD at the lab, please fill out <a href="https://form.jotform.com/243106704097050" target="_blank">this form</a>. I typically review applications in June and September, but the form has the most up-to-date information.</p>
       <h2>join the lab - other</h2>
-      <p>Read in the information below, and then email me: <a href="mailto:katy.gero@sydney.edu.au">katy.gero@sydney.edu.au</a></p>
+      <p>Read the information below, and then email me: <a href="mailto:katy.gero@sydney.edu.au">katy.gero@sydney.edu.au</a></p>
       <p>If you are interested in an MPhil, please email me with the subject line "Write Futures MPhil Interest". Include a transcript, resume, and either a research area you are interested in or a short (< 1 page) thesis proposal.</p>
       <p>If you are a student at the University of Sydney and interested in a research project, I supervise a number of Master's Research Pathway, Honours, and Dalyell Scholars each year. Please email me with the subject line "Write Futures [Honours / Dalyell / etc.] Interest", attach a transcript and resume, and let me know what kind of research or research topics you are interested in.</p>
       <p>I do not currently have any funding for post-docs, but if you have your own funding, I am happy to discuss! Email me however you like. ;)</P>
       <h2>colophon</h2>
       <p>The title font is <a href="https://fonts.google.com/specimen/Megrim">Megrim</a> by Daniel Johnson.</p>
       <p>The avatars on the 'people' page are from <a href="https://boringavatars.com/">Boring Avatars</a>. The icons on the 'publication' page are from the <a href="https://phosphoricons.com/">Phosphor icon family</a>.</p>
-      <p>Weather conditions in Sydney are pulled from the <a href="https://open-meteo.com/">Open-Meteo</a> free weather API. Moon info (if it's up, what phase) use <a href="https://github.com/mourner/suncalc">SunCalc</a>, "a tiny BSD-licensed JavaScript library for calculating sun position" and more.</p>
+      <p>Weather conditions in Sydney are pulled from the <a href="https://open-meteo.com/">Open-Meteo</a> free weather API; conditions (and time) are updated every 15 minutes. Moon info (if it's up, what phase) use <a href="https://github.com/mourner/suncalc">SunCalc</a>, "a tiny BSD-licensed JavaScript library for calculating sun position" and more.</p>
     </div>
   </div>
 
@@ -447,7 +448,7 @@
 
     const members = [
       {
-        name: "Dr. Katy Gero",
+        name: "Katy Gero",
         status: "fulltime",
         position: "Director",
         website: "https://katygero.com",
@@ -525,10 +526,18 @@
 
     const papers = [
       {
+        title: "Design Friction as a Path to Cognitive Engagement in Chat-Based LLM Interfaces",
+        authors: "Helen Chen and Katy Gero",
+        venue: "",
+        venueshort: "under review",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M183.89,153.34a57.6,57.6,0,0,1-46.56,46.55A8.75,8.75,0,0,1,136,200a8,8,0,0,1-1.32-15.89c16.57-2.79,30.63-16.85,33.44-33.45a8,8,0,0,1,15.78,2.68ZM216,144a88,88,0,0,1-176,0c0-27.92,11-56.47,32.66-84.85a8,8,0,0,1,11.93-.89l24.12,23.41,22-60.41a8,8,0,0,1,12.63-3.41C165.21,36,216,84.55,216,144Zm-16,0c0-46.09-35.79-85.92-58.21-106.33L119.52,98.74a8,8,0,0,1-13.09,3L80.06,76.16C64.09,99.21,56,122,56,144a72,72,0,0,0,144,0Z"></path></svg>`,
+        avatar: `<svg viewBox="0 0 80 80" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="80" height="80"><mask id="_r_1iq_" maskUnits="userSpaceOnUse" x="0" y="0" width="80" height="80"><rect width="80" height="80" rx="160" fill="#FFFFFF"></rect></mask><g mask="url(#_r_1iq_)"><rect width="80" height="80" fill="#ff7d10"></rect><path filter="url(#filter__r_1iq_)" d="M32.414 59.35L50.376 70.5H72.5v-71H33.728L26.5 13.381l19.057 27.08L32.414 59.35z" fill="#ffb238" transform="translate(0 0) rotate(336 40 40) scale(1.2)"></path><path filter="url(#filter__r_1iq_)" style="mix-blend-mode: overlay;" d="M22.216 24L0 46.75l14.108 38.129L78 86l-3.081-59.276-22.378 4.005 12.972 20.186-23.35 27.395L22.215 24z" fill="#0a0310" transform="translate(0 0) rotate(-144 40 40) scale(1.2)"></path></g><defs><filter id="filter__r_1iq_" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend><feGaussianBlur stdDeviation="7" result="effect1_foregroundBlur"></feGaussianBlur></filter></defs></svg>`
+      },
+      {
         title: "How AI Policy Clarity Impacts Undergraduate Writing with AI",
         authors: "Wendy Fan, Ray Zhou, and Katy Gero",
-        venue: "Working paper",
-        venueshort: "",
+        venue: "",
+        venueshort: "working paper",
         icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M208,32H160a16,16,0,0,0-16,16V208a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H160V176h24a8,8,0,0,0,0-16H160V136h24a8,8,0,0,0,0-16H160V96h24a8,8,0,0,0,0-16H160V48h48V208ZM77.66,26.34a8,8,0,0,0-11.32,0l-32,32A8,8,0,0,0,32,64V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V64a8,8,0,0,0-2.34-5.66ZM48,176V80H64v96ZM80,80H96v96H80ZM72,43.31,92.69,64H51.31ZM48,208V192H96v16Z"></path></svg>`
       },
       {
@@ -555,15 +564,20 @@
 
     function renderPapers() {
       const list = document.getElementById('papers-list');
-      list.innerHTML = papers.map(paper => `
+      list.innerHTML = papers.map(paper => {
+        const title = paper.pdf
+          ? `<a href="${paper.pdf}" target="_blank" rel="noopener">${paper.title}</a>`
+          : paper.title;
+        return `
         <li>
           ${paperIcon(paper.icon)}
           <div>
-            <div><a href="${paper.pdf}" target="_blank" rel="noopener">${paper.title}</a></div>
+            <div>${title}</div>
             <div>${paper.authors}</div>
             <div>${paper.venue} <span class="venueshort">(${paper.venueshort})</span></div>
           </div>
-        </li>`).join('');
+        </li>`;
+      }).join('');
     }
 
     function renderMembers() {
@@ -602,7 +616,7 @@
     }
 
     updateSydneyConditions();
-    setInterval(updateSydneyConditions, 30 * 60 * 1000);
+    setInterval(updateSydneyConditions, 5 * 60 * 1000);
     renderMembers();
     renderCollaborators();
     renderPapers();
