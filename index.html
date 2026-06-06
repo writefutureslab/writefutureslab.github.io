@@ -1,6 +1,6 @@
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
   <meta content="utf-8" http-equiv="encoding">
 
@@ -8,75 +8,604 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Megrim&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
   <style>
-    body {
-      height: 100vh;             /* Full viewport height */
-      display: flex;             /* Enable Flexbox */
-      flex-direction: column;    /* Stack children vertically */
-      justify-content: center;   /* Vertical centering */
-      align-items: center;       /* Horizontal centering */
-      margin: 0;    
+    *, *::before, *::after {
+      box-sizing: border-box;
     }
 
-    .megrim-regular {
-      font-family: "Megrim", system-ui;
-      font-weight: 400;
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    :root {
+      --ink: #0a0310;
+      --accent: #49007e;
+      --muted: grey;
+      --paper-icon-size: 2.5em;
+      --cloud-size: .65em;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      overflow-x: hidden;
+      font-family: "Open Sans", system-ui;
+      font-weight: 200;
       font-style: normal;
+      font-size: 1em;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    a {
+      color: var(--ink);
+      font-weight: 400;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:visited {
+      color: var(--ink);
+    }
+
+    #header {
+      width: 100%;
+    }
+
+    #content {
+      width: 100%;
+      max-width: 800px;
+      padding-left: max(1.25rem, env(safe-area-inset-left, 0px));
+      padding-right: max(1.25rem, env(safe-area-inset-right, 0px));
     }
 
     h1 {
       font-family: "Megrim", system-ui;
       font-weight: 400;
       font-style: normal;
-      font-size: 5em;
+      font-size: clamp(2.25rem, 11vw, 5em);
+      line-height: 1.05;
+      margin: 0.2em 0 0.1em;
     }
 
-    #header pre.ascii-art {
+    h2 {
+      font-size: 1em;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: 0.05em;
+      margin: 0 0 1em;
+      text-transform: lowercase;
+    }
+
+    h2:not(:first-child) {
+      margin-top: 2em;
+    }
+
+    .header-art {
+      width: fit-content;
+      max-width: 100%;
+      margin: 4em auto 2em;
+      padding-left: max(1.25rem, env(safe-area-inset-left, 0px));
+      padding-right: max(1.25rem, env(safe-area-inset-right, 0px));
+    }
+
+    #header pre.ascii-art-wide,
+    #header pre.ascii-art-slim {
       font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
       white-space: pre;
-      margin: 0;
-      font-size: clamp(0.4rem, 1.5vw, 0.65rem);
+      margin: 0 0 1em;
+      width: fit-content;
+      font-size: var(--cloud-size);
       line-height: 1.1;
       letter-spacing: 0.03em;
     }
-</style>
+
+    #header pre.ascii-art-slim {
+      display: none;
+    }
+
+    @media (max-width: 1100px) {
+      #header pre.ascii-art-wide {
+        display: none;
+      }
+
+      #header pre.ascii-art-slim {
+        display: block;
+      }
+    }
+
+    #sydney-conditions {
+      font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+      font-size: .75em;
+      letter-spacing: 0.03em;
+      text-align: left;
+      margin: 0;
+      color: var(--ink);
+    }
+
+    #tab-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25em;
+      margin-bottom: 2em;
+    }
+
+    #tab-nav button {
+      background: none;
+      border: none;
+      margin-bottom: -2px;
+      padding: 0.6em 1em;
+      font-size: 1.05em;
+      cursor: pointer;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    #tab-nav button:hover {
+      color: var(--ink);
+    }
+
+    #tab-nav button.active {
+      color: var(--ink);
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    #members-list,
+    #papers-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    #members-list li {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      margin-bottom: 1.5em;
+    }
+
+    #members-list li > div {
+      min-width: 0;
+    }
+
+    #members-list svg {
+      flex-shrink: 0;
+      display: block;
+      border-radius: 50%;
+    }
+
+    #members-list .role {
+      color: var(--muted);
+      font-size: 0.95em;
+    }
+
+    #members-list p {
+      margin: 0 0 0;
+      color: var(--muted);
+      font-size: .95em;
+    }
+
+
+    #collaborators-list {
+      list-style: none;
+      margin: 0 0 0 1em;
+      padding: 0;
+    }
+
+    #collaborators-list li {
+      margin-bottom: 0.5em;
+    }
+
+    #collaborators-list .affiliation {
+      color: var(--muted);
+    }
+
+    #papers-list li {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      margin-bottom: 1.5em;
+      font-size: .9em;
+    }
+
+    #papers-list li > div {
+      min-width: 0;
+    }
+
+    #papers-list svg {
+      flex-shrink: 0;
+      display: block;
+      width: var(--paper-icon-size);
+      height: var(--paper-icon-size);
+    }
+
+    #papers-list a {
+      font-weight: 400;
+    }
+
+    #papers-list .venueshort {
+      /* color: var(--muted); */
+    }
+
+    p, #members-list li, #collaborators-list li, #papers-list li {
+      overflow-wrap: break-word;
+    }
+
+    @media (max-width: 480px) {
+      .header-art {
+        margin-top: 1.5em;
+      }
+
+      #tab-nav button {
+        padding: 0.65em 0.85em;
+        font-size: 1em;
+      }
+
+      h2:not(:first-child) {
+        margin-top: 1.5em;
+      }
+    }
+  </style>
 </head>
 <body>
   <div id="header">
-    <pre class="ascii-art">                                          ◠◠◠◠◠◠                                                                                                                      
-                                        (           )                                                                                                                   
-                                      ((               )))                                                                                                              
-                                     (                    )                                                                                                             
-                                   ((                       )                                                                                                           
-                        ◠◠◠◠◠◠◠◠◠◠                           )                                                                                                          
-                   ◠                                          ))                                                                                                        
-                 ((                                             ◠◠◠◠                                                                                                    
-              ◠◠                                                      ◠◠◠◠                                          ◠◠◠◠                                                
-            (                                                             ))                                     (       ))                                             
-        ◠◠◠                                             ◠◠◠◠                )                                  (            )                                           
-   (                            write                                        )                               ◠◠               ))                                        
-  (                                             (                            )                             (                        ◠◠◠◠◠◠◠◠◠                           
- (                                                             )              )                   ◠◠◠◠◠◠◠◠                      ◠◠◠           ))                        
-((                                                  (         )              )                ((              (              )                   ))                     
-(                  ((             )                    ◡◡◡◡                  )               (                                    (               )                     
-(                   (                                                     )                 (                                                     ◠◠◠◠                  
- ((                   (        )                                        ))                  (                                                         ◠◠◠◠◠             
-    (                     ◡◡                                         )))                    (                              futures                          )           
-      (    ◡◡                                                     ◡                          (                                                               )          
-              ◡◡◡  ◡                        ◡◡◡◡               )                              (             )             ◠◠                                  )         
-                     ◡      ◡◡◡◡◡◡     ◡◡           ◡◡◡◡◡◡◡◡                                   ((                                                (            )         
-                                                                                                 ((       )                     )                              )        
-                                                                                                                               )                  (            )        
-                                                                                                   (                                              (           )         
-                                                                                                    (          (              ◡◡               ◡◡◡           ))         
-                                                                                                        ◡◡◡◡◡             ◡◡    ◡◡         ◡◡◡      ◡◡◡◡◡◡◡◡            
-                                                                                                                ◡◡◡     ◡◡◡        ◡◡◡◡◡◡◡◡                             
-                                                                                                                   ◡◡◡◡◡                                                
+    <div class="header-art">
+    <pre class="ascii-art-wide">                                          ◠◠◠◠◠◠
+                                        (           )
+                                      ((               )))
+                                     (                    )
+                                   ((                       )
+                        ◠◠◠◠◠◠◠◠◠◠                           )
+                   ◠                                          ))
+                 ((                                             ◠◠◠◠
+              ◠◠                                                      ◠◠◠◠                                          ◠◠◠◠
+            (                                                             ))                                     (       ))
+        ◠◠◠                                             ◠◠◠◠                )                                  (            )
+   (                                                                         )                               ◠◠               ))
+  (                                             (                            )                             (                        ◠◠◠◠◠◠◠◠◠
+ (                                                             )              )                   ◠◠◠◠◠◠◠◠                      ◠◠◠           ))
+((                                                  (         )              )                ((              (              )                   ))
+(                  ((             )                    ◡◡◡◡                  )               (                                    (               )
+(                   (                                                     )                 (                                                     ◠◠◠◠
+ ((                   (        )                                        ))                  (                                                         ◠◠◠◠◠
+    (                     ◡◡                                         )))                    (                                                               )
+      (    ◡◡                                                     ◡                          (                                                               )
+              ◡◡◡  ◡                        ◡◡◡◡               )                              (             )             ◠◠                                  )
+                     ◡      ◡◡◡◡◡◡     ◡◡           ◡◡◡◡◡◡◡◡                                   ((                                                (            )
+                                                                                                 ((       )                     )                              )
+                                                                                                                               )                  (            )
+                                                                                                   (                                              (           )
+                                                                                                    (          (              ◡◡               ◡◡◡           ))
+                                                                                                        ◡◡◡◡◡             ◡◡    ◡◡         ◡◡◡      ◡◡◡◡◡◡◡◡
+                                                                                                                ◡◡◡     ◡◡◡        ◡◡◡◡◡◡◡◡
+                                                                                                                   ◡◡◡◡◡
 </pre>
+<pre class="ascii-art-slim">                                          ◠◠◠◠◠◠
+                                        (           )
+                                      ((               )))
+                                     (                    )
+                                   ((                       )
+                        ◠◠◠◠◠◠◠◠◠◠                           )
+                   ◠                                          ))
+                 ((                                             ◠◠◠◠
+              ◠◠                                                      ◠◠◠◠       
+            (                                                             ))       
+        ◠◠◠                                             ◠◠◠◠                )     
+   (                                                                         )     
+  (                                             (                            )     
+ (                                                             )              )      
+((                                                  (         )              )       
+(                  ((             )                    ◡◡◡◡                  )    
+(                   (                                                     )       
+ ((                   (        )                                        ))      
+    (                     ◡◡                                         )))          
+      (    ◡◡                                                     ◡              
+              ◡◡◡  ◡                        ◡◡◡◡               )                  
+                     ◡      ◡◡◡◡◡◡     ◡◡           ◡◡◡◡◡◡◡◡      
+
+</pre>
+    
+    </div>
   </div>
-  <h1>Write Futures Lab</h1>
+
+  <div id="content">
+    <p id="sydney-conditions">conditions in sydney: …</p>
+    <h1>Write Futures Lab</h1>
+
+    <nav id="tab-nav">
+      <button class="active" onclick="showTab('about')">about</button>
+      <button onclick="showTab('people')">people</button>
+      <button onclick="showTab('publications')">publications</button>
+      <button onclick="showTab('misc')">misc</button>
+    </nav>
+
+    <div id="about" class="tab-panel active">
+      <p><i>
+        We study how technology is changing how we write and how we think, and imagine ("write") new ways of building or deconstructing technology in our writing and thinking lives.
+      </i></p>
+      <p>
+        Writing is often a mode of thinking. By forcing our amorphous thoughts into words on the page, we clarify and revise our thoughts; they are changed by the act of writing. Because of this, writing, as a technology itself, changed the way we think. At the Write Futures Lab, we study how new technologies like large language models are once again changing our thought processes by changing how we write. We also critique current technological practices, like how language models are made and distributed, and envision positive futures, like new ways of making language models that align with our values. 
+      </p>
+      <p>
+        The Write Futures Lab is led by <a href="https://www.katygero.com/">Katy Gero</a> and housed in the <a href="https://www.sydney.edu.au/engineering/schools/school-of-computer-science.html">School of Computer Science</a> at the <a href="https://www.sydney.edu.au">University of Sydney</a>.
+       </p>
+    </div>
+
+    <div id="people" class="tab-panel">
+      <h2>members</h2>
+      <ul id="members-list"></ul>
+      <h2>collaborators</h2>
+      <ul id="collaborators-list"></ul>
+    </div>
+
+    <div id="publications" class="tab-panel">
+      <ul id="papers-list"></ul>
+    </div>
+
+    <div id="misc" class="tab-panel">
+      <h2>join the lab - PhD</h2>
+      <p>If you are interested in doing a PhD at the lab, please fill out <a href="https://form.jotform.com/243106704097050" target="_blank">this form</a>. I typically review applications in June and September, but the form has the most up-to-date information.</p>
+      <h2>join the lab - other</h2>
+      <p>Read in the information below, and then email me: <a href="mailto:katy.gero@sydney.edu.au">katy.gero@sydney.edu.au</a></p>
+      <p>If you are interested in an MPhil, please email me with the subject line "Write Futures MPhil Interest". Include a transcript, resume, and either a research area you are interested in or a short (< 1 page) thesis proposal.</p>
+      <p>If you are a student at the University of Sydney and interested in a research project, I supervise a number of Master's Research Pathway, Honours, and Dalyell Scholars each year. Please email me with the subject line "Write Futures [Honours / Dalyell / etc.] Interest", attach a transcript and resume, and let me know what kind of research or research topics you are interested in.</p>
+      <p>I do not currently have any funding for post-docs, but if you have your own funding, I am happy to discuss! Email me however you like. ;)</P>
+      <h2>colophon</h2>
+      <p>The title font is <a href="https://fonts.google.com/specimen/Megrim">Megrim</a> by Daniel Johnson.</p>
+      <p>The avatars on the 'people' page are from <a href="https://boringavatars.com/">Boring Avatars</a>. The icons on the 'publication' page are from the <a href="https://phosphoricons.com/">Phosphor icon family</a>.</p>
+      <p>Weather conditions in Sydney are pulled from the <a href="https://open-meteo.com/">Open-Meteo</a> free weather API. Moon info (if it's up, what phase) use <a href="https://github.com/mourner/suncalc">SunCalc</a>, "a tiny BSD-licensed JavaScript library for calculating sun position" and more.</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/suncalc@1.9.0/suncalc.min.js"></script>
+  <script>
+    const SYDNEY_LAT = -33.8688;
+    const SYDNEY_LNG = 151.2093;
+
+    const weatherPhrases = {
+      0: 'clear', 1: 'mostly clear', 2: 'partly cloudy', 3: 'overcast',
+      45: 'foggy', 48: 'foggy', 51: 'light drizzle', 53: 'drizzle', 55: 'drizzle',
+      61: 'light rain', 63: 'rain', 65: 'heavy rain',
+      71: 'light snow', 73: 'snow', 75: 'heavy snow',
+      80: 'showers', 81: 'showers', 82: 'heavy showers',
+      95: 'thunderstorm', 96: 'thunderstorm', 99: 'thunderstorm'
+    };
+
+    function formatSydneyTime(iso) {
+      const [, time] = iso.split('T');
+      const [h, m] = time.split(':').map(Number);
+      const hour = h % 12 || 12;
+      return `${hour}:${String(m).padStart(2, '0')} ${h < 12 ? 'am' : 'pm'}`;
+    }
+
+    function moonPhaseName(phase) {
+      if (phase < 0.03 || phase > 0.97) return 'new moon';
+      if (phase < 0.22) return 'waxing crescent';
+      if (phase < 0.28) return 'first quarter';
+      if (phase < 0.47) return 'waxing gibbous';
+      if (phase < 0.53) return 'full moon';
+      if (phase < 0.72) return 'waning gibbous';
+      if (phase < 0.78) return 'last quarter';
+      return 'waning crescent';
+    }
+
+    function isMoonUp(date) {
+      const { rise, set, alwaysUp, alwaysDown } = SunCalc.getMoonTimes(date, SYDNEY_LAT, SYDNEY_LNG);
+      if (alwaysUp) return true;
+      if (alwaysDown) return false;
+      const now = date.getTime();
+      if (rise && set) {
+        return rise < set
+          ? now >= rise.getTime() && now < set.getTime()
+          : now >= rise.getTime() || now < set.getTime();
+      }
+      if (rise) return now >= rise.getTime();
+      if (set) return now < set.getTime();
+      return false;
+    }
+
+    async function updateSydneyConditions() {
+      const el = document.getElementById('sydney-conditions');
+      try {
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${SYDNEY_LAT}&longitude=${SYDNEY_LNG}&current=temperature_2m,weather_code&timezone=Australia/Sydney`;
+        const res = await fetch(url);
+        const data = await res.json();
+        const { time, temperature_2m, weather_code } = data.current;
+        const parts = [
+          formatSydneyTime(time),
+          weatherPhrases[weather_code] || 'unknown',
+          `${Math.round(temperature_2m)}°c`
+        ];
+        if (typeof SunCalc !== 'undefined') {
+          const now = new Date();
+          if (isMoonUp(now)) {
+            const phase = SunCalc.getMoonIllumination(now).phase;
+            parts.push(`moon up (${moonPhaseName(phase)})`);
+          }
+        }
+        el.textContent = `conditions in sydney: ${parts.join(' · ')}`;
+      } catch {
+        el.textContent = 'conditions in sydney: unavailable';
+      }
+    }
+
+    const members = [
+      {
+        name: "Dr. Katy Gero",
+        status: "fulltime",
+        position: "Director",
+        website: "https://katygero.com",
+        about: "Writing, LLMs, creativity",
+        avatar: `<svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><mask id="_R_4eqnpflb_" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#FFFFFF" rx="72"></rect></mask><g mask="url(#_R_4eqnpflb_)"><rect width="36" height="36" fill="#ff005b"></rect><rect x="0" y="0" width="36" height="36" transform="translate(9 -5) rotate(219 18 18) scale(1)" fill="#ffb238" rx="6"></rect><g transform="translate(4.5 -4) rotate(9 18 18)"><path d="M15 19c2 1 4 1 6 0" stroke="#000000" fill="none" stroke-linecap="round"></path><rect x="10" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect><rect x="24" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect></g></g></svg>`
+      },
+      {
+        name: "Jiho Kim",
+        status: "incoming",
+        position: "PhD student (incoming Oct '26)",
+        website: "",
+        about: "Metacognition in AI-assisted writing",
+        avatar: `<svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><mask id="_R_4eqnpflb_" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#FFFFFF" rx="72"></rect></mask><g mask="url(#_R_4eqnpflb_)"><rect width="36" height="36" fill="#ff005b"></rect><rect x="0" y="0" width="36" height="36" transform="translate(9 -5) rotate(219 18 18) scale(1)" fill="#ffb238" rx="6"></rect><g transform="translate(4.5 -4) rotate(9 18 18)"><path d="M15 19c2 1 4 1 6 0" stroke="#000000" fill="none" stroke-linecap="round"></path><rect x="10" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect><rect x="24" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect></g></g></svg>`
+      },
+      {
+        name: "Lu Han",
+        status: "fulltime",
+        position: "MPhil Student (co-advised by Dr. Nyugen Tran)",
+        website: "",
+        about: "",
+        avatar: `<svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><mask id="_R_4eqnpflb_" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#FFFFFF" rx="72"></rect></mask><g mask="url(#_R_4eqnpflb_)"><rect width="36" height="36" fill="#ff005b"></rect><rect x="0" y="0" width="36" height="36" transform="translate(9 -5) rotate(219 18 18) scale(1)" fill="#ffb238" rx="6"></rect><g transform="translate(4.5 -4) rotate(9 18 18)"><path d="M15 19c2 1 4 1 6 0" stroke="#000000" fill="none" stroke-linecap="round"></path><rect x="10" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect><rect x="24" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect></g></g></svg>`
+      },
+      {
+        name: "Yang Song",
+        status: "project",
+        position: "Master's Research Pathway student",
+        about: "",
+        avatar: `<svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><mask id="_R_4eqnpflb_" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#FFFFFF" rx="72"></rect></mask><g mask="url(#_R_4eqnpflb_)"><rect width="36" height="36" fill="#ff005b"></rect><rect x="0" y="0" width="36" height="36" transform="translate(9 -5) rotate(219 18 18) scale(1)" fill="#ffb238" rx="6"></rect><g transform="translate(4.5 -4) rotate(9 18 18)"><path d="M15 19c2 1 4 1 6 0" stroke="#000000" fill="none" stroke-linecap="round"></path><rect x="10" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect><rect x="24" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect></g></g></svg>`
+      },
+      {
+        name: "Tanvi Bangar",
+        status: "project",
+        position: "Honours student",
+        about: "",
+        avatar: `<svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><mask id="_R_4eqnpflb_" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#FFFFFF" rx="72"></rect></mask><g mask="url(#_R_4eqnpflb_)"><rect width="36" height="36" fill="#ff005b"></rect><rect x="0" y="0" width="36" height="36" transform="translate(9 -5) rotate(219 18 18) scale(1)" fill="#ffb238" rx="6"></rect><g transform="translate(4.5 -4) rotate(9 18 18)"><path d="M15 19c2 1 4 1 6 0" stroke="#000000" fill="none" stroke-linecap="round"></path><rect x="10" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect><rect x="24" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect></g></g></svg>`
+      },
+      {
+        name: "Devang Jindia",
+        status: "project",
+        position: "Honours student",
+        about: "",
+        avatar: `<svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><mask id="_R_4eqnpflb_" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#FFFFFF" rx="72"></rect></mask><g mask="url(#_R_4eqnpflb_)"><rect width="36" height="36" fill="#ff005b"></rect><rect x="0" y="0" width="36" height="36" transform="translate(9 -5) rotate(219 18 18) scale(1)" fill="#ffb238" rx="6"></rect><g transform="translate(4.5 -4) rotate(9 18 18)"><path d="M15 19c2 1 4 1 6 0" stroke="#000000" fill="none" stroke-linecap="round"></path><rect x="10" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect><rect x="24" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect></g></g></svg>`
+      },
+      {
+        name: "Wendy Fan",
+        status: "project",
+        position: "Dalyell Scholar",
+        about: "",
+        avatar: `<svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><mask id="_R_4eqnpflb_" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#FFFFFF" rx="72"></rect></mask><g mask="url(#_R_4eqnpflb_)"><rect width="36" height="36" fill="#ff005b"></rect><rect x="0" y="0" width="36" height="36" transform="translate(9 -5) rotate(219 18 18) scale(1)" fill="#ffb238" rx="6"></rect><g transform="translate(4.5 -4) rotate(9 18 18)"><path d="M15 19c2 1 4 1 6 0" stroke="#000000" fill="none" stroke-linecap="round"></path><rect x="10" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect><rect x="24" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect></g></g></svg>`
+      }
+    ];
+
+    const collaborators = [
+      {
+        name: "Carly Schniztler",
+        affiliation: "Johns Hopkins University Writing Program"
+      },
+      {
+        name: "Alicia Guo",
+        affiliation: "University of Washington"
+      },
+      {
+        name: "Helen Chen",
+        affiliation: "University of Waterloo"
+      },
+      {
+        name: "Paramveer Dhillon",
+        affiliation: "University of Michigan"
+      },
+      {
+        name: "Ray Zhou",
+        affiliation: "University of Sydney"
+      }
+    ];
+
+    const papers = [
+      {
+        title: "How AI Policy Clarity Impacts Undergraduate Writing with AI",
+        authors: "Wendy Fan, Ray Zhou, and Katy Gero",
+        venue: "Working paper",
+        venueshort: "",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M208,32H160a16,16,0,0,0-16,16V208a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H160V176h24a8,8,0,0,0,0-16H160V136h24a8,8,0,0,0,0-16H160V96h24a8,8,0,0,0,0-16H160V48h48V208ZM77.66,26.34a8,8,0,0,0-11.32,0l-32,32A8,8,0,0,0,32,64V208a16,16,0,0,0,16,16H96a16,16,0,0,0,16-16V64a8,8,0,0,0-2.34-5.66ZM48,176V80H64v96ZM80,80H96v96H80ZM72,43.31,92.69,64H51.31ZM48,208V192H96v16Z"></path></svg>`
+      },
+      {
+        title: "From Planning to Revision: How AI Writing Support at Different Stages Alters Ownership",
+        authors: "Katy Gero, Tao Long, Carly Schnitzler, and Paramveer Dhillon",
+        venue: "2026 ACM Designing Interactive Systems Conference",
+        venueshort: "DIS 26",
+        pdf: "https://www.katygero.com/papers/2026_FromPlanningToRevision.pdf",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M227.32,73.37,182.63,28.69a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31l83.67-83.66,3.48,13.9-36.8,36.79a8,8,0,0,0,11.31,11.32l40-40a8,8,0,0,0,2.11-7.6l-6.9-27.61L227.32,96A16,16,0,0,0,227.32,73.37ZM48,179.31,76.69,208H48Zm48,25.38L51.31,160,136,75.31,180.69,120Zm96-96L147.32,64l24-24L216,84.69Z"></path></svg>`
+      },
+      {
+        title: "Seed Bank, Co-op, Stoop Swap: Metaphors for Governing Language Model Data for Creative Writing",
+        authors: "Alicia Guo, Carly Schnitzler, and Katy Gero",
+        venue: "2026 ACM Creativity and Cognition Conference",
+        venueshort: "C&C 26",
+        pdf: "https://arxiv.org/pdf/2605.12888",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M232,104a56.06,56.06,0,0,0-56-56H136a24,24,0,0,1,24-24,8,8,0,0,0,0-16,40,40,0,0,0-40,40H80a56.06,56.06,0,0,0-56,56,16,16,0,0,0,8,13.83V128c0,35.53,33.12,62.12,59.74,83.49C103.66,221.07,120,234.18,120,240a8,8,0,0,0,16,0c0-5.82,16.34-18.93,28.26-28.51C190.88,190.12,224,163.53,224,128V117.83A16,16,0,0,0,232,104ZM80,64h96a40.06,40.06,0,0,1,40,40H40A40,40,0,0,1,80,64Zm74.25,135c-10.62,8.52-20,16-26.25,23.37-6.25-7.32-15.63-14.85-26.25-23.37C77.8,179.79,48,155.86,48,128v-8H208v8C208,155.86,178.2,179.79,154.25,199Z"></path></svg>`,
+      }
+    ];
+
+    function paperIcon(svg) {
+      return svg.replace(/\s(width|height)="[^"]*"/g, '');
+    }
+
+    function renderPapers() {
+      const list = document.getElementById('papers-list');
+      list.innerHTML = papers.map(paper => `
+        <li>
+          ${paperIcon(paper.icon)}
+          <div>
+            <div><a href="${paper.pdf}" target="_blank" rel="noopener">${paper.title}</a></div>
+            <div>${paper.authors}</div>
+            <div>${paper.venue} <span class="venueshort">(${paper.venueshort})</span></div>
+          </div>
+        </li>`).join('');
+    }
+
+    function renderMembers() {
+      const list = document.getElementById('members-list');
+      list.innerHTML = members.map(person => {
+        const name = person.website
+          ? `<a href="${person.website}">${person.name}</a>`
+          : `${person.name}`;
+        const about = person.about ? `<p>${person.about}</p>` : '';
+        return `
+          <li>
+            ${person.avatar}
+            <div>
+              <div>${name}<span class="role"> · ${person.position}</span></div>
+              ${about}
+            </div>
+          </li>`;
+      }).join('');
+    }
+
+    function renderCollaborators() {
+      const list = document.getElementById('collaborators-list');
+      list.innerHTML = collaborators.map(person => {
+        const name = person.website
+          ? `<a href="${person.website}">${person.name}</a>`
+          : person.name;
+        return `<li>${name}<span class="affiliation"> – ${person.affiliation}</span></li>`;
+      }).join('');
+    }
+
+    function showTab(id) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('#tab-nav button').forEach(b => b.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
+
+    updateSydneyConditions();
+    setInterval(updateSydneyConditions, 30 * 60 * 1000);
+    renderMembers();
+    renderCollaborators();
+    renderPapers();
+  </script>
 </body>
 </html>
