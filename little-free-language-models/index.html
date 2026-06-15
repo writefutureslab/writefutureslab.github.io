@@ -1,219 +1,383 @@
 <!DOCTYPE html>
-<html >
-
+<html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="Content-Style-Type" content="text/css" />
-        <meta name="generator" content="pandoc" />
         <title>Little Free Language Models</title>
-
-
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Megrim&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Major+Mono+Display&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
         <style>
-        .major-mono-display-regular {
-          font-family: "Major Mono Display", monospace;
-          font-weight: 400;
-          font-style: normal;
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            background: #f8f3ff;
+            min-height: 100%;
+            overflow-x: hidden;
+        }
+        body {
+            font-family: 'Poppins', Helvetica, sans-serif;
+            font-size: 16.5px;
+            line-height: 1.72;
+            color: #33292b;
+            background: transparent;
+            padding: 170px 34px 72px;
+            max-width: 760px;
+            margin: 0 auto;
+            min-height: 100%;
+        }
+        h1 {
+            font-family: "Major Mono Display", monospace;
+            font-size: clamp(2.25em, 5.8vw, 3.1em);
+            color: #e74d55;
+            margin: 0 0 0.38em;
+            font-weight: 400;
+            line-height: 1.08;
+            -webkit-text-stroke: 0.043em #e74d55;
+            text-shadow: 0.08em 0.08em 0 #ffe08a;
+        }
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1em;
+            color: #e74d55;
+            margin-top: 3.25em;
+            margin-bottom: 1.1em;
+            font-weight: 600;
+            letter-spacing: 0;
+            text-transform: uppercase;
+            background: transparent;
+            border: 0;
+            border-bottom: 4px dotted rgba(231, 77, 85, 0.46);
+            box-shadow: none;
+            padding: 0 0 0.35em;
+        }
+        h3 {
+            font-size: 1.1em;
+            color: #256f56;
+            margin: 1.6em 0 0.55em;
+            font-weight: 700;
+            line-height: 1.25;
+        }
+        .hero-question {
+            margin: 1.85em auto 2.2em;
+            max-width: 700px;
+            color: #e74d55;
+            font-size: clamp(1.12em, 1.9vw, 1.25em);
+            font-weight: 600;
+            line-height: 1.35;
+            text-align: center;
+        }
+        p {
+            margin-bottom: 1.05em;
+        }
+        em {
+            font-style: italic;
+        }
+        strong {
+            font-weight: 700;
+            color: #5e2230;
+            background: linear-gradient(180deg, transparent 54%, #ffe08a 54%);
+            padding: 0 0.12em;
+        }
+        ul {
+            margin: 1.2em 0;
+            padding-left: 1.35em;
+        }
+        li {
+            margin-bottom: 0.65em;
+            padding-left: 0.2em;
+        }
+        li::marker {
+            color: #e74d55;
+        }
+        a {
+            color: #e74d55;
+            text-decoration-thickness: 0.08em;
+            text-underline-offset: 0.18em;
+        }
+        a:hover {
+            color: #e74d55;
+        }
+        .community-flag {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            width: 100vw;
+            margin: 0;
+            padding: 6px 56px 8px;
+            background: #ffe08a;
+            border: 0;
+            box-shadow: none;
+        }
+        .community-flag__eyebrow {
+            overflow: hidden;
+            margin: 0 -56px 0.55em;
+            font-family: 'DM Mono', monospace;
+            font-size: 0.95em;
+            line-height: 1.2;
+            color: #e74d55;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        .community-flag__eyebrow-track {
+            display: inline-flex;
+            width: max-content;
+            animation: community-marquee 18s linear infinite;
+        }
+        .community-flag__eyebrow-track span {
+            flex: 0 0 auto;
+            padding-right: 3.5rem;
+        }
+        @keyframes community-marquee {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+        .community-flag__main {
+            margin: 0;
+            font-size: clamp(1em, 1.25vw, 1.12em);
+            font-weight: 600;
+            line-height: 1.34;
+            max-width: none;
+            text-align: center;
+        }
+        .community-flag__main a {
+            color: #e74d55;
+            text-decoration: underline;
+            text-decoration-thickness: 0.08em;
+            text-underline-offset: 0.18em;
+        }
+        .site-figure {
+            position: relative;
+            margin: 2.4em -14px;
+            padding: 0;
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+        }
+        .site-figure::before {
+            content: "";
+            position: absolute;
+            top: -13px;
+            left: 50%;
+            width: 92px;
+            height: 24px;
+            background: rgba(255, 224, 138, 0.76);
+            transform: translateX(-50%) rotate(-2deg);
+        }
+        .site-figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+            padding: 12px;
+            background: #fff;
+            border: 0;
+        }
+        .site-figure figcaption {
+            margin-top: 0.75em;
+            font-family: inherit;
+            font-size: 1em;
+            line-height: inherit;
+            color: inherit;
+            text-align: center;
+        }
+        .material-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            margin: 1.4em 0 2.2em;
+        }
+        .material-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 154px;
+            padding: 14px;
+            color: #33292b;
+            background: #fff;
+            border: 0;
+            box-shadow: 6px 6px 0 rgba(231, 77, 85, 0.13);
+            text-decoration: none;
+        }
+        .material-card:hover {
+            color: #33292b;
+            box-shadow: 6px 6px 0 rgba(231, 77, 85, 0.28);
+            transform: translate(-1px, -1px);
+        }
+        .material-card span:first-child {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.8em;
+            color: #e74d55;
+            text-transform: uppercase;
+        }
+        .material-card span:last-child {
+            margin-top: auto;
+            font-size: 0.9em;
+        }
+        .team p {
+            margin-bottom: 1.25em;
+        }
+        .team {
+            padding-bottom: 280px;
+        }
+        .team-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin: 1.2em 0 0;
+            padding: 0;
+            list-style: none;
+        }
+        .team-list li {
+            position: relative;
+            padding: 0;
+        }
+        .team-card {
+            display: block;
+            width: 100%;
+            min-height: 76px;
+            padding: 14px;
+            color: #33292b;
+            font: inherit;
+            text-align: left;
+            background: #fff;
+            border: 0;
+            box-shadow: 6px 6px 0 rgba(231, 77, 85, 0.12);
+            cursor: default;
+        }
+        .team-name {
+            display: block;
+            color: #e74d55;
+            font-weight: 700;
+        }
+        .team-bio {
+            display: block;
+            max-height: 0;
+            margin-top: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 180ms ease, margin-top 180ms ease, opacity 180ms ease;
+        }
+        .team-card:hover .team-bio,
+        .team-card:focus .team-bio,
+        .team-card:focus-within .team-bio {
+            max-height: 260px;
+            margin-top: 0.75em;
+            opacity: 1;
+        }
+        .team-card:focus {
+            outline: 2px solid #e74d55;
+            outline-offset: 3px;
+        }
+        @media (max-width: 760px) {
+            body {
+                padding: 178px 20px 58px;
+            }
+            .site-figure {
+                margin-left: 0;
+                margin-right: 0;
+            }
+            .material-grid {
+                grid-template-columns: 1fr;
+            }
+            .community-flag {
+                padding: 6px 20px 8px;
+            }
+            .community-flag__eyebrow {
+                margin-left: -20px;
+                margin-right: -20px;
+            }
+            .team-list {
+                grid-template-columns: 1fr;
+            }
+            .team {
+                padding-bottom: 360px;
+            }
         }
         </style>
-
     </head>
 
     <body>
-                <h1 class="major-mono-display-regular">Little Free Language Models</h1>
-                <p><strong>creating co-operatively run language
-                models</strong></p>
-                <p>Many popular language models today are created by
-                large, for-profit technology companies and serve the
-                goals of these corporations. What would a language model
-                look like if it was created by writers and to serve
-                their creative community? Can we envision a co-operative
-                language model that challenges existing notions of how
-                technology is created and who it can serve?</p>
-                <h2 id="metaphors-for-model-governance">METAPHORS FOR
-                MODEL GOVERNANCE</h2>
-                <p>How would we govern a language model run for and by
-                creative writers? We have collected over one hundred
-                “metaphors for models” – projects, activities,
-                collectives, locations that may make good metaphors for
-                how to create and run a language model. For instance,
-                what if a language model was like a community vegetable
-                garden? Or a seed bank? Or the bathroom in a dive
-                bar?</p>
-                <p>Below are some metaphors we have investigated
-                deeply:</p>
-                <h3 id="community-garden">Community Garden</h3>
-                <p>Community gardens are small plots of land where local
-                community members can be allotted a part of the plot to
-                grow plants. This is often in urban areas where people
-                may not have a backyard or may not have enough light in
-                their yard or porch to grow what they would like.
-                Community gardens tend to be free, but may have long
-                wait times to get an allocation if they are popular.
-                It’s run by volunteers who likely have their own
-                allocation. Sometimes these gardens are fenced off to
-                prevent animals from entering, but often they are not
-                locked; anyone can come in and look around and there is
-                no need to get a key or anything similar.</p>
-                <p>What if a language model was like a community
-                garden?</p>
-                <p><strong>Who are the data contributors?</strong> The
-                data is probably the garden contents: dirt, seeds,
-                plants, flowers, vegetables, etc. While people bring
-                their own seeds, the garden probably provides the dirt
-                and maybe water. For a language model, this suggests
-                that the members bring data to fine-tune the model on,
-                but get to “own” model outputs (akin to the vegetables
-                they grew). Probably members fine-tune their own version
-                of the model, similar to how each garden member has
-                their own allotment for growing. Since the garden
-                provides the dirt, a “community garden” language model
-                is probably fine-tuned on a shared existing model and
-                the community independently hosts the shared model and
-                the fine-tune versions (in the same way land is
-                provided).</p>
-                <p><strong>Who are the model users?</strong> The users
-                are the same people who provide the data. Users would be
-                co-located in some way, akin to a community garden being
-                open to those living within a certain physical distance
-                of the garden. Since everyone gets their own allotment
-                in a shared space, maybe everyone’s model is accessible
-                to others, but it’s considered rude to “take” from
-                another person’s model. (Just like you wouldn’t pick
-                your neighbors tomatoes.) Instead, you just get to look
-                on.</p>
-                <p><strong>Who are the model stewards?</strong>
-                Community members volunteer to steward the garden. This
-                means they manage the digital infrastructure, invite new
-                members when old members leave, and make sure the
-                community stays “tidy”. This could involve making sure
-                that fine-tuning models is easy for new-comers, making
-                sure that fine-tuned models are accessible, and updating
-                shared base models when appropriate.</p>
-                <p><strong>What else does this metaphor
-                suggest?</strong> In this metaphor, it’s worth
-                considering where the “land” comes from, which for a
-                language model probably represents compute resources:
-                model hosting and GPUs for training. In a community
-                garden, it comes from the local municipality or council,
-                which decides to take a lot of land that was otherwise
-                not used or used for something else and makes it
-                available to the community. This may mean that a
-                “community garden” language model gets donated compute
-                resources from some sort of community organization. This
-                could be a university, a non-profit, maybe an
-                independent art school, or even a local government that
-                has compute resources.</p>
-                <h2 id="workshops-on-metaphors-for-models">WORKSHOPS ON
-                METAPHORS FOR MODELS</h2>
-                <p>Starting in February 2025, we ran a series of
-                workshops to envision what a community-run creative
-                language model could look like. These workshops seeded
-                the analysis of “metaphors for models”. Below we
-                summarize the workshops as a whole, and provide our
-                materials for those interested in running their own. If
-                you would like us to run a workshop with your community,
-                please reach out ____.</p>
-                <p>[summary of workshops]</p>
-                <p>[links to materials: slides, run of show, template
-                miro board]</p>
-                <h2 id="history-of-the-project">HISTORY OF THE
-                PROJECT</h2>
-                <p>This project arose from a research study we conducted
-                on how creative writers reason about the use of their
-                writing as training data for large language models.
-                Check out the published paper here.</p>
-                <p>Large language models (LLMs) present significant
-                ethical concerns across a number of dimensions—from
-                resource overuse to labor exploitation to intellectual
-                theft. At the same time, LLMs have also demonstrated
-                potential as artistic, pedagogical, and humanistic
-                tools. Yet, as our previous study revealed, the problems
-                with available LLMs make many people unwilling to use
-                them, even if such models are humanistically
-                interesting.</p>
-                <p>There are ongoing efforts to reign in corporate LLMs,
-                such as lawsuits to prevent the unconsensual use of
-                writing as training data, and … There are also efforts
-                to document and create more ethically-minded LLMs, such
-                as the European Open Source AI Index to track how open
-                LLMs truly are and OLMo, a state-of-the-art, truly open
-                language model with inspectable training data. These are
-                important efforts, but can remain distant for specific
-                communities that may want to engage with this technology
-                directly and on their own terms.</p>
-                <p>Our aim is to shepherd writer-led and contributed
-                language models, where “creative writing as training
-                data” is well-documented, full consent is provided by
-                all contributing writers, and use cases are recorded and
-                shared with community members. The training datasets and
-                models will be guided by a community board. Such models
-                would provide an ethical LLM options and be designed to
-                prioritize community values like diversity and
-                creativity.</p>
-                <h2 id="how-you-can-contribute">HOW YOU CAN
-                CONTRIBUTE</h2>
-                <ul>
-                <li>Anyone can submit an analysis of a metaphor for
-                governance. Please use this form to submit a
-                metaphor.</li>
-                <li>Run a workshop! You are welcome to use our
-                materials, or we are happy to help run a workshop for
-                your community. If you run a workshop on your own, we
-                would love to hear how it went! Please email _____.</li>
-                <li>Interested in developing the technical backbones for
-                training community language models? We are investigating
-                different base models, fine-tuning paradigms, and how
-                much data is needed to train a small model from scratch.
-                Please email _____.</li>
-                <li>We are piloting a small community language of just
-                10-20 writers; if you would like to participate, please
-                email _____.</li>
-                <li>Part of this project takes the form of
-                Human-Computer Interaction research; if you are a
-                researcher interested in collaborating on projects about
-                data ethics and AI governance, please email ______.</li>
-                </ul>
-                <h2 id="the-team">THE TEAM</h2>
-                <p>Katy Gero—Katy is a post-doctoral fellow at Harvard
-                University, soon to be a faculty in Computer Science at
-                the University of Sydney. She’s interested in figuring
-                out how to challenge existing capitalist (and arguably
-                colonial) language models with pro-social community
-                ones.</p>
-                <p>Carly Schnitzler—Carly teaches writing at Johns
-                Hopkins University and is the founder of If, Then:
-                Technology and Poetics. Her teaching and research center
-                digital rhetoric, creative computation, and the public
-                humanities.</p>
-                <p>Meera Desai—Meera is a PhD student at University of
-                Michigan where she studies responsible practices for
-                developing and using language models for knowledge
-                production. She’s interested in community-centered
-                approaches to collecting and stewarding training data
-                for language models.</p>
-                <p>Alicia Guo—Alicia is a PhD student at the University
-                of Washington where she works on creativity support
-                tools and investigating the processes behind creative
-                uses of AI.</p>
-                <p>Carmel Schare—Carmel is a PhD student in Computer
-                Science at MIT. His background includes research in
-                digital humanities and programming languages. He is
-                interested in the advantages and limitations of
-                computers as tools that facilitate human creativity and
-                collaboration.</p>
-                <p>Stephanie Young—Stephanie teaches writing on the
-                Mills College campus at Northeastern University, where
-                she serves as the NULab for Digital Humanities and
-                Social Sciences Oakland coordinator. She’s a poet,
-                editor, and scholar whose writing often works between
-                genres and combines digital tools with archival
-                research.</p>
+        <aside class="community-flag" aria-labelledby="community-updates">
+            <p class="community-flag__eyebrow" id="community-updates"><span class="community-flag__eyebrow-track"><span>Community updates</span><span aria-hidden="true">Community updates</span><span aria-hidden="true">Community updates</span><span aria-hidden="true">Community updates</span><span aria-hidden="true">Community updates</span><span aria-hidden="true">Community updates</span><span aria-hidden="true">Community updates</span><span aria-hidden="true">Community updates</span><span aria-hidden="true">Community updates</span><span aria-hidden="true">Community updates</span><span aria-hidden="true">Community updates</span><span aria-hidden="true">Community updates</span></span></p>
+            <p class="community-flag__main">Two summer town halls: discuss next steps. <a href="https://docs.google.com/forms/d/e/1FAIpQLSfca3gwDA_ojIUXgfcXptYe2wByp9O-b9PJg6HnxvLkqSy0qw/viewform" target="_blank" rel="noopener noreferrer">Take the survey</a> to join us June 25 or July 23 at 5pm EDT.</p>
+        </aside>
+
+        <h1>Little Free Language Models</h1>
+
+        <p>Many popular language models today are created by large, for-profit technology companies and serve the goals of these corporations. Can we envision a co-operative language model that challenges existing notions of how technology is created and who it can serve?</p>
+        <p class="hero-question"><em>What would a language model look like if it was created by writers and to serve their creative community?</em></p>
+
+
+        <figure class="site-figure">
+            <img src="assets/gardenexample.png" alt="Illustration of a community garden metaphor, with members contributing seeds and labor, sharing rules, and using shared infrastructure.">
+        </figure>
+
+        <h2>About this project</h2>
+        <p>How would we govern a language model run for and by creative writers? This project arose from a research study we conducted on how creative writers reason about the use of their writing as training data for large language models. Check out the <a href="https://arxiv.org/abs/2409.14281" target="_blank" rel="noopener noreferrer">published paper</a>.</p>
+        <p>Large language models (LLMs) present significant ethical concerns across a number of dimensions—from resource overuse to labor exploitation to intellectual theft. At the same time, LLMs have also demonstrated potential as artistic, pedagogical, and humanistic tools. Yet, as our previous study revealed, the problems with available LLMs make many people unwilling to use them, even if such models are humanistically interesting.</p>
+        <p>There are ongoing efforts to reign in corporate LLMs, such as lawsuits to prevent the unconsensual use of writing as training data, and calls for collective refusal. There are also efforts to document and create more ethically-minded LLMs, such as the European Open Source AI Index to track how open LLMs truly are and OLMo, a state-of-the-art, truly open language model with inspectable training data. These are important efforts, but can remain distant for specific communities that may want to engage with this technology directly and on their own terms.</p>
+        <p>Our aim is to shepherd writer-led and contributed language models, where “creative writing as training data” is well-documented, full consent is provided by all contributing writers, and use cases are recorded and shared with community members. The training datasets and models will be guided by a community board. Such models would provide an ethical LLM option and be designed to prioritize community values like diversity and creativity.</p>
+
+        <h2>The Beginning: workshops</h2>
+        <p>Starting in February 2025, we ran a series of workshops to envision what a community-run creative language model could look like through the lens of metaphors. These workshops seeded the analysis of “metaphors for models”.</p>
+
+        <p>Below we summarize the workshops as a whole, and provide our materials for those interested in running their own.</p>
+        <div class="material-grid">
+            <a class="material-card" href="assets/materials/Creative_LLM_Workshop_Metaphors_for_Models_Slides.pdf" target="_blank" rel="noopener noreferrer">
+                <span>Slides</span>
+                <span>Creative LLM Workshop: Metaphors for Models Slides</span>
+            </a>
+            <a class="material-card" href="assets/materials/Metaphors_for_Models_Breakout_Activity_Miro_Template.pdf" target="_blank" rel="noopener noreferrer">
+                <span>Template</span>
+                <span>Metaphors for Models Breakout Activity Miro Template</span>
+            </a>
+            <a class="material-card" href="assets/materials/Workshop_Participant_Metaphors.pdf" target="_blank" rel="noopener noreferrer">
+                <span>Metaphors</span>
+                <span>Workshop Participant Metaphors</span>
+            </a>
+        </div>
+
+
+
+        <h2>The Metaphors</h2>
+        <p>Through these workshops, we have collectively generated over 200 “metaphors for models” – projects, activities, collectives, locations that may make good metaphors for how to create and run a language model.</p>
+
+        <p>For instance, what if a language model was like a community vegetable garden? Or a seed bank? Or the bathroom in a dive bar? Across the workshops, metaphors helped participants reason about data contribution, access, stewardship, norms, credit, and shared infrastructure.</p>
+        <figure class="site-figure">
+            <img src="assets/teaser.png" alt="Six illustrated metaphor families for model governance: living systems, performance, early internet, instruments, knowledge systems, and civic life.">
+            <figcaption>A sketch of recurring metaphor families from the workshops: living systems, performance, early internet, instruments, knowledge systems, and civic life.</figcaption>
+        </figure>
+
+
+        <h2>How you can contribute</h2>
+        <ul>
+            <li>Anyone can submit an analysis of a metaphor for governance. Please use this <a href="https://forms.gle/bR31qAJbP1TQ14Di7" target="_blank" rel="noopener noreferrer">form</a> to submit a metaphor.</li>
+            <li>You can also take our <a href="https://docs.google.com/forms/d/e/1FAIpQLSfca3gwDA_ojIUXgfcXptYe2wByp9O-b9PJg6HnxvLkqSy0qw/viewform" target="_blank" rel="noopener noreferrer">new survey</a> to help shape further steps.</li>
+            <li>Run a workshop! You are welcome to use our materials, or we are happy to help run a workshop for your community. If you run a workshop on your own, we would love to hear how it went!</li>
+            <li>Interested in developing the technical backbones for training community language models? We are investigating different base models, fine-tuning paradigms, and how much data is needed to train a small model from scratch.</li>
+            <li>We are piloting a small community language model of just 10-20 writers. If you are a writer and interested, please email us!</li>
+            <li>Part of this project takes the form of Human-Computer Interaction research; if you are a researcher interested in collaborating on projects about data ethics and AI governance, we would love to hear from you.</li>
+        </ul>
+        <p>To participate in the writing pilot or run your own workshops, contact Carly at cschnit1@jh.edu. For model training interest, contact Katy at katy.gero@sydney.edu.au. For other research collaborations, contact Alicia at axguo@uw.edu.</p>
+
+        <h2>The team</h2>
+        <section class="team">
+            <ul class="team-list">
+                <li><button class="team-card" type="button"><span class="team-name">Katy Gero</span><span class="team-bio">Katy is a post-doctoral fellow at Harvard University, soon to be a faculty in Computer Science at the University of Sydney. She’s interested in figuring out how to challenge existing capitalist (and arguably colonial) language models with pro-social community ones.</span></button></li>
+                <li><button class="team-card" type="button"><span class="team-name">Carly Schnitzler</span><span class="team-bio">Carly teaches writing at Johns Hopkins University and is the founder of If, Then: Technology and Poetics. Her teaching and research center digital rhetoric, creative computation, and the public humanities.</span></button></li>
+                <li><button class="team-card" type="button"><span class="team-name">Alicia Guo</span><span class="team-bio">Alicia is a PhD student at the University of Washington where she works on creativity support tools and investigating the processes behind creative uses of AI. She is also a computational poet and artist interested in small and personal datasets</span></button></li>
+                <li><button class="team-card" type="button"><span class="team-name">Meera Desai</span><span class="team-bio">Meera is a PhD student at University of Michigan where she studies responsible practices for developing and using language models for knowledge production. She’s interested in community-centered approaches to collecting and stewarding training data for language models.</span></button></li>
+                <li><button class="team-card" type="button"><span class="team-name">Carmel Schare</span><span class="team-bio">Carmel is a PhD student in Computer Science at MIT. His background includes research in digital humanities and programming languages. He is interested in the advantages and limitations of computers as tools that facilitate human creativity and collaboration.</span></button></li>
+                <li><button class="team-card" type="button"><span class="team-name">Stephanie Young</span><span class="team-bio">Stephanie teaches writing on the Mills College campus at Northeastern University, where she serves as the NULab for Digital Humanities and Social Sciences Oakland coordinator. She’s a poet, editor, and scholar whose writing often works between genres and combines digital tools with archival research.</span></button></li>
+            </ul>
+        </section>
     </body>
 </html>
