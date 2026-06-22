@@ -34,7 +34,7 @@ Starting in February 2025, we ran a series of workshops to envision what a commu
 
 ## HISTORY OF THE PROJECT
 
-This project arose from a research study we conducted on how creative writers reason about the use of their writing as training data for large language models.  Check out the published paper here.
+This project arose from a research study we conducted on how creative writers reason about the use of their writing as training data for large language models. Check out the [published paper](https://arxiv.org/abs/2605.12888) or our [blog version online](metaphor-workshops/).
 
 Large language models (LLMs) present significant ethical concerns across a number of dimensions—from resource overuse to labor exploitation to intellectual theft. At the same time, LLMs have also demonstrated potential as artistic, pedagogical, and humanistic tools. Yet, as our previous study revealed, the problems with available LLMs make many people unwilling to use them, even if such models are humanistically interesting. 
 
@@ -63,4 +63,3 @@ Alicia Guo—Alicia is a PhD student at the University of Washington where she w
 Carmel Schare—Carmel is a PhD student in Computer Science at MIT. His background includes research in digital humanities and programming languages. He is interested in the advantages and limitations of computers as tools that facilitate human creativity and collaboration.
 
 Stephanie Young—Stephanie teaches writing on the Mills College campus at Northeastern University, where she serves as the NULab for Digital Humanities and Social Sciences Oakland coordinator. She's a poet, editor, and scholar whose writing often works between genres and combines digital tools with archival research.
-
