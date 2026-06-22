@@ -1,0 +1,2530 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seed Bank, Co-op, Stoop Swap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #24211d;
+      --body: #302a2b;
+      --muted: #6f6a63;
+      --section-accent: #ef505d;
+      --section-dots: #f3a4aa;
+      --bullet-accent: #4e78df;
+      --title-font: "PT Serif", Georgia, "Times New Roman", serif;
+      --text-font: "Poppins", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      background: #fff4fd;
+      overflow-x: hidden;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: var(--text-font);
+      font-weight: 400;
+      overflow-x: hidden;
+    }
+
+    .hero {
+      position: relative;
+      width: min(1040px, 100vw);
+      min-height: 0;
+      margin: 0 auto;
+      display: grid;
+      place-items: center;
+      overflow: visible;
+      padding: 58px 32px 0;
+      isolation: isolate;
+    }
+
+    .title-block {
+      position: relative;
+      z-index: 3;
+      width: min(720px, 88vw);
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .hero-blob-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-blob {
+      position: absolute;
+      right: 0;
+      left: 0;
+      margin-right: auto;
+      margin-left: auto;
+      max-width: none;
+      height: auto;
+      pointer-events: none;
+      user-select: none;
+      transform: rotate(var(--blob-rotate, 0deg)) scaleX(var(--blob-scale-x, 1)) scaleY(var(--blob-scale-y, 1));
+    }
+
+    .hero-blob-blue {
+      top: -4px;
+      width: min(575px, 78vw);
+      opacity: 0.62;
+      --blob-rotate: -1.5deg;
+      --blob-scale-x: 1.08;
+      --blob-scale-y: 0.96;
+    }
+
+    .hero-blob-orange {
+      top: 156px;
+      width: min(520px, 72vw);
+      --blob-rotate: 0.8deg;
+      --blob-scale-x: 1.08;
+      --blob-scale-y: 0.84;
+    }
+
+    h1 {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      color: var(--ink);
+      font-family: "PT Serif", Georgia, "Times New Roman", serif;
+      font-size: clamp(42px, 6vw, 68px);
+      font-weight: 700;
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    .title-line {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .mobile-title-line {
+      display: none;
+    }
+
+    .subtitle {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 34px auto 0;
+      color: var(--ink);
+      font-family: var(--text-font);
+      font-size: clamp(13px, 1.25vw, 15.5px);
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    .actions,
+    .byline {
+      position: relative;
+      z-index: 1;
+    }
+
+    .subtitle-line {
+      display: inline;
+    }
+
+    .subtitle-line + .subtitle-line::before {
+      content: " ";
+    }
+
+    .image-ring {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .image-ring img {
+      position: absolute;
+      width: clamp(94px, 12vw, 132px);
+      height: auto;
+      transform: translate(-50%, -50%) rotate(var(--rotate)) scale(var(--image-scale, 1));
+      transform-origin: 50% 70%;
+      filter: drop-shadow(0 14px 18px rgb(36 33 29 / 0.10));
+    }
+
+    .image-ring img:nth-child(1) { left: 11%; top: 25%; --rotate: -8deg; --delay: -0.3s; }
+    .image-ring img:nth-child(2) { left: 9%; top: 50%; --rotate: -3deg; --delay: -0.9s; }
+    .image-ring img:nth-child(3) { left: 17%; top: 70%; --rotate: 5deg; --delay: -2.2s; }
+    .image-ring img:nth-child(4) { left: 89%; top: 25%; --rotate: 8deg; --delay: -1.8s; }
+    .image-ring img:nth-child(5) { left: 91%; top: 50%; --rotate: -6deg; --delay: -0.7s; }
+    .image-ring img:nth-child(6) { left: 83%; top: 70%; --rotate: 7deg; --delay: -1.5s; }
+
+    .article {
+      width: min(660px, calc(100vw - 48px));
+      max-width: calc(100vw - 48px);
+      margin: 0 auto;
+      padding: 26px 0 120px;
+      text-align: left;
+    }
+
+    .project-intro {
+      margin: 0;
+      color: var(--body);
+      font-size: 16.5px;
+      font-weight: 400;
+      line-height: 1.72;
+      text-align: left;
+    }
+
+    h2 {
+      margin: 48px 0 14px;
+      font-family: var(--title-font);
+      font-size: clamp(21px, 2.3vw, 24px);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: 0;
+      color: var(--section-accent);
+      text-transform: uppercase;
+    }
+
+    .section-status {
+      color: var(--muted);
+      font-size: 0.72em;
+      font-weight: 400;
+    }
+
+    .article-body {
+      margin: 0;
+      color: var(--body);
+      font-size: 16.5px;
+      font-weight: 400;
+      line-height: 1.72;
+    }
+
+    .article-body + .article-body {
+      margin-top: 18px;
+    }
+
+    .article-body a {
+      color: var(--ink);
+      text-decoration-line: underline;
+      text-decoration-style: dotted;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
+    }
+
+    .article-body a:hover {
+      text-decoration-style: solid;
+    }
+
+    .article section {
+      margin-top: 48px;
+    }
+
+    .article section + section {
+      margin-top: 64px;
+    }
+
+    .article section h2 {
+      position: relative;
+      margin-top: 0;
+    }
+
+    .article section h2::after {
+      content: "";
+      display: block;
+      height: 6px;
+      margin-top: 8px;
+      background-image: radial-gradient(circle, var(--section-dots) 2px, transparent 2.5px);
+      background-size: 12px 6px;
+      background-position: left center;
+      background-repeat: repeat-x;
+    }
+
+    .article ul,
+    .article ol {
+      margin: 18px 0 0;
+      color: var(--body);
+      font-family: var(--text-font);
+      font-size: 16.5px;
+      font-weight: 400;
+      line-height: 1.72;
+    }
+
+    .article ul {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .article ol {
+      padding-left: 1.35em;
+    }
+
+    .article li + li {
+      margin-top: 10px;
+    }
+
+    .article ul li {
+      position: relative;
+      padding-left: 1.6em;
+    }
+
+    .article ul li::before {
+      content: "";
+      position: absolute;
+      left: 0.15em;
+      top: 0.86em;
+      width: 0.66em;
+      height: 0.66em;
+      background: var(--bullet-accent);
+      clip-path: polygon(50% 0%, 65% 35%, 100% 50%, 65% 65%, 50% 100%, 35% 65%, 0% 50%, 35% 35%);
+      transform: translateY(-50%);
+    }
+
+    .domain-figure {
+      width: 90%;
+      margin: 34px auto;
+    }
+
+    .domain-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .domain-figure figcaption {
+      max-width: 660px;
+      margin: 12px auto 0;
+      color: var(--muted);
+      font-family: var(--text-font);
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    .theme-sections {
+      display: grid;
+      gap: 28px;
+      margin-top: 24px;
+    }
+
+    .theme-detail {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .theme-detail h3 {
+      margin: 0 0 10px;
+      color: var(--bullet-accent);
+      font-family: var(--text-font);
+      font-size: clamp(17px, 1.8vw, 19px);
+      font-weight: 600;
+      line-height: 1.32;
+      letter-spacing: 0;
+    }
+
+    .theme-detail p {
+      margin: 0;
+      color: var(--body);
+      font-family: var(--text-font);
+      font-size: 16.5px;
+      font-weight: 400;
+      line-height: 1.72;
+    }
+
+    .theme-detail p + p {
+      margin-top: 18px;
+    }
+
+    .theme-detail blockquote {
+      margin: 22px 0;
+      padding-left: 20px;
+      border-left: 2px solid rgb(36 33 29 / 0.28);
+      color: var(--ink);
+      font-family: var(--title-font);
+      font-size: 16.5px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.72;
+    }
+
+    .theme-detail blockquote p {
+      color: inherit;
+      font-family: inherit;
+      font-size: inherit;
+      font-style: inherit;
+      line-height: inherit;
+    }
+
+    .workshop-board-wrap {
+      width: min(92vw, 980px);
+      margin: 26px calc(50% - min(46vw, 490px)) 0;
+    }
+
+    .board-caption {
+      width: min(660px, calc(100% - 48px));
+      margin: 12px auto 0;
+      color: var(--muted);
+      font-family: var(--text-font);
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    .sticky-form {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: min(430px, calc(100% - 36px));
+      padding: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .sticky-form label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    .sticky-form input {
+      width: 100%;
+      min-height: 36px;
+      padding: 0 12px;
+      border: 1px solid rgb(36 33 29 / 0.16);
+      border-radius: 4px;
+      color: var(--ink);
+      background: #fff;
+      font-family: var(--text-font);
+      font-size: 13px;
+      font-weight: 300;
+    }
+
+    .sticky-form input:focus {
+      border-color: var(--ink);
+      outline: 0;
+      box-shadow: inset 0 0 0 1px var(--ink);
+    }
+
+    .sticky-form button:focus-visible,
+    .metaphor-note:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 3px;
+    }
+
+    .sticky-form button {
+      flex: 0 0 auto;
+      min-height: 36px;
+      padding: 0 13px;
+      border: 1px solid rgb(36 33 29 / 0.18);
+      border-radius: 4px;
+      color: var(--ink);
+      background: #fff;
+      font-family: var(--text-font);
+      font-size: 14px;
+      font-weight: 400;
+      cursor: pointer;
+      transition: background 160ms ease, border-color 160ms ease;
+    }
+
+    .sticky-form button:hover {
+      background: rgb(36 33 29 / 0.035);
+      border-color: rgb(36 33 29 / 0.32);
+    }
+
+    .metaphor-board {
+      position: relative;
+      height: clamp(360px, 40vw, 460px);
+      overflow: hidden;
+      border: 1px solid rgb(36 33 29 / 0.13);
+      border-radius: 6px;
+      background: #fff;
+    }
+
+    .board-empty {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: min(360px, calc(100% - 48px));
+      margin: 0;
+      color: var(--muted);
+      font-family: var(--title-font);
+      font-size: clamp(22px, 3vw, 31px);
+      font-weight: 400;
+      line-height: 1.18;
+      text-align: center;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .metaphor-note {
+      position: absolute;
+      left: calc(var(--x) * 1%);
+      top: calc(var(--y) * 1%);
+      z-index: 2;
+      width: var(--note-size, 74px);
+      aspect-ratio: 1 / 1;
+      padding: var(--note-padding, 7px);
+      border: 0;
+      border-radius: 0;
+      color: var(--ink);
+      background: var(--note-color, #fff59d);
+      box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 14%, transparent);
+      font-family: var(--text-font);
+      font-size: var(--note-font-size, 10px);
+      font-weight: 300;
+      line-height: 1.25;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow-wrap: anywhere;
+      transform: translate(-50%, -50%);
+      touch-action: none;
+      cursor: grab;
+    }
+
+    .metaphor-note.is-dragging {
+      z-index: 5;
+      box-shadow: 0 6px 18px color-mix(in srgb, var(--ink) 18%, transparent);
+      cursor: grabbing;
+    }
+
+    .screen-reader-notes {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    .quote-block {
+      margin: 0;
+      padding: 0 0 0 20px;
+      border-left: 2px solid rgb(36 33 29 / 0.28);
+      color: var(--body);
+      font-family: var(--title-font);
+      font-size: 16.5px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.72;
+    }
+
+    .quote-block footer {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .question-callout {
+      max-width: 680px;
+      margin: 58px auto 0;
+      color: var(--bullet-accent);
+      font-size: clamp(20px, 2vw, 24px);
+      font-weight: 500;
+      line-height: 1.35;
+      text-align: center;
+    }
+
+    .question-callout + .article-body {
+      margin-top: 46px;
+    }
+
+    .quote-block p {
+      margin: 0;
+    }
+
+    .quote-block + .article-body {
+      margin-top: 28px;
+    }
+
+    .citation-box {
+      margin: 18px 0 0;
+      padding: 18px 20px;
+      overflow-x: auto;
+      border: 1px solid rgb(36 33 29 / 0.16);
+      border-radius: 4px;
+      color: var(--body);
+      background: rgb(36 33 29 / 0.025);
+      font-family: ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 12.5px;
+      font-weight: 400;
+      line-height: 1.55;
+      white-space: pre;
+    }
+
+    .citation-box code {
+      font: inherit;
+    }
+
+    .responsive-tuner {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 50;
+      width: min(360px, calc(100vw - 32px));
+      color: var(--ink);
+      font-family: var(--text-font);
+      font-size: 12px;
+    }
+
+    .responsive-tuner[open] {
+      max-height: min(760px, calc(100vh - 32px));
+      overflow: auto;
+      border: 1px solid rgb(36 33 29 / 0.16);
+      border-radius: 8px;
+      background: rgb(255 250 244 / 0.96);
+      box-shadow: 0 16px 40px rgb(36 33 29 / 0.12);
+    }
+
+    .responsive-tuner summary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 36px;
+      padding: 0 14px;
+      border: 1px solid rgb(36 33 29 / 0.18);
+      border-radius: 999px;
+      background: rgb(255 255 255 / 0.92);
+      box-shadow: 0 8px 24px rgb(36 33 29 / 0.08);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .responsive-tuner[open] summary {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      border-width: 0 0 1px;
+      border-radius: 8px 8px 0 0;
+      box-shadow: none;
+    }
+
+    .tuner-panel {
+      display: grid;
+      gap: 14px;
+      padding: 14px;
+    }
+
+    .tuner-row,
+    .tuner-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .tuner-row {
+      justify-content: space-between;
+    }
+
+    .tuner-row label {
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .tuner-row select {
+      width: min(210px, 62%);
+      min-height: 32px;
+      border: 1px solid rgb(36 33 29 / 0.18);
+      border-radius: 4px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+    }
+
+    .tuner-groups {
+      display: grid;
+      gap: 12px;
+    }
+
+    .tuner-group {
+      display: grid;
+      gap: 8px;
+      padding-top: 10px;
+      border-top: 1px solid rgb(36 33 29 / 0.12);
+    }
+
+    .tuner-group-title {
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .tuner-control {
+      display: grid;
+      grid-template-columns: 88px 1fr 44px;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tuner-control label {
+      color: var(--muted);
+    }
+
+    .tuner-control input {
+      width: 100%;
+      accent-color: var(--ink);
+    }
+
+    .tuner-value {
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+    }
+
+    .tuner-actions {
+      flex-wrap: wrap;
+      padding-top: 4px;
+    }
+
+    .tuner-actions button {
+      min-height: 32px;
+      padding: 0 10px;
+      border: 1px solid rgb(36 33 29 / 0.18);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .tuner-actions button:hover {
+      border-color: rgb(36 33 29 / 0.35);
+    }
+
+    .tuner-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.45;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin: 38px 0 0;
+    }
+
+    .actions a {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 0 2px 8px;
+      border: 0;
+      border-radius: 0;
+      color: var(--ink);
+      background: transparent;
+      box-shadow: none;
+      font-family: var(--text-font);
+      font-size: 14.5px;
+      font-weight: 400;
+      line-height: 1.1;
+      text-decoration: none;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+      width: var(--dot-width);
+    }
+
+    .actions a:nth-child(1) {
+      --dot-width: 172px;
+    }
+
+    .actions a:nth-child(2) {
+      --dot-width: 150px;
+    }
+
+    .actions a::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 6px;
+      background-image: radial-gradient(circle, var(--section-dots) 2px, transparent 2.5px);
+      background-size: 12px 6px;
+      background-position: left center;
+      background-repeat: repeat-x;
+      pointer-events: none;
+    }
+
+    .actions a::after {
+      content: "→";
+      margin-left: 7px;
+      color: var(--ink);
+      font-size: 0.95em;
+      line-height: 1;
+    }
+
+    .actions a:hover {
+      border-color: color-mix(in srgb, var(--ink) 28%, transparent);
+    }
+
+    .actions a:hover::before {
+      background-image: radial-gradient(circle, var(--section-accent) 2px, transparent 2.5px);
+    }
+
+    .actions a:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 4px;
+    }
+
+    .byline {
+      display: grid;
+      gap: 3px;
+      width: min(660px, calc(100vw - 48px));
+      max-width: none;
+      margin: 84px 0 0 calc(50% - min(330px, calc(50vw - 24px)));
+      color: var(--muted);
+      font-family: var(--text-font);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.5;
+      text-align: left;
+    }
+
+    .byline span {
+      display: block;
+    }
+
+    .byline strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    @media (max-width: 1080px) and (min-width: 721px) {
+      .hero {
+        width: 100%;
+        max-width: 100vw;
+        overflow: clip;
+        padding-top: 50px;
+      }
+
+      .title-block {
+        width: min(650px, 76vw);
+      }
+
+      .hero-blob-blue {
+        top: 8px;
+        width: min(490px, 62vw);
+        --blob-scale-x: 1.12;
+        --blob-scale-y: 0.96;
+      }
+
+      .hero-blob-orange {
+        top: 154px;
+        width: min(430px, 56vw);
+        --blob-scale-x: 1.12;
+        --blob-scale-y: 0.82;
+      }
+
+      h1 {
+        font-size: clamp(46px, 6.2vw, 60px);
+      }
+
+      .subtitle {
+        max-width: min(620px, 78vw);
+        margin-top: 30px;
+      }
+
+      .image-ring img {
+        width: clamp(72px, 10vw, 104px);
+      }
+
+      .image-ring img:nth-child(1) { left: 10%; top: 25%; }
+      .image-ring img:nth-child(2) { left: 9%; top: 49%; }
+      .image-ring img:nth-child(3) { left: 16%; top: 70%; }
+      .image-ring img:nth-child(4) { left: 90%; top: 25%; }
+      .image-ring img:nth-child(5) { left: 91%; top: 49%; }
+      .image-ring img:nth-child(6) { left: 84%; top: 70%; }
+
+      .actions {
+        margin-top: 36px;
+      }
+
+      .byline {
+        margin-top: 76px;
+      }
+    }
+
+    @media (max-width: 860px) and (min-width: 721px) {
+      .title-block {
+        width: min(560px, 78vw);
+      }
+
+      .hero-blob-blue {
+        top: 14px;
+        width: min(460px, 64vw);
+        --blob-scale-x: 1.1;
+        --blob-scale-y: 0.95;
+      }
+
+      .hero-blob-orange {
+        top: 130px;
+        width: min(430px, 62vw);
+        --blob-scale-x: 1.24;
+        --blob-scale-y: 0.74;
+      }
+
+      h1 {
+        font-size: clamp(42px, 6vw, 52px);
+      }
+
+      .subtitle {
+        font-size: 14px;
+      }
+
+      .image-ring img {
+        width: clamp(62px, 9vw, 82px);
+      }
+    }
+
+    @media (max-width: 720px) and (min-width: 481px) {
+      html,
+      body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: clip;
+      }
+
+      .hero {
+        min-height: 0;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        overflow: clip;
+        padding: 44px 24px 0;
+      }
+
+      .title-block {
+        width: min(560px, calc(100vw - 48px));
+        margin-top: 0;
+      }
+
+      .hero-blob-blue {
+        top: 12px;
+        width: min(420px, 70vw);
+        --blob-scale-x: 1.12;
+        --blob-scale-y: 0.95;
+      }
+
+      .hero-blob-orange {
+        top: 148px;
+        width: min(360px, 62vw);
+        --blob-scale-x: 1.18;
+        --blob-scale-y: 0.9;
+      }
+
+      h1 {
+        font-size: clamp(40px, 8vw, 54px);
+        line-height: 1;
+      }
+
+      .title-line {
+        white-space: normal;
+      }
+
+      .image-ring img {
+        width: clamp(58px, 10vw, 76px);
+        opacity: 0.78;
+      }
+
+      .image-ring img:nth-child(1) { left: 10%; top: 18%; }
+      .image-ring img:nth-child(2) { left: 10%; top: 39%; }
+      .image-ring img:nth-child(3) { left: 19%; top: 58%; }
+      .image-ring img:nth-child(4) { left: 90%; top: 18%; }
+      .image-ring img:nth-child(5) { left: 90%; top: 39%; }
+      .image-ring img:nth-child(6) { left: 81%; top: 58%; }
+
+      .actions {
+        gap: 10px;
+        margin-top: 32px;
+      }
+
+      .project-intro {
+        text-align: left;
+      }
+
+      .article {
+        display: block;
+        width: min(560px, calc(100vw - 48px)) !important;
+        max-width: none !important;
+        margin: 0 auto !important;
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      .article-body,
+      .project-intro,
+      .theme-detail p,
+      .theme-detail blockquote {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        overflow-wrap: break-word;
+      }
+
+      .domain-figure {
+        width: 90%;
+        margin: 28px auto;
+      }
+
+      .actions a {
+        min-height: 34px;
+        padding: 0 2px 8px;
+        font-size: 14px;
+      }
+
+      .actions a:nth-child(1) {
+        --dot-width: 160px;
+      }
+
+      .actions a:nth-child(2) {
+        --dot-width: 144px;
+      }
+
+      .byline {
+        width: min(560px, calc(100vw - 48px));
+        max-width: none;
+        margin-right: auto;
+        margin-left: auto;
+        font-size: 14.5px;
+        margin-top: 68px;
+      }
+
+      .subtitle {
+        max-width: min(560px, calc(100vw - 48px));
+        margin-top: 28px;
+        font-size: clamp(13px, 2.1vw, 15px);
+      }
+
+      .subtitle-line {
+        display: block;
+      }
+
+      .subtitle-line + .subtitle-line::before {
+        content: "";
+      }
+
+      .workshop-board-wrap {
+        width: min(100%, calc(100vw - 28px));
+        margin: 32px calc(50% - min(50vw - 14px, 490px)) 0;
+      }
+
+      .sticky-form {
+        align-items: center;
+        flex-direction: row;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        width: auto;
+      }
+
+      .sticky-form button {
+        width: auto;
+      }
+
+      .metaphor-board {
+        height: 420px;
+      }
+
+      .metaphor-note {
+        width: var(--note-size, 68px);
+        padding: var(--note-padding, 7px);
+        font-size: var(--note-font-size, 9.5px);
+      }
+
+      .project-intro,
+      .article-body,
+      .theme-detail p,
+      .theme-detail blockquote,
+      .quote-block,
+      .article ul,
+      .article ol {
+        font-size: 15.75px;
+      }
+    }
+
+    @media (max-width: 600px) and (min-width: 481px) {
+      .title-block {
+        width: min(440px, calc(100vw - 48px));
+      }
+
+      .desktop-title-line {
+        display: none;
+      }
+
+      .mobile-title-line {
+        display: block;
+      }
+
+      h1 {
+        font-size: clamp(36px, 8.2vw, 44px);
+      }
+
+      .hero-blob-blue {
+        top: 4px;
+        width: min(345px, 68vw);
+        --blob-scale-x: 1.24;
+        --blob-scale-y: 1.18;
+      }
+
+      .hero-blob-orange {
+        top: 142px;
+        width: min(330px, 64vw);
+        --blob-scale-x: 1.34;
+        --blob-scale-y: 1.18;
+      }
+
+      .subtitle {
+        margin-top: 10px;
+        font-size: clamp(12.75px, 2.2vw, 14px);
+      }
+
+      .image-ring img {
+        width: clamp(68px, 12vw, 88px);
+      }
+
+      .byline,
+      .article {
+        width: min(560px, calc(100vw - 24px)) !important;
+        max-width: none !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+      }
+
+      .byline {
+        position: relative;
+        left: 50%;
+        text-align: left;
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (max-width: 480px) {
+      html,
+      body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: clip;
+      }
+
+      .hero {
+        min-height: 0;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        overflow: clip;
+        padding: 44px 20px 0;
+      }
+
+      .title-block {
+        width: min(390px, calc(100vw - 40px));
+        margin-top: 0;
+      }
+
+      .hero-blob-blue {
+        top: 2px;
+        width: min(355px, 82vw);
+        --blob-scale-x: 1.24;
+        --blob-scale-y: 1.18;
+      }
+
+      .hero-blob-orange {
+        top: 140px;
+        width: min(345px, 80vw);
+        --blob-scale-x: 1.32;
+        --blob-scale-y: 1.18;
+      }
+
+      h1 {
+        font-size: clamp(29px, 8.6vw, 36px);
+        line-height: 1.02;
+      }
+
+      .title-line {
+        white-space: normal;
+      }
+
+      .desktop-title-line {
+        display: none;
+      }
+
+      .mobile-title-line {
+        display: block;
+      }
+
+      .image-ring img {
+        width: clamp(56px, 15vw, 70px);
+        opacity: 0.78;
+      }
+
+      .image-ring img:nth-child(1) { left: 13%; top: 17%; }
+      .image-ring img:nth-child(2) { left: 12%; top: 38%; }
+      .image-ring img:nth-child(3) { left: 20%; top: 58%; }
+      .image-ring img:nth-child(4) { left: 87%; top: 17%; }
+      .image-ring img:nth-child(5) { left: 88%; top: 38%; }
+      .image-ring img:nth-child(6) { left: 80%; top: 58%; }
+
+      .actions {
+        gap: 10px;
+        margin-top: 32px;
+      }
+
+      .actions a {
+        min-height: 34px;
+        padding: 0 2px 8px;
+        font-size: 13px;
+      }
+
+      .actions a:nth-child(1) {
+        --dot-width: 148px;
+      }
+
+      .actions a:nth-child(2) {
+        --dot-width: 132px;
+      }
+
+      .byline {
+        width: min(390px, calc(100vw - 24px));
+        margin-right: auto;
+        margin-left: auto;
+        font-size: 13.5px;
+        margin-top: 64px;
+        position: relative;
+        left: 50%;
+        text-align: left;
+        transform: translateX(-50%);
+      }
+
+      .subtitle {
+        max-width: 600px;
+        margin-top: 4px;
+        font-size: clamp(12px, 3.1vw, 13.5px);
+      }
+
+      .subtitle-line {
+        display: block;
+      }
+
+      .subtitle-line + .subtitle-line::before {
+        content: "";
+      }
+
+      .article {
+        display: block;
+        width: min(390px, calc(100vw - 24px)) !important;
+        max-width: 390px !important;
+        margin: 0 auto !important;
+        padding-right: 0;
+        padding-left: 0;
+      }
+
+      .article-body,
+      .project-intro,
+      .theme-detail p,
+      .theme-detail blockquote {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        overflow-wrap: break-word;
+      }
+
+      .project-intro,
+      .article-body,
+      .theme-detail p,
+      .theme-detail blockquote,
+      .quote-block,
+      .article ul,
+      .article ol {
+        font-size: 14.75px;
+        line-height: 1.66;
+      }
+
+      .domain-figure {
+        width: 90%;
+        margin: 28px auto;
+      }
+
+      .workshop-board-wrap {
+        width: min(100%, calc(100vw - 28px));
+        margin: 32px calc(50% - min(50vw - 14px, 490px)) 0;
+      }
+
+      .sticky-form {
+        align-items: center;
+        flex-direction: row;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        width: auto;
+      }
+
+      .sticky-form button {
+        width: auto;
+      }
+
+      .metaphor-board {
+        height: 420px;
+      }
+
+      .metaphor-note {
+        width: var(--note-size, 68px);
+        padding: var(--note-padding, 7px);
+        font-size: var(--note-font-size, 9.5px);
+      }
+    }
+
+    @media (max-width: 380px) {
+      .article,
+      .byline {
+        width: min(312px, calc(100vw - 32px)) !important;
+        max-width: 312px !important;
+      }
+
+      .article {
+        margin-right: auto !important;
+        margin-left: auto !important;
+      }
+
+      h1 {
+        font-size: clamp(29px, 9vw, 35px);
+      }
+    }
+
+    /* Final calibrated responsive settings. */
+    @media (min-width: 1081px) {
+      .hero-blob-blue {
+        top: -4px;
+        width: min(575px, 78vw);
+        opacity: 0.62;
+        --blob-scale-x: 1.08;
+        --blob-scale-y: 0.96;
+      }
+
+      .hero-blob-orange {
+        top: 166px;
+        width: min(520px, 72vw);
+        --blob-scale-x: 1.08;
+        --blob-scale-y: 0.84;
+      }
+
+      h1 {
+        font-size: clamp(42px, 6vw, 68px);
+      }
+
+      .subtitle {
+        margin-top: 34px;
+        font-size: 15px;
+      }
+
+      .image-ring img {
+        width: clamp(94px, 12vw, 132px);
+      }
+
+      .image-ring img:nth-child(1) {
+        left: 12%;
+        top: 16%;
+        --image-scale: 1.19;
+      }
+
+      .image-ring img:nth-child(2) {
+        left: 4%;
+        top: 44%;
+        --image-scale: 1.29;
+      }
+
+      .image-ring img:nth-child(3) {
+        left: 11%;
+        top: 65%;
+        --image-scale: 1.24;
+      }
+
+      .image-ring img:nth-child(4) {
+        left: 91%;
+        top: 20%;
+        --image-scale: 1.42;
+      }
+
+      .image-ring img:nth-child(5) {
+        left: 98%;
+        top: 50%;
+        --image-scale: 1.16;
+      }
+
+      .image-ring img:nth-child(6) {
+        left: 85%;
+        top: 73%;
+        --image-scale: 1.27;
+      }
+
+      .article,
+      .byline {
+        width: min(660px, calc(100vw - 48px)) !important;
+        max-width: 660px !important;
+      }
+    }
+
+    @media (max-width: 1080px) and (min-width: 861px) {
+      .hero-blob-blue {
+        top: 8px;
+        width: min(490px, 62vw);
+        opacity: 0.62;
+        --blob-scale-x: 1.12;
+        --blob-scale-y: 0.96;
+      }
+
+      .hero-blob-orange {
+        top: 154px;
+        width: min(430px, 56vw);
+        --blob-scale-x: 1.12;
+        --blob-scale-y: 0.82;
+      }
+
+      h1 {
+        font-size: clamp(46px, 6.2vw, 60px);
+      }
+
+      .subtitle {
+        margin-top: 30px;
+        font-size: 13.5px;
+      }
+
+      .image-ring img {
+        width: clamp(72px, 10vw, 95px);
+      }
+
+      .image-ring img:nth-child(1) {
+        left: 14%;
+        top: 25%;
+        --image-scale: 1.38;
+      }
+
+      .image-ring img:nth-child(2) {
+        left: 9%;
+        top: 49%;
+        --image-scale: 1.33;
+      }
+
+      .image-ring img:nth-child(3) {
+        left: 18%;
+        top: 64%;
+        --image-scale: 1.37;
+      }
+
+      .image-ring img:nth-child(4) {
+        left: 90%;
+        top: 20%;
+        --image-scale: 1.55;
+      }
+
+      .image-ring img:nth-child(5) {
+        left: 81%;
+        top: 42%;
+        --image-scale: 1.17;
+      }
+
+      .image-ring img:nth-child(6) {
+        left: 88%;
+        top: 67%;
+        --image-scale: 1.36;
+      }
+
+      .article,
+      .byline {
+        width: min(660px, calc(100vw - 48px)) !important;
+        max-width: 660px !important;
+      }
+    }
+
+    @media (max-width: 860px) and (min-width: 721px) {
+      .hero-blob-blue {
+        top: 14px;
+        width: min(460px, 64vw);
+        opacity: 0.62;
+        --blob-scale-x: 1.1;
+        --blob-scale-y: 0.95;
+      }
+
+      .hero-blob-orange {
+        top: 130px;
+        width: min(430px, 62vw);
+        --blob-scale-x: 1.24;
+        --blob-scale-y: 0.74;
+      }
+
+      h1 {
+        font-size: clamp(42px, 6vw, 52px);
+      }
+
+      .subtitle {
+        margin-top: 30px;
+        font-size: 12.5px;
+      }
+
+      .image-ring img {
+        width: clamp(62px, 9vw, 85px);
+      }
+
+      .image-ring img:nth-child(1) {
+        left: 10%;
+        top: 25%;
+        --image-scale: 1.39;
+      }
+
+      .image-ring img:nth-child(2) {
+        left: 9%;
+        top: 49%;
+        --image-scale: 1.49;
+      }
+
+      .image-ring img:nth-child(3) {
+        left: 16%;
+        top: 70%;
+        --image-scale: 1.48;
+      }
+
+      .image-ring img:nth-child(4) {
+        left: 90%;
+        top: 25%;
+        --image-scale: 1.57;
+      }
+
+      .image-ring img:nth-child(5) {
+        left: 91%;
+        top: 49%;
+        --image-scale: 1.37;
+      }
+
+      .image-ring img:nth-child(6) {
+        left: 81%;
+        top: 74%;
+        --image-scale: 1.57;
+      }
+
+      .article,
+      .byline {
+        width: min(660px, calc(100vw - 48px)) !important;
+        max-width: 660px !important;
+      }
+    }
+
+    @media (max-width: 720px) and (min-width: 601px) {
+      .hero-blob-blue {
+        top: 12px;
+        width: min(420px, 70vw);
+        opacity: 0.62;
+        --blob-scale-x: 1.12;
+        --blob-scale-y: 0.95;
+      }
+
+      .hero-blob-orange {
+        top: 148px;
+        width: min(360px, 62vw);
+        --blob-scale-x: 1.18;
+        --blob-scale-y: 0.9;
+      }
+
+      h1 {
+        font-size: clamp(40px, 8vw, 54px);
+      }
+
+      .subtitle {
+        margin-top: 28px;
+        font-size: 11.75px;
+      }
+
+      .image-ring img {
+        width: clamp(58px, 10vw, 76px);
+      }
+
+      .image-ring img:nth-child(1) {
+        left: 10%;
+        top: 18%;
+        --image-scale: 1.05;
+      }
+
+      .image-ring img:nth-child(2) {
+        left: 10%;
+        top: 39%;
+        --image-scale: 1;
+      }
+
+      .image-ring img:nth-child(3) {
+        left: 19%;
+        top: 58%;
+        --image-scale: 1;
+      }
+
+      .image-ring img:nth-child(4) {
+        left: 90%;
+        top: 18%;
+        --image-scale: 1;
+      }
+
+      .image-ring img:nth-child(5) {
+        left: 90%;
+        top: 39%;
+        --image-scale: 1;
+      }
+
+      .image-ring img:nth-child(6) {
+        left: 81%;
+        top: 58%;
+        --image-scale: 1;
+      }
+
+      .article,
+      .byline {
+        width: min(560px, calc(100vw - 48px)) !important;
+        max-width: 560px !important;
+      }
+    }
+
+    @media (max-width: 600px) and (min-width: 481px) {
+      .hero-blob-blue {
+        top: 4px;
+        width: min(345px, 68vw);
+        opacity: 0.62;
+        --blob-scale-x: 1.24;
+        --blob-scale-y: 1.18;
+      }
+
+      .hero-blob-orange {
+        top: 142px;
+        width: min(330px, 64vw);
+        --blob-scale-x: 1.34;
+        --blob-scale-y: 1.18;
+      }
+
+      h1 {
+        font-size: clamp(36px, 8.2vw, 44px);
+      }
+
+      .subtitle {
+        margin-top: 10px;
+        font-size: 11px;
+      }
+
+      .image-ring img {
+        width: clamp(68px, 12vw, 88px);
+      }
+
+      .image-ring img:nth-child(1) {
+        left: 10%;
+        top: 18%;
+        --image-scale: 1;
+      }
+
+      .image-ring img:nth-child(2) {
+        left: 10%;
+        top: 39%;
+        --image-scale: 1;
+      }
+
+      .image-ring img:nth-child(3) {
+        left: 19%;
+        top: 58%;
+        --image-scale: 1;
+      }
+
+      .image-ring img:nth-child(4) {
+        left: 90%;
+        top: 18%;
+        --image-scale: 1;
+      }
+
+      .image-ring img:nth-child(5) {
+        left: 90%;
+        top: 39%;
+        --image-scale: 1;
+      }
+
+      .image-ring img:nth-child(6) {
+        left: 81%;
+        top: 58%;
+        --image-scale: 1;
+      }
+
+      .article,
+      .byline {
+        width: min(560px, calc(100vw - 24px)) !important;
+        max-width: 560px !important;
+      }
+    }
+
+    @media (max-width: 480px) and (min-width: 381px) {
+      .hero-blob-blue {
+        top: 21px;
+        width: min(355px, 82vw);
+        opacity: 0.71;
+        --blob-scale-x: 1.24;
+        --blob-scale-y: 1.28;
+      }
+
+      .hero-blob-orange {
+        top: 131px;
+        width: min(345px, 80vw);
+        --blob-scale-x: 1.14;
+        --blob-scale-y: 1.33;
+      }
+
+      h1 {
+        font-size: clamp(29px, 8.6vw, 36px);
+      }
+
+      .subtitle {
+        margin-top: 4px;
+        font-size: 10.25px;
+      }
+
+      .image-ring img {
+        width: clamp(56px, 15vw, 70px);
+      }
+
+      .image-ring img:nth-child(1) {
+        left: 16%;
+        top: 12%;
+        --image-scale: 1.15;
+      }
+
+      .image-ring img:nth-child(2) {
+        left: 10%;
+        top: 30%;
+        --image-scale: 1.34;
+      }
+
+      .image-ring img:nth-child(3) {
+        left: 8%;
+        top: 48%;
+        --image-scale: 1.3;
+      }
+
+      .image-ring img:nth-child(4) {
+        left: 87%;
+        top: 8%;
+        --image-scale: 1.37;
+      }
+
+      .image-ring img:nth-child(5) {
+        left: 88%;
+        top: 26%;
+        --image-scale: 1.39;
+      }
+
+      .image-ring img:nth-child(6) {
+        left: 90%;
+        top: 43%;
+        --image-scale: 1.43;
+      }
+
+      .article,
+      .byline {
+        width: min(390px, calc(100vw - 24px)) !important;
+        max-width: 390px !important;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .hero-blob-blue {
+        top: 2px;
+        width: min(330px, 84vw);
+        opacity: 0.62;
+        --blob-scale-x: 1.2;
+        --blob-scale-y: 1.16;
+      }
+
+      .hero-blob-orange {
+        top: 136px;
+        width: min(320px, 82vw);
+        --blob-scale-x: 1.26;
+        --blob-scale-y: 1.14;
+      }
+
+      h1 {
+        font-size: clamp(29px, 9vw, 35px);
+      }
+
+      .subtitle {
+        margin-top: 4px;
+        font-size: 10px;
+      }
+
+      .image-ring img {
+        width: clamp(48px, 15vw, 64px);
+      }
+
+      .image-ring img:nth-child(1) {
+        left: 13%;
+        top: 17%;
+        --image-scale: 1;
+      }
+
+      .image-ring img:nth-child(2) {
+        left: 12%;
+        top: 38%;
+        --image-scale: 1;
+      }
+
+      .image-ring img:nth-child(3) {
+        left: 20%;
+        top: 58%;
+        --image-scale: 1;
+      }
+
+      .image-ring img:nth-child(4) {
+        left: 87%;
+        top: 17%;
+        --image-scale: 1;
+      }
+
+      .image-ring img:nth-child(5) {
+        left: 88%;
+        top: 38%;
+        --image-scale: 1;
+      }
+
+      .image-ring img:nth-child(6) {
+        left: 80%;
+        top: 58%;
+        --image-scale: 1;
+      }
+
+      .article,
+      .byline {
+        width: min(312px, calc(100vw - 32px)) !important;
+        max-width: 312px !important;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <main class="hero">
+    <div class="hero-blob-layer" aria-hidden="true">
+      <img class="hero-blob hero-blob-blue" src="colored/blue_blob.png" alt="">
+      <img class="hero-blob hero-blob-orange" src="colored/orange_blob.png" alt="">
+    </div>
+    <div class="image-ring" aria-hidden="true">
+      <img src="uncolored/IMG_0563.PNG" alt="">
+      <img src="uncolored/Untitled_Artwork.png" alt="">
+      <img src="uncolored/IMG_0568.PNG" alt="">
+      <img src="uncolored/IMG_0565.PNG" alt="">
+      <img src="uncolored/IMG_0566.PNG" alt="">
+      <img src="uncolored/IMG_0567.PNG" alt="">
+    </div>
+    <section class="title-block" aria-labelledby="title">
+      <h1 id="title">
+        <span class="title-line desktop-title-line">Seed Bank, Co&#8209;op,</span>
+        <span class="title-line mobile-title-line">Seed Bank,</span>
+        <span class="title-line mobile-title-line">Co&#8209;op,</span>
+        <span class="title-line">Stoop Swap</span>
+      </h1>
+      <p class="subtitle">
+        <span class="subtitle-line">Metaphors for Governing</span>
+        <span class="subtitle-line">Language Model Data for Creative Writing</span>
+      </p>
+      <div class="actions" aria-label="Project links">
+        <a href="../little-free-language-models/index.html" target="_blank" rel="noopener">Project homepage</a>
+        <a href="https://arxiv.org/pdf/2605.12888" target="_blank" rel="noopener">Read full paper</a>
+      </div>
+      <p class="byline">
+        <span><strong>Alicia Guo</strong>, University of Washington</span>
+        <span><strong>Carly Schnitzler</strong>, Johns Hopkins University</span>
+        <span><strong>Katy Gero</strong>, University of Sydney</span>
+      </p>
+    </section>
+  </main>
+  <article class="article" id="article">
+    <p class="project-intro">Many popular language models today are created by large, for-profit technology companies and serve the goals of these corporations. Can we envision a co-operative language model that challenges existing notions of how technology is created and who it can serve?</p>
+    <section>
+      <h2>Toward Community Models</h2>
+      <p class="article-body">Many popular language models today are built by large technology companies, trained on massive datasets of scraped web text and books, often without the authors&rsquo; consent or knowledge, then marketed back to the public for generating the kinds of writing authors produce professionally. But not all creators are against the technology itself, but instead are <em>troubled by the ways in which the technology is currently being created, governed and used</em>. We make this distinction because critiques of nonconsensual data collection, the colonial or extractive nature of data use and the negative impact on artist industries at large are critiques of a particular way of developing generative AI models, but not (necessarily) of generative AI models as a technology.</p>
+      <p class="article-body">Yet, it is immensely difficult to separate the abstract idea of a technology from the way it is created and used. This is especially difficult for generative AI models where there are few examples that are created in line with creator values and respect for data contributors. Writers are often the sources of data and then the potential users of language models, but rarely are they the decision-makers, leading some writers to refuse or boycott these tools entirely. Others advocate for critical engagement or policy changes or stronger norms around consent and provenance.</p>
+      <p class="article-body">Amongst the larger effort of writers responding to the current AI landscape, we intentionally take a positive futuring stance and imagine how creative writers can claim this technology as their own and explore it on their own terms.</p>
+      <p class="question-callout">What would a language model look like if it was created by writers and built to serve their creative community?</p>
+      <p class="article-body">Instead of advocating for better practices from existing model creators, we propose that communities can and should build this technology for themselves. In particular, we are interested in community governance, or how to build language models <em>by and for</em> creative writers. We start with a loose definition of <strong>community models</strong> as models built not only for a community, but with meaningful participation from the community they are intended to serve&mdash;in their design and creation, not just as stakeholders or data contributors.</p>
+      <p class="article-body">This raises many questions about how community models may function, such as feasibility of model and community scale, how to collect and manage training data, whether such models can truly operate independently of commercial ones, and if they can ever feasibly be truly &ldquo;large.&rdquo; In particular, the first part of this project aims to explore the questions:</p>
+      <ul>
+        <li>How do writers envision positive or idealized community language model governance?</li>
+        <li>What values do writers prioritize in community language model governance?</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>How We Got Here</h2>
+      <p class="article-body">Algorithmic processes have long been a part of various writing practices, from tarot decks as storytelling devices to dice rolls deciding narrative elements to computational rule-based systems to generate text. What changes with large language models is the scale of training data used as opposed to randomness and the concentration of ownership. Despite these concerns, some writers have <em>chosen</em> to adopt these models into their practice. Many writers are not fully against the technology, but are concerned about the distribution of power and control, and the devaluing of creative labor. Lawsuits and licensing debates are important, but do not answer the whole question. Even if a model is legally trained, writers may still want more say over the design and purpose of these models. Community models are one of many possible responses to this problem.</p>
+      <p class="article-body">We are not arguing that every writer should use AI, or that community models solve the harms of current AI systems. We share many of the concerns that have led writers to refuse, resist, or organize against generative AI. This project starts from a complementary question: alongside refusal and regulation, what would it take for writers to have real agency over the models built for creative writing?</p>
+    </section>
+
+    <section>
+      <h2>The Workshops</h2>
+      <p class="article-body">To this end, we invited creative writers to join us in imagining what governing a community language might look like. Across six workshops, including two pilot sessions, more than one hundred writers brainstormed metaphors to think through how a language model might be governed if it were created by and for a writing community.</p>
+      <p class="article-body">Writers were asked to:</p>
+      <ul>
+        <li>Articulate how they would want interacting with a language model to make them feel.</li>
+        <li>Brainstorm metaphors for alternative language model governance. What if a language model were like a seed bank? or a community garden? or a church?</li>
+        <li>Analyze two metaphors in depth in small groups, asking questions like who are the contributors? Why are they there? Who are the users, who are the stewards, and what would the relationships be like?</li>
+      </ul>
+      <div class="workshop-board-wrap" aria-labelledby="workshop-board-title">
+        <div class="metaphor-board" id="metaphor-board" can-play aria-live="polite" aria-label="Shared sticky-note board for community model metaphors">
+          <form class="sticky-form" id="sticky-form">
+            <label for="sticky-text">Your metaphor</label>
+            <input id="sticky-text" name="sticky-text" maxlength="140" placeholder="A community language model could be like..." required>
+            <button type="submit">Add note</button>
+          </form>
+          <p class="board-empty">Leave the first metaphor on the board.</p>
+          <div class="screen-reader-notes" id="screen-reader-notes" aria-live="polite"></div>
+        </div>
+        <p class="board-caption" id="workshop-board-title">A few examples from the workshops, and from you as the reader. Feel free to contribute your own metaphors for governing a language model by adding a sticky note.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Why Metaphors?</h2>
+      <p class="article-body">Metaphors are powerful tools: we use metaphors to strategically reframe the problem of how to govern language models by considering other groups and processes that make collective decisions, and how writers might adopt those practices in this new context. As Kenneth Burke writes in the essay &ldquo;Four Master Tropes,&rdquo; good metaphors allow us to see &ldquo;something in terms of something else.&rdquo; Braunstein and Warren expand on this Burkean impulse in their work on the stack metaphor in computing, writing: &ldquo;<em>As a rhetorical figure, metaphor shapes what can be thought. When it functions properly, we do not even notice the epistemic shifts that occur when one domain or scale substitutes for another</em>.&rdquo; Metaphors are both a rhetorical device and an epistemic instrument&mdash;they are doing simultaneous social and cognitive work. In this project, we use metaphor generation to ask: what is epistemically prioritized when we imagine community data governance through frames like community gardens or anthills or garage bands?</p>
+      <p class="article-body">For this project, we were especially interested in Sch&ouml;n&rsquo;s theorization of the &ldquo;generative metaphor&rdquo; which moves from explanatory to imaginative&mdash;arguing that in addition to framing a way of looking at an idea or concept, metaphors can also be &ldquo;<em>a process by which new perspectives on the world come into existence</em>.&rdquo; No metaphor was perfect, and often broke when stretched enough. A single metaphor can also be expanded in multiple ways, depending on what participants found important to highlight. In this sense, metaphors were a way for participants to reason through governance concepts that could otherwise become abstract or technical.</p>
+    </section>
+
+    <section>
+      <h2>Metaphors for Governance</h2>
+      <p class="article-body">The workshops generated over 259 metaphors for model governance. Looking at the metaphors across all workshops, some patterns emerged, specifically in the <em>domains</em> of life that participants drew from. These domains begin to reveal the kinds of systems participants found most resonant or legible as models for governance: many metaphors drew from domains characterized by care, knowledge sharing, or creative production. Most metaphors eschewed traditional corporate or state structures, but some metaphors entailed commercial activities (coffee shop), commercial software (AutoCAD, Photoshop), or government-funded projects (public library), suggesting corporate and state structures can have elements of communal control. Notably, many metaphors were small in scale (band jam, film club, potluck) and prosocial, with many of them being playful and imaginative (beehive, seance, drunk friend).</p>
+      <figure class="domain-figure">
+        <img src="colored/teaser.png" alt="Six illustrated metaphor domains: living systems, performance, early internet, instruments, knowledge systems, and civic life.">
+        <figcaption>Metaphor domains that participants returned to when imagining how community language models could be governed.</figcaption>
+      </figure>
+      <p class="article-body">When analyzing metaphors in depth, we found that participants came back to four main themes on how to manage community models:</p>
+      <ul>
+        <li>The importance of <strong>consent</strong> as an ongoing, dynamic, and temporal process.</li>
+        <li>How to define implicit <strong>boundaries</strong> that could maintain control without explicit gatekeeping.</li>
+        <li>Ways to give <strong>recognition</strong> to contributions to community models.</li>
+        <li>Trade-offs in <strong>scale</strong> that pushed participants towards desiring smaller models that could be run locally and preserve privacy.</li>
+      </ul>
+      <div class="theme-sections" aria-label="Four themes for managing community models">
+        <section class="theme-detail">
+          <h3>Consent as ongoing, dynamic, and temporal</h3>
+          <p>Participants consistently emphasized the need for ethically sourced contributions and stated that consent was a pre-condition for community governance. How participants saw and defined consent differed, with many approaches proposed such as opt-ins, renew options, and revocation&mdash;what was consistent was the non-negotiability of intentional consent. Many metaphors used donations as a way to gather data, such as in municipal composting where contributors brought in their collected compost material. Other metaphors such as library located consent further upstream, through the act of publishing. For some, intentional consent entailed participants knowing intimately what their data was being used for and the actions their contributions were enabling, pointing at the purpose of the models, asking whether downstream decisions and qualities affect consent: &ldquo;Do we need a clear sense of what is a good or bad purpose in order to make an ethical model?&rdquo;</p>
+          <p>Consent was rarely framed as a one-time decision, but as something ongoing that data contributors would actively participate in, asked through questions of what happens when a community becomes less active, or when contributors no longer agree with their past decisions. Participants grappled with whether models should persist or fade alongside community activity. As one participant put it:</p>
+          <blockquote>
+            <p>&ldquo;When a Discord server or group chat stops being as participatory, do you want the LLM to live on as a record of that, as an archive? Or do you want it to only exist when people are actively participating? So we talked about the need for a kill switch...or other ways of naturally allowing the context to decline.&rdquo;</p>
+          </blockquote>
+          <p>Multiple groups landed on consent structures that changed over time and allowed for a natural built-in expiration to be part of the consent mechanism, where contributors would have to actively renew their consent either through explicit renewal or by the contribution of new data. Metaphors from the &ldquo;living system&rdquo; domain, such as a forest, fungi network and community gardens, prompted participants to imagine models that could change both with the intake of new information and the clearing of old information. The forest metaphor group envisioned: &ldquo;A forest ecosystem can cycle...the size and the limitation of the data should be set so that the amount of information that&rsquo;s cycled through is constant...it learns to forget.&rdquo;</p>
+        </section>
+        <section class="theme-detail">
+          <h3>Boundaries and other mechanisms for maintaining control</h3>
+          <p>Many groups were against formal contracts and explicit gatekeeping of a community model, exploring the tension between accessibility and the shared values and trust that make governance work. A group focused on shared physical places surfaced how physical locations can be gated, and rejected the idea of having a language model be &ldquo;gated&rdquo; with a key. Other groups also resisted restricted access, with one expressing the desire for models to be &ldquo;absolutely free for as many people as possible,&rdquo; pointing to resources like Reddit and Wikipedia and questioning the &ldquo;extent to which you can really do community work&rdquo; with commercial models.</p>
+          <p>However, participants worried about who gets to contribute, recognizing that contributors shape model values and character, suggesting some curation might be necessary. This would require access controls, at least on the model creation side. One group likened discarding data that wasn&rsquo;t serving the community space to keeping invasive species out of a pollinator garden, which would be carried out by community gardeners; similarly, a bar bathroom graffiti wall could be regulated by the owners or staff. At the same time, some groups ran into the limits of their metaphors since it is more difficult to know exactly how training data contributions map to language model characteristics or behavior. Such gatekeeping also didn&rsquo;t align with their values, because attempting to formalize requirements was &ldquo;just a harder thing to enforce...once you&rsquo;re putting limits or giving form to what kinds of contributions count, you start putting walls up; instead of fencing in your garden to help curate it, you&rsquo;re then leaving people out.&rdquo;</p>
+          <p>Other metaphors such as churches, dance halls, and campfires described spaces with softer membership boundaries that relied on shared values, norms, and guidance from existing community members to guide access, rather than explicit &ldquo;gates&rdquo; or rules. One group expanded on churches and viewed them as welcoming but with strong norms: &ldquo;It&rsquo;s open to people...but they also share the value system...At the same time, there is a structure, there are priests.&rdquo; In such metaphors, anyone can join but only those with similar values are likely to stay, and there are barriers to take on formal roles.</p>
+        </section>
+        <section class="theme-detail">
+          <h3>Recognition of presence in models</h3>
+          <p>Most participants explicitly minimized the importance of monetary compensation as a motivator, but rather focused on credit, recognition, or access to the model as what they might be gaining from contributing to the model or to its governance. Some metaphors led participants to consider a notion of payment, particularly for use, similar to paying to see an orchestra performance or having an engineering middleman following the business model of microgrids serving a community. Many groups framed compensation through social connection and other experiential benefits rather than monetary payment, describing what contributors would get being &ldquo;creative spark, shared experiences, and socializing,&rdquo; &ldquo;something missing in their life...whimsy&rdquo; or &ldquo;joy of playing.&rdquo; Other groups, while bringing up a concern that volunteer-led projects often fail to sustain themselves, prioritized thinking through how to assign credit or recognize contributors.</p>
+          <p>Several groups noted that writers influence each other in entangled ways that resist clear attribution, similar to sampling in music. One participant compared this to writer workshops: &ldquo;You&rsquo;re inevitably influencing each other in the same way that an LLM output is made up of these latent influences...it&rsquo;s difficult to ascribe credit.&rdquo; Rather than discrete contributions, influences blend together, raising questions about whether attribution is even desirable. As one participant asked, &ldquo;being able to be traced back to a creator&mdash;is that a good thing or a bad thing? Would we want to be anonymous?&rdquo;</p>
+          <p>Instead of fine-grained credit, participants anchored on wanting recognition of &ldquo;time and effort put into community creation,&rdquo; similar to communities like Wikipedia and Reddit. Participants discussed credit not only outside the model (attribution for contributions) but also recognition within it&mdash;having a distinctive, recognizable presence in the model&rsquo;s outputs. Reflecting on the graffiti-in-a-bar-bathroom metaphor, one participant noted: &ldquo;The mark on the wall signifies something that you don&rsquo;t normally see in a language model. You don&rsquo;t have that sense of presence, but I really love that idea of leaving a mark.&rdquo; Rather than explicit attribution, participants imagined recognition through felt influence.</p>
+        </section>
+        <section class="theme-detail">
+          <h3>Scale and the desire for smaller language models</h3>
+          <p>Scale considerations through size of community, size of the model, and longevity of the model became key factors in how the metaphors played out and also a point of tension where they broke. Although participants were primed to imagine what governing a large language model might look like, the metaphors they chose and the ways in which they expanded them repeatedly pointed at the desire to have smaller, personalized, and intentionally limited systems. The archive group explicitly asked in relation to an archive&rsquo;s ability to preserve provenance and uncertainty: &ldquo;thinking about smallness or in relationship to data...can we imagine a large language model that doesn&rsquo;t seem godlike?&rdquo;</p>
+          <p>The desires that groups mentioned such as ongoing consent, membership that stems from shared values and trust, and meaningful recognition were often discussed through metaphors that assumed limited scale of community, i.e., local, tight knit communities. Questions such as &ldquo;what happens when an insular dataset meant for two people grows into a massive LLM?&rdquo; surfaced, complicating how far the expansions of the chosen metaphors could be applied before behaviors changed. For example, the bar bathroom graffiti wall example brought up what would happen if the wall became a famous piece of art, raising the stakes and discouraging further free use for it.</p>
+          <p>Participants repeatedly voiced wants for models that were local and personalized, which often went hand in hand. They recognized there would be a utility tradeoff with a smaller model, but many expressed that they didn&rsquo;t need a big model, and many groups mentioned wanting these models to exist locally on their computer, not in the cloud. Writing can be incredibly personal, and participants wanted a way to be able to contribute and use models without feeling like they were giving up their privacy or control over their writing: &ldquo;one of the big desires is to have models that are local first...especially if folks are going to put a corpus of their work or an individual work of theirs into a model.&rdquo; Some wanted to be able to use these models for their personal writing and journals, thus many existing tools have not been an option to them. In talking about how these models would be used (that is, why the participants might want to be contributors to a model,) participants consistently emphasized creativity over efficiency and even welcomed the idea of friction if it supported their creative experimentation, citing how tools can be molded by the people using them: &ldquo;the more you sit in a chair, the more it becomes shaped to you.&rdquo;</p>
+          <p>This automatically puts some limits on the size of a model, but in return can serve to address more specific needs, where one group stated that what was &ldquo;important about that metaphor [microgrids] is that it&rsquo;s hyperlocal and can really address the needs of smaller communities.&rdquo;</p>
+        </section>
+      </div>
+    </section>
+
+    <section>
+      <h2>What Comes Next</h2>
+      <blockquote class="quote-block">
+        <p>&ldquo;This group of people&rsquo;s shared code of ethics or rules&mdash;that struck us as interesting, I think, in part because there&rsquo;s often a sense that language models are supposed to be these neutral artifacts, especially the big ones that are being produced by the big companies right now. And the idea of having them be reflective of a relatively tight-knit group living according to a certain code that might be deliberately separating itself from the world in some way, that was interesting to us.&rdquo;</p>
+      </blockquote>
+      <p class="article-body">The metaphors are a starting point for asking the question of what a community language model could be. We are continuing this work towards building small language models to test in practice what small groups of writers building together would look like. In the next phase we are looking for writers, writing groups, or organizations who are interested in piloting early versions of these ideas with us.</p>
+      <p class="article-body">We hope for this work to invite many parallel experiments towards community models. The <a href="https://arxiv.org/pdf/2605.12888" target="_blank" rel="noopener">full paper</a> details future work possibilities for writers, researchers, and community organizations. If you are interested in this work, we are <a href="../little-free-language-models/index.html" target="_blank" rel="noopener">hosting two town halls</a> for writers, researchers, organizers, and builders who want to think with us about what community language models could become.</p>
+    </section>
+
+    <section>
+      <h2>Cite This Work</h2>
+      <p class="article-body">Guo, Alicia, Carly Schnitzler, and Katy Gero. 2026. <em>Seed Bank, Co-op, Stoop Swap: Metaphors for Governing Language Model Data for Creative Writing.</em> To appear in <em>Creativity and Cognition (C&amp;C '26)</em>, July 13&ndash;16, 2026, London, United Kingdom. DOI: 10.1145/3803784.3807550.</p>
+      <p class="article-body">This work received an honorable mention at C&amp;C '26.</p>
+      <pre class="citation-box"><code>@inproceedings{guo2026seedbank,
+  title = {Seed Bank, Co-op, Stoop Swap: Metaphors for Governing Language Model Data for Creative Writing},
+  author = {Guo, Alicia and Schnitzler, Carly and Gero, Katy},
+  year = {2026},
+  booktitle = {Creativity and Cognition (C\&amp;C '26), July 13--16, 2026, London, United Kingdom},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  doi = {10.1145/3803784.3807550},
+  isbn = {979-8-4007-2583-8/2026/07},
+  url = {https://doi.org/10.1145/3803784.3807550}
+}</code></pre>
+    </section>
+  </article>
+  <script type="module">
+    const tunerStyle = document.createElement("style");
+    tunerStyle.id = "responsive-tuner-overrides";
+    document.head.append(tunerStyle);
+
+    const tunerStorageKey = "seed-bank-responsive-tuner-v1";
+    const breakpoints = [
+      { id: "desktop", label: "Desktop: 1081px+", media: "(min-width: 1081px)" },
+      { id: "tablet1080", label: "Tablet: 1080px–861px", media: "(max-width: 1080px) and (min-width: 861px)" },
+      { id: "tablet860", label: "Tablet tight: 860px–721px", media: "(max-width: 860px) and (min-width: 721px)" },
+      { id: "small720", label: "Small tablet: 720px–601px", media: "(max-width: 720px) and (min-width: 601px)" },
+      { id: "small600", label: "Narrow: 600px–481px", media: "(max-width: 600px) and (min-width: 481px)" },
+      { id: "phone480", label: "Phone: 480px–381px", media: "(max-width: 480px) and (min-width: 381px)" },
+      { id: "tiny380", label: "Tiny phone: 380px and below", media: "(max-width: 380px)" }
+    ];
+
+    const tunerDefaults = {
+      desktop: {
+        blueTop: -4, blueMax: 575, blueVw: 78, blueX: 1.08, blueY: 0.96, blueOpacity: 0.62,
+        orangeTop: 156, orangeMax: 520, orangeVw: 72, orangeX: 1.08, orangeY: 0.84,
+        imageVw: 12, imageMax: 132, subtitleTop: 34, titleVw: 6, titleMax: 68, articleMax: 660, gutter: 48
+      },
+      tablet1080: {
+        blueTop: 8, blueMax: 490, blueVw: 62, blueX: 1.12, blueY: 0.96, blueOpacity: 0.62,
+        orangeTop: 154, orangeMax: 430, orangeVw: 56, orangeX: 1.12, orangeY: 0.82,
+        imageVw: 10, imageMax: 104, subtitleTop: 30, titleVw: 6.2, titleMax: 60, articleMax: 660, gutter: 48
+      },
+      tablet860: {
+        blueTop: 14, blueMax: 460, blueVw: 64, blueX: 1.1, blueY: 0.95, blueOpacity: 0.62,
+        orangeTop: 130, orangeMax: 430, orangeVw: 62, orangeX: 1.24, orangeY: 0.74,
+        imageVw: 9, imageMax: 82, subtitleTop: 30, titleVw: 6, titleMax: 52, articleMax: 660, gutter: 48
+      },
+      small720: {
+        blueTop: 12, blueMax: 420, blueVw: 70, blueX: 1.12, blueY: 0.95, blueOpacity: 0.62,
+        orangeTop: 148, orangeMax: 360, orangeVw: 62, orangeX: 1.18, orangeY: 0.9,
+        imageVw: 10, imageMax: 76, subtitleTop: 28, titleVw: 8, titleMax: 54, articleMax: 560, gutter: 48
+      },
+      small600: {
+        blueTop: 4, blueMax: 345, blueVw: 68, blueX: 1.24, blueY: 1.18, blueOpacity: 0.62,
+        orangeTop: 142, orangeMax: 330, orangeVw: 64, orangeX: 1.34, orangeY: 1.18,
+        imageVw: 12, imageMax: 88, subtitleTop: 10, titleVw: 8.2, titleMax: 44, articleMax: 560, gutter: 24
+      },
+      phone480: {
+        blueTop: 2, blueMax: 355, blueVw: 82, blueX: 1.24, blueY: 1.18, blueOpacity: 0.62,
+        orangeTop: 140, orangeMax: 345, orangeVw: 80, orangeX: 1.32, orangeY: 1.18,
+        imageVw: 15, imageMax: 70, subtitleTop: 4, titleVw: 8.6, titleMax: 36, articleMax: 390, gutter: 24
+      },
+      tiny380: {
+        blueTop: 2, blueMax: 330, blueVw: 84, blueX: 1.2, blueY: 1.16, blueOpacity: 0.62,
+        orangeTop: 136, orangeMax: 320, orangeVw: 82, orangeX: 1.26, orangeY: 1.14,
+        imageVw: 15, imageMax: 64, subtitleTop: 4, titleVw: 9, titleMax: 35, articleMax: 312, gutter: 32
+      }
+    };
+
+    const imagePositionDefaults = {
+      desktop: [[11, 25], [9, 50], [17, 70], [89, 25], [91, 50], [83, 70]],
+      tablet1080: [[10, 25], [9, 49], [16, 70], [90, 25], [91, 49], [84, 70]],
+      tablet860: [[10, 25], [9, 49], [16, 70], [90, 25], [91, 49], [84, 70]],
+      small720: [[10, 18], [10, 39], [19, 58], [90, 18], [90, 39], [81, 58]],
+      small600: [[10, 18], [10, 39], [19, 58], [90, 18], [90, 39], [81, 58]],
+      phone480: [[13, 17], [12, 38], [20, 58], [87, 17], [88, 38], [80, 58]],
+      tiny380: [[13, 17], [12, 38], [20, 58], [87, 17], [88, 38], [80, 58]]
+    };
+
+    Object.entries(tunerDefaults).forEach(([breakpointId, values]) => {
+      imagePositionDefaults[breakpointId].forEach(([x, y], index) => {
+        const imageNumber = index + 1;
+        values[`img${imageNumber}X`] = x;
+        values[`img${imageNumber}Y`] = y;
+        values[`img${imageNumber}S`] = 1;
+      });
+    });
+
+    const imageControls = [
+      ["computer", 1],
+      ["easel", 2],
+      ["campfire", 3],
+      ["forest", 4],
+      ["cafe", 5],
+      ["band", 6]
+    ].flatMap(([name, imageNumber]) => [
+      { group: `Image ${imageNumber}: ${name}`, id: `img${imageNumber}X`, label: "X position", min: -5, max: 105, step: 1, unit: "%" },
+      { group: `Image ${imageNumber}: ${name}`, id: `img${imageNumber}Y`, label: "Y position", min: -5, max: 105, step: 1, unit: "%" },
+      { group: `Image ${imageNumber}: ${name}`, id: `img${imageNumber}S`, label: "Scale", min: 0.35, max: 1.8, step: 0.01, unit: "x" }
+    ]);
+
+    const tunerControls = [
+      { group: "Blue blob", id: "blueTop", label: "Top", min: -60, max: 220, step: 1, unit: "px" },
+      { group: "Blue blob", id: "blueMax", label: "Max width", min: 180, max: 900, step: 5, unit: "px" },
+      { group: "Blue blob", id: "blueVw", label: "VW width", min: 35, max: 115, step: 1, unit: "vw" },
+      { group: "Blue blob", id: "blueX", label: "Stretch X", min: 0.7, max: 1.8, step: 0.01, unit: "x" },
+      { group: "Blue blob", id: "blueY", label: "Stretch Y", min: 0.55, max: 1.7, step: 0.01, unit: "x" },
+      { group: "Blue blob", id: "blueOpacity", label: "Opacity", min: 0.15, max: 1, step: 0.01, unit: "" },
+      { group: "Orange blob", id: "orangeTop", label: "Top", min: -20, max: 260, step: 1, unit: "px" },
+      { group: "Orange blob", id: "orangeMax", label: "Max width", min: 160, max: 850, step: 5, unit: "px" },
+      { group: "Orange blob", id: "orangeVw", label: "VW width", min: 35, max: 115, step: 1, unit: "vw" },
+      { group: "Orange blob", id: "orangeX", label: "Stretch X", min: 0.7, max: 1.9, step: 0.01, unit: "x" },
+      { group: "Orange blob", id: "orangeY", label: "Stretch Y", min: 0.45, max: 1.8, step: 0.01, unit: "x" },
+      { group: "Hero layout", id: "subtitleTop", label: "Subtitle gap", min: -10, max: 60, step: 1, unit: "px" },
+      { group: "Hero layout", id: "titleMax", label: "Title max", min: 28, max: 90, step: 1, unit: "px" },
+      { group: "Hero layout", id: "titleVw", label: "Title VW", min: 4, max: 12, step: 0.1, unit: "vw" },
+      { group: "Hero layout", id: "imageVw", label: "Image VW", min: 5, max: 20, step: 0.5, unit: "vw" },
+      { group: "Hero layout", id: "imageMax", label: "Image max", min: 42, max: 160, step: 1, unit: "px" },
+      { group: "Text column", id: "articleMax", label: "Column max", min: 280, max: 760, step: 5, unit: "px" },
+      { group: "Text column", id: "gutter", label: "Side gutter", min: 16, max: 80, step: 2, unit: "px" },
+      ...imageControls
+    ];
+
+    const cloneSettings = (settings) => JSON.parse(JSON.stringify(settings));
+    const mergeSettings = (base, overrides = {}) => {
+      const merged = cloneSettings(base);
+      Object.entries(overrides).forEach(([key, value]) => {
+        if (!merged[key]) return;
+        merged[key] = { ...merged[key], ...value };
+      });
+      return merged;
+    };
+
+    const loadTunerSettings = () => {
+      try {
+        return mergeSettings(tunerDefaults, JSON.parse(localStorage.getItem(tunerStorageKey) || "{}"));
+      } catch {
+        return cloneSettings(tunerDefaults);
+      }
+    };
+
+    let tunerSettings = loadTunerSettings();
+    let activeTunerBreakpoint = null;
+
+    const imagePlacementCss = (values) => Array.from({ length: 6 }, (_, index) => {
+      const imageNumber = index + 1;
+      return `  .image-ring img:nth-child(${imageNumber}) {
+    left: ${values[`img${imageNumber}X`]}%;
+    top: ${values[`img${imageNumber}Y`]}%;
+    --image-scale: ${values[`img${imageNumber}S`]};
+  }`;
+    }).join("\n\n");
+
+    const cssForBreakpoint = ({ id, media }, values) => {
+      const titleMin = id === "desktop" ? 42 : id === "tiny380" ? 29 : id === "phone480" ? 29 : id === "small600" ? 36 : id === "small720" ? 40 : id === "tablet860" ? 42 : 46;
+      const imageMin = id === "desktop" ? 94 : id === "tiny380" ? 48 : id === "phone480" ? 56 : id === "small600" ? 68 : id === "small720" ? 58 : id === "tablet860" ? 62 : 72;
+      return `@media ${media} {
+  .hero-blob-blue {
+    top: ${values.blueTop}px;
+    width: min(${values.blueMax}px, ${values.blueVw}vw);
+    opacity: ${values.blueOpacity};
+    --blob-scale-x: ${values.blueX};
+    --blob-scale-y: ${values.blueY};
+  }
+
+  .hero-blob-orange {
+    top: ${values.orangeTop}px;
+    width: min(${values.orangeMax}px, ${values.orangeVw}vw);
+    --blob-scale-x: ${values.orangeX};
+    --blob-scale-y: ${values.orangeY};
+  }
+
+  h1 {
+    font-size: clamp(${titleMin}px, ${values.titleVw}vw, ${values.titleMax}px);
+  }
+
+  .subtitle {
+    margin-top: ${values.subtitleTop}px;
+  }
+
+  .image-ring img {
+    width: clamp(${imageMin}px, ${values.imageVw}vw, ${values.imageMax}px);
+  }
+
+${imagePlacementCss(values)}
+
+  .article,
+  .byline {
+    width: min(${values.articleMax}px, calc(100vw - ${values.gutter}px)) !important;
+    max-width: ${values.articleMax}px !important;
+  }
+}`;
+    };
+
+    const buildTunerCss = (settings = tunerSettings) => breakpoints
+      .map((breakpoint) => cssForBreakpoint(breakpoint, settings[breakpoint.id]))
+      .join("\n\n");
+
+    const applyTunerSettings = () => {
+      tunerStyle.textContent = buildTunerCss(tunerSettings);
+    };
+
+    const activeBreakpointId = () => {
+      const width = window.innerWidth;
+      if (width <= 380) return "tiny380";
+      if (width <= 480) return "phone480";
+      if (width <= 600) return "small600";
+      if (width <= 720) return "small720";
+      if (width <= 860) return "tablet860";
+      if (width <= 1080) return "tablet1080";
+      return "desktop";
+    };
+
+    const formatTunerValue = (value, unit) => {
+      const rounded = Number.isInteger(Number(value)) ? value : Number(value).toFixed(2).replace(/0+$/, "").replace(/\.$/, "");
+      return `${rounded}${unit}`;
+    };
+
+    const initResponsiveTuner = () => {
+      const tuner = document.getElementById("responsive-tuner");
+      const select = document.getElementById("tuner-breakpoint");
+      const groups = document.getElementById("tuner-groups");
+      const saveButton = document.getElementById("tuner-save");
+      const resetButton = document.getElementById("tuner-reset");
+      const copyButton = document.getElementById("tuner-copy");
+      const status = document.getElementById("tuner-status");
+      if (!tuner || !select || !groups) return;
+
+      breakpoints.forEach((breakpoint) => {
+        const option = document.createElement("option");
+        option.value = breakpoint.id;
+        option.textContent = breakpoint.label;
+        select.append(option);
+      });
+
+      const renderControls = () => {
+        const selected = select.value;
+        groups.innerHTML = "";
+        const grouped = new Map();
+        tunerControls.forEach((control) => {
+          if (!grouped.has(control.group)) grouped.set(control.group, []);
+          grouped.get(control.group).push(control);
+        });
+
+        grouped.forEach((controls, groupName) => {
+          const group = document.createElement("section");
+          group.className = "tuner-group";
+          group.innerHTML = `<div class="tuner-group-title">${groupName}</div>`;
+
+          controls.forEach((control) => {
+            const value = tunerSettings[selected][control.id];
+            const row = document.createElement("div");
+            row.className = "tuner-control";
+            row.innerHTML = `
+              <label for="tuner-${control.id}">${control.label}</label>
+              <input id="tuner-${control.id}" type="range" min="${control.min}" max="${control.max}" step="${control.step}" value="${value}">
+              <span class="tuner-value">${formatTunerValue(value, control.unit)}</span>
+            `;
+            const input = row.querySelector("input");
+            const output = row.querySelector(".tuner-value");
+            input.addEventListener("input", () => {
+              const nextValue = Number(input.value);
+              tunerSettings[selected][control.id] = nextValue;
+              output.textContent = formatTunerValue(nextValue, control.unit);
+              applyTunerSettings();
+              status.textContent = "Previewing unsaved changes.";
+            });
+            group.append(row);
+          });
+
+          groups.append(group);
+        });
+      };
+
+      const setActiveBreakpoint = (id, { render = true } = {}) => {
+        activeTunerBreakpoint = id;
+        select.value = id;
+        if (render) renderControls();
+      };
+
+      select.addEventListener("change", () => setActiveBreakpoint(select.value));
+
+      saveButton.addEventListener("click", () => {
+        localStorage.setItem(tunerStorageKey, JSON.stringify(tunerSettings));
+        status.textContent = "Saved in this browser.";
+      });
+
+      resetButton.addEventListener("click", () => {
+        const selected = select.value;
+        tunerSettings[selected] = { ...tunerDefaults[selected] };
+        applyTunerSettings();
+        renderControls();
+        localStorage.setItem(tunerStorageKey, JSON.stringify(tunerSettings));
+        status.textContent = "Reset and saved this cutoff.";
+      });
+
+      copyButton.addEventListener("click", async () => {
+        const css = buildTunerCss(tunerSettings);
+        try {
+          await navigator.clipboard.writeText(css);
+          status.textContent = "Copied CSS overrides.";
+        } catch {
+          const textarea = document.createElement("textarea");
+          textarea.value = css;
+          document.body.append(textarea);
+          textarea.select();
+          document.execCommand("copy");
+          textarea.remove();
+          status.textContent = "Copied CSS overrides.";
+        }
+      });
+
+      window.addEventListener("resize", () => {
+        const next = activeBreakpointId();
+        if (!tuner.open && next !== activeTunerBreakpoint) {
+          setActiveBreakpoint(next);
+        }
+      });
+
+      setActiveBreakpoint(activeBreakpointId());
+      applyTunerSettings();
+    };
+
+    initResponsiveTuner();
+
+    const MAX_NOTES = 80;
+    const board = document.getElementById("metaphor-board");
+    const form = document.getElementById("sticky-form");
+    const textInput = document.getElementById("sticky-text");
+    const srNotes = document.getElementById("screen-reader-notes");
+    const emptyState = board.querySelector(".board-empty");
+    const notePalette = [
+      "#fff3a3",
+      "#ffd1a6",
+      "#f4a3dc",
+      "#a9ccff",
+      "#7dde9a",
+      "#bdf06f",
+      "#a3eadf",
+      "#f8c7ec"
+    ];
+    const seedNotes = [
+      { id: "seed-food-coop", text: "Food co-op!", x: 8, y: 17, color: "#ffd1a6", createdAt: 1 },
+      { id: "seed-little-free-library", text: "little free library", x: 15, y: 22, color: "#fff3a3", createdAt: 2 },
+      { id: "seed-lit-mag", text: "lit mag", x: 23, y: 17, color: "#9fdcff", createdAt: 3 },
+      { id: "seed-quilt", text: "Quilt", x: 32, y: 16, color: "#7dde9a", createdAt: 4 },
+      { id: "seed-dictionary", text: "A dictionary", x: 9, y: 47, color: "#a9ccff", createdAt: 5 },
+      { id: "seed-wiki", text: "a wiki", x: 17, y: 48, color: "#7dde9a", createdAt: 6 },
+      { id: "seed-community-archive", text: "community archive", x: 24, y: 52, color: "#f4a3dc", createdAt: 7 },
+      { id: "seed-zine-library", text: "zine library in a van", x: 45, y: 31, color: "#f4a3dc", createdAt: 8 },
+      { id: "seed-sandbox", text: "sandbox", x: 53, y: 29, color: "#a9ccff", createdAt: 9 },
+      { id: "seed-pollinator", text: "pollinator garden", x: 68, y: 23, color: "#7dde9a", createdAt: 10 },
+      { id: "seed-community-garden", text: "community garden", x: 77, y: 28, color: "#ffd1a6", createdAt: 11 },
+      { id: "seed-shared-well", text: "shared well", x: 87, y: 26, color: "#a9ccff", createdAt: 12 },
+      { id: "seed-church", text: "church", x: 68, y: 47, color: "#bdf06f", createdAt: 13 },
+      { id: "seed-public-piano", text: "public piano", x: 78, y: 48, color: "#a9ccff", createdAt: 14 },
+      { id: "seed-best-friend", text: "best friend", x: 16, y: 75, color: "#a9ccff", createdAt: 15 },
+      { id: "seed-writing-group", text: "writing group", x: 24, y: 75, color: "#f4a3dc", createdAt: 16 },
+      { id: "seed-discord", text: "discord server", x: 18, y: 88, color: "#7dde9a", createdAt: 17 },
+      { id: "seed-game-mods", text: "video game modding community", x: 31, y: 86, color: "#fff3a3", createdAt: 18 },
+      { id: "seed-homebrew", text: "Homebrew Computer Club", x: 41, y: 86, color: "#7dde9a", createdAt: 19 },
+      { id: "seed-sidewalk-cafe", text: "sidewalk cafe", x: 49, y: 78, color: "#ffb0b0", createdAt: 20 },
+      { id: "seed-craigslist", text: "craigslist", x: 56, y: 74, color: "#f4a3dc", createdAt: 21 },
+      { id: "seed-open-toed", text: "open toed sandals", x: 56, y: 57, color: "#a9ccff", createdAt: 22 }
+    ];
+    let boardApi = null;
+    let localState = { notes: seedNotes.map((note) => ({ ...note })) };
+
+    const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+    const sanitize = (value) => value.replace(/\s+/g, " ").trim().slice(0, 140);
+    const randomNoteColor = () => notePalette[Math.floor(Math.random() * notePalette.length)];
+    const colorFromText = (value) => {
+      let hash = 0;
+      for (const character of value) hash = (hash + character.charCodeAt(0)) % notePalette.length;
+      return notePalette[hash];
+    };
+    const noteMetricsForText = (text = "") => {
+      const compact = window.matchMedia("(max-width: 720px)").matches;
+      const length = text.trim().length;
+      const words = text.trim().split(/\s+/).filter(Boolean).length;
+      if (length > 24 || words > 3) {
+        return compact
+          ? { size: 92, padding: 8, fontSize: 9.5 }
+          : { size: 104, padding: 9, fontSize: 10.5 };
+      }
+      if (length > 12 || words > 1) {
+        return compact
+          ? { size: 78, padding: 7, fontSize: 9.5 }
+          : { size: 86, padding: 8, fontSize: 10.25 };
+      }
+      return compact
+        ? { size: 68, padding: 7, fontSize: 9.5 }
+        : { size: 74, padding: 7, fontSize: 10 };
+    };
+    const escapeHtml = (value) => value.replace(/[&<>"']/g, (character) => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    }[character]));
+    const noteBounds = (size = noteMetricsForText().size) => {
+      const rect = board.getBoundingClientRect();
+      const halfX = ((size / 2) / rect.width) * 100;
+      const halfY = ((size / 2) / rect.height) * 100;
+      return {
+        minX: halfX,
+        maxX: 100 - halfX,
+        minY: halfY,
+        maxY: 100 - halfY
+      };
+    };
+    const clampNotePosition = (x, y, size) => {
+      const bounds = noteBounds(size);
+      return {
+        x: clamp(x, bounds.minX, bounds.maxX),
+        y: clamp(y, bounds.minY, bounds.maxY)
+      };
+    };
+    const randomPosition = (text) => {
+      const bounds = noteBounds(noteMetricsForText(text).size);
+      return {
+        x: bounds.minX + Math.random() * (bounds.maxX - bounds.minX),
+        y: bounds.minY + Math.random() * (bounds.maxY - bounds.minY)
+      };
+    };
+    const renderNotes = (notes = []) => {
+      board.querySelectorAll(".metaphor-note").forEach((note) => note.remove());
+      emptyState.hidden = notes.length > 0;
+      srNotes.textContent = notes.map((note) => note.text).join(". ");
+
+      notes.forEach((note) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "metaphor-note";
+        button.dataset.noteId = note.id;
+        const metrics = noteMetricsForText(note.text);
+        const position = clampNotePosition(Number(note.x) || 50, Number(note.y) || 50, metrics.size);
+        button.style.setProperty("--x", position.x);
+        button.style.setProperty("--y", position.y);
+        button.style.setProperty("--note-size", `${metrics.size}px`);
+        button.style.setProperty("--note-padding", `${metrics.padding}px`);
+        button.style.setProperty("--note-font-size", `${metrics.fontSize}px`);
+        button.style.setProperty("--note-color", note.color || colorFromText(`${note.id}${note.text}`));
+        button.setAttribute("aria-label", `Sticky note: ${note.text}. Drag to move.`);
+        button.innerHTML = escapeHtml(note.text);
+        attachDrag(button);
+        board.append(button);
+      });
+    };
+
+    const updateNotes = (mutator) => {
+      if (boardApi) {
+        boardApi.setData((draft) => {
+          if (!Array.isArray(draft.notes)) draft.notes = [];
+          mutator(draft.notes);
+          if (draft.notes.length > MAX_NOTES) {
+            draft.notes.splice(0, draft.notes.length - MAX_NOTES);
+          }
+        });
+        return;
+      }
+
+      mutator(localState.notes);
+      if (localState.notes.length > MAX_NOTES) {
+        localState.notes.splice(0, localState.notes.length - MAX_NOTES);
+      }
+      renderNotes(localState.notes);
+    };
+
+    const addNote = (text) => {
+      const position = randomPosition(text);
+      const note = {
+        id: `note-${Date.now()}-${Math.random().toString(16).slice(2)}`,
+        text,
+        x: position.x,
+        y: position.y,
+        color: randomNoteColor(),
+        createdAt: Date.now()
+      };
+      updateNotes((notes) => notes.push(note));
+    };
+
+    const moveNote = (id, x, y) => {
+      updateNotes((notes) => {
+        const note = notes.find((item) => item.id === id);
+        if (!note) return;
+        note.x = x;
+        note.y = y;
+      });
+    };
+
+    function attachDrag(note) {
+      let dragging = false;
+      const moveLocally = (clientX, clientY) => {
+        const rect = board.getBoundingClientRect();
+        const noteSize = note.getBoundingClientRect().width;
+        const position = clampNotePosition(
+          ((clientX - rect.left) / rect.width) * 100,
+          ((clientY - rect.top) / rect.height) * 100,
+          noteSize
+        );
+        note.style.setProperty("--x", position.x);
+        note.style.setProperty("--y", position.y);
+        return position;
+      };
+
+      note.addEventListener("pointerdown", (event) => {
+        dragging = true;
+        note.classList.add("is-dragging");
+        note.setPointerCapture(event.pointerId);
+        event.preventDefault();
+      });
+
+      note.addEventListener("pointermove", (event) => {
+        if (!dragging) return;
+        moveLocally(event.clientX, event.clientY);
+      });
+
+      note.addEventListener("pointerup", (event) => {
+        if (!dragging) return;
+        dragging = false;
+        note.classList.remove("is-dragging");
+        const nextPosition = moveLocally(event.clientX, event.clientY);
+        moveNote(note.dataset.noteId, nextPosition.x, nextPosition.y);
+      });
+
+      note.addEventListener("pointercancel", () => {
+        dragging = false;
+        note.classList.remove("is-dragging");
+      });
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const text = sanitize(textInput.value);
+      if (!text) return;
+      addNote(text);
+      textInput.value = "";
+    });
+
+    board.defaultData = { notes: seedNotes.map((note) => ({ ...note })) };
+    board.updateElement = ({ data, setData }) => {
+      boardApi = { setData };
+      const notes = Array.isArray(data.notes) ? data.notes : [];
+      renderNotes(notes);
+    };
+
+    renderNotes(localState.notes);
+
+    try {
+      const { playhtml } = await import("https://unpkg.com/playhtml");
+      await playhtml.init({
+        room: "seed-bank-coop-stoop-swap-metaphor-board-v2",
+        onError: () => {
+          boardApi = null;
+        }
+      });
+    } catch (error) {
+      boardApi = null;
+    }
+  </script>
+</body>
+</html>
