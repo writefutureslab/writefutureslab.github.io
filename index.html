@@ -375,6 +375,7 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/suncalc@1.9.0/suncalc.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/boring-avatars-vanilla/dist/index.umd.js"></script>
   <script>
     const SYDNEY_LAT = -33.8688;
     const SYDNEY_LNG = 151.2093;
@@ -446,58 +447,64 @@
       }
     }
 
+    const avatarConfig = {
+      variant: 'beam',
+      colors: ['#49007e', '#ff005b', '#ffb238', '#363DA6', '#D6EBFF'],
+      size: 40
+    };
+
     const members = [
       {
         name: "Katy Gero",
+        avatarName: "Margaret",
         status: "fulltime",
         position: "Director",
         website: "https://katygero.com",
-        about: "Writing, LLMs, creativity",
-        avatar: `<svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><mask id="_R_4eqnpflb_" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#FFFFFF" rx="72"></rect></mask><g mask="url(#_R_4eqnpflb_)"><rect width="36" height="36" fill="#ff005b"></rect><rect x="0" y="0" width="36" height="36" transform="translate(9 -5) rotate(219 18 18) scale(1)" fill="#ffb238" rx="6"></rect><g transform="translate(4.5 -4) rotate(9 18 18)"><path d="M15 19c2 1 4 1 6 0" stroke="#000000" fill="none" stroke-linecap="round"></path><rect x="10" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect><rect x="24" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect></g></g></svg>`
+        about: "Writing, LLMs, creativity"
       },
       {
         name: "Jiho Kim",
+        avatarName: "Jiho Kim",
         status: "incoming",
         position: "PhD student (incoming Oct '26)",
         website: "",
-        about: "Metacognition in AI-assisted writing",
-        avatar: `<svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><mask id="_R_4eqnpflb_" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#FFFFFF" rx="72"></rect></mask><g mask="url(#_R_4eqnpflb_)"><rect width="36" height="36" fill="#ff005b"></rect><rect x="0" y="0" width="36" height="36" transform="translate(9 -5) rotate(219 18 18) scale(1)" fill="#ffb238" rx="6"></rect><g transform="translate(4.5 -4) rotate(9 18 18)"><path d="M15 19c2 1 4 1 6 0" stroke="#000000" fill="none" stroke-linecap="round"></path><rect x="10" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect><rect x="24" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect></g></g></svg>`
+        about: "Metacognition in AI-assisted writing"
       },
       {
         name: "Lu Han",
+        avatarName: "Lu Han",
         status: "fulltime",
-        position: "MPhil Student (co-advised by Dr. Nyugen Tran)",
+        position: "MPhil Student (co-advised by Nyugen Tran)",
         website: "",
-        about: "",
-        avatar: `<svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><mask id="_R_4eqnpflb_" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#FFFFFF" rx="72"></rect></mask><g mask="url(#_R_4eqnpflb_)"><rect width="36" height="36" fill="#ff005b"></rect><rect x="0" y="0" width="36" height="36" transform="translate(9 -5) rotate(219 18 18) scale(1)" fill="#ffb238" rx="6"></rect><g transform="translate(4.5 -4) rotate(9 18 18)"><path d="M15 19c2 1 4 1 6 0" stroke="#000000" fill="none" stroke-linecap="round"></path><rect x="10" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect><rect x="24" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect></g></g></svg>`
+        about: ""
       },
       {
         name: "Yang Song",
+        avatarName: "Yang Song",
         status: "project",
         position: "Master's Research Pathway student",
-        about: "",
-        avatar: `<svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><mask id="_R_4eqnpflb_" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#FFFFFF" rx="72"></rect></mask><g mask="url(#_R_4eqnpflb_)"><rect width="36" height="36" fill="#ff005b"></rect><rect x="0" y="0" width="36" height="36" transform="translate(9 -5) rotate(219 18 18) scale(1)" fill="#ffb238" rx="6"></rect><g transform="translate(4.5 -4) rotate(9 18 18)"><path d="M15 19c2 1 4 1 6 0" stroke="#000000" fill="none" stroke-linecap="round"></path><rect x="10" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect><rect x="24" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect></g></g></svg>`
+        about: ""
       },
       {
         name: "Tanvi Bangar",
+        avatarName: "Tanvi Bangar",
         status: "project",
         position: "Honours student",
-        about: "",
-        avatar: `<svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><mask id="_R_4eqnpflb_" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#FFFFFF" rx="72"></rect></mask><g mask="url(#_R_4eqnpflb_)"><rect width="36" height="36" fill="#ff005b"></rect><rect x="0" y="0" width="36" height="36" transform="translate(9 -5) rotate(219 18 18) scale(1)" fill="#ffb238" rx="6"></rect><g transform="translate(4.5 -4) rotate(9 18 18)"><path d="M15 19c2 1 4 1 6 0" stroke="#000000" fill="none" stroke-linecap="round"></path><rect x="10" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect><rect x="24" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect></g></g></svg>`
+        about: ""
       },
       {
         name: "Devang Jindia",
+        avatarName: "Devang Jindia",
         status: "project",
         position: "Honours student",
-        about: "",
-        avatar: `<svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><mask id="_R_4eqnpflb_" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#FFFFFF" rx="72"></rect></mask><g mask="url(#_R_4eqnpflb_)"><rect width="36" height="36" fill="#ff005b"></rect><rect x="0" y="0" width="36" height="36" transform="translate(9 -5) rotate(219 18 18) scale(1)" fill="#ffb238" rx="6"></rect><g transform="translate(4.5 -4) rotate(9 18 18)"><path d="M15 19c2 1 4 1 6 0" stroke="#000000" fill="none" stroke-linecap="round"></path><rect x="10" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect><rect x="24" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect></g></g></svg>`
+        about: ""
       },
       {
-        name: "Wendy Fan",
+        name: "Wenyu (Wendy) Fan",
+        avatarName: "Wenyu (Wendy) Fan",
         status: "project",
         position: "Dalyell Scholar",
-        about: "",
-        avatar: `<svg viewBox="0 0 36 36" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><mask id="_R_4eqnpflb_" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#FFFFFF" rx="72"></rect></mask><g mask="url(#_R_4eqnpflb_)"><rect width="36" height="36" fill="#ff005b"></rect><rect x="0" y="0" width="36" height="36" transform="translate(9 -5) rotate(219 18 18) scale(1)" fill="#ffb238" rx="6"></rect><g transform="translate(4.5 -4) rotate(9 18 18)"><path d="M15 19c2 1 4 1 6 0" stroke="#000000" fill="none" stroke-linecap="round"></path><rect x="10" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect><rect x="24" y="14" width="1.5" height="2" rx="1" stroke="none" fill="#000000"></rect></g></g></svg>`
+        about: ""
       }
     ];
 
@@ -579,6 +586,10 @@
         </li>`;
       }).join('');
     }
+    
+    function memberAvatar(avatarName) {
+      return BoringAvatars.boring({ name: avatarName, ...avatarConfig });
+    }
 
     function renderMembers() {
       const list = document.getElementById('members-list');
@@ -589,7 +600,7 @@
         const about = person.about ? `<p>${person.about}</p>` : '';
         return `
           <li>
-            ${person.avatar}
+            ${memberAvatar(person.avatarName)}
             <div>
               <div>${name}<span class="role"> · ${person.position}</span></div>
               ${about}
