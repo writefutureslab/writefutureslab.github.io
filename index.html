@@ -22,6 +22,7 @@
     :root {
       --ink: #0a0310;
       --accent: #49007e;
+      --accent-badge: #ffb238;
       --muted: grey;
       --paper-icon-size: 2.5em;
       --cloud-size: .65em;
@@ -241,7 +242,41 @@
     }
 
     #papers-list .venueshort {
-      /* color: var(--muted); */
+      color: var(--muted);
+    }
+
+    #papers-list .paper-title {
+      font-weight: 400;
+    }
+
+    #papers-list .paper-badge {
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      text-transform: lowercase;
+      border: 1px solid var(--accent-badge);
+      border-radius: 4px;
+      padding: 0.1em 0.45em;
+      display: inline-block;
+      color: var(--accent-badge);
+    }
+
+    #papers-list .paper-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.35em 0.5em;
+      margin-top: 0.35em;
+      font-size: 0.9em;
+    }
+
+    #papers-list .paper-links a {
+      color: var(--accent);
+      font-weight: 400;
+    }
+
+    #papers-list .paper-sep {
+      color: var(--muted);
+      user-select: none;
     }
 
     p, #members-list li, #collaborators-list li, #papers-list li {
@@ -341,8 +376,9 @@
         We study how technology is changing how we write and how we think, and imagine ("write") new ways of building or deconstructing technology in our writing and thinking lives.
       </i></p>
       <p>
-        Writing is often a mode of thinking. By forcing our amorphous thoughts into words on the page, we clarify and revise our thoughts; they are changed by the act of writing. Because of this, writing, as a technology itself, changed the way we think. At the Write Futures Lab, we study how new technologies like large language models are once again changing our thought processes by changing how we write. We also critique current technological practices, like how language models are made and distributed, and envision positive futures, like new ways of making language models that align with our values. 
+        Writing is often a mode of thinking. By forcing our amorphous thoughts into words on the page, we clarify and revise our thoughts; they are changed by the act of writing. Because of this, writing---which is often considered a technology unto itself---changed the way we think. At the <i>Write Futures Lab</i>, we study how new technologies like large language models (llms) are once again changing our thought processes by changing how we write. We also critique current technological practices, like how language models are made and distributed, and envision positive futures, like new ways of making language models that align with our values. 
       </p>
+      <p>We are interested in 1) investigating and challenging assumptions about how llms are used and changing our habits, 2) providing empirical evidence to guide llm usage for writing support, 3) envisioning and then creating new ways of building llms outside of the current norms.</p>
       <p>
         The Write Futures Lab is led by <a href="https://www.katygero.com/">Katy Gero</a> and housed in the <a href="https://www.sydney.edu.au/engineering/schools/school-of-computer-science.html">School of Computer Science</a> at the <a href="https://www.sydney.edu.au">University of Sydney</a>.
        </p>
@@ -361,13 +397,18 @@
 
     <div id="misc" class="tab-panel">
       <h2>join the lab - PhD</h2>
+
       <p>If you are interested in doing a PhD at the lab, please fill out <a href="https://form.jotform.com/243106704097050" target="_blank">this form</a>. I typically review applications in June and September, but the form has the most up-to-date information.</p>
+
       <h2>join the lab - other</h2>
-      <p>Read the information below, and then email me: <a href="mailto:katy.gero@sydney.edu.au">katy.gero@sydney.edu.au</a></p>
+      
       <p>If you are interested in an MPhil, please email me with the subject line "Write Futures MPhil Interest". Include a transcript, resume, and either a research area you are interested in or a short (< 1 page) thesis proposal.</p>
       <p>If you are a student at the University of Sydney and interested in a research project, I supervise a number of Master's Research Pathway, Honours, and Dalyell Scholars each year. Please email me with the subject line "Write Futures [Honours / Dalyell / etc.] Interest", attach a transcript and resume, and let me know what kind of research or research topics you are interested in.</p>
       <p>I do not currently have any funding for post-docs, but if you have your own funding, I am happy to discuss! Email me however you like. ;)</P>
+      <p>Read the information above, and then email me: <a href="mailto:katy.gero@sydney.edu.au">katy.gero@sydney.edu.au</a></p>
+
       <h2>colophon</h2>
+
       <p>The title font is <a href="https://fonts.google.com/specimen/Megrim">Megrim</a> by Daniel Johnson.</p>
       <p>The avatars on the 'people' page are from <a href="https://boringavatars.com/">Boring Avatars</a>. The icons on the 'publication' page are from the <a href="https://phosphoricons.com/">Phosphor icon family</a>.</p>
       <p>Weather conditions in Sydney are pulled from the <a href="https://open-meteo.com/">Open-Meteo</a> free weather API; conditions (and time) are updated every 15 minutes. Moon info (if it's up, what phase) use <a href="https://github.com/mourner/suncalc">SunCalc</a>, "a tiny BSD-licensed JavaScript library for calculating sun position" and more.</p>
@@ -457,55 +498,60 @@
       {
         name: "Katy Gero",
         avatarName: "Margaret",
-        status: "fulltime",
         position: "Director",
         website: "https://katygero.com",
-        about: "Writing, LLMs, creativity"
+        about: "Writing, LLMs, creativity",
+        status: "current"
       },
       {
         name: "Jiho Kim",
         avatarName: "Jiho Kim",
-        status: "incoming",
         position: "PhD student (incoming Oct '26)",
         website: "",
-        about: "Metacognition in AI-assisted writing"
+        about: "Metacognition in AI-assisted writing",
+        status: "incoming"
       },
       {
         name: "Lu Han",
         avatarName: "Lu Han",
-        status: "fulltime",
-        position: "MPhil Student (co-advised by Nyugen Tran)",
+        position: "MPhil Student (co-advised by Nguyen Tran)",
         website: "",
-        about: ""
+        about: "",
+        status: "current"
       },
       {
         name: "Yang Song",
         avatarName: "Yang Song",
-        status: "project",
+        type: "project",
         position: "Master's Research Pathway student",
-        about: ""
+        about: "",
+        status: "alum",
+        year: "2025-26"
       },
       {
         name: "Tanvi Bangar",
         avatarName: "Tanvi Bangar",
-        status: "project",
+        type: "project",
         position: "Honours student",
-        about: ""
+        about: "",
+        status: "current"
       },
       {
         name: "Devang Jindia",
         avatarName: "Devang Jindia",
-        status: "project",
+        type: "project",
         position: "Honours student",
-        about: ""
+        about: "",
+        status: "current"
       },
       {
         name: "Wenyu (Wendy) Fan",
         avatarName: "wenyufan",
-        status: "project",
+        type: "project",
         position: "Dalyell Scholar",
         website: "https://wenyufan.vercel.app/",
-        about: ""
+        about: "",
+        status: "current"
       }
     ];
 
@@ -537,7 +583,7 @@
         title: "Design Friction as a Path to Cognitive Engagement in Chat-Based LLM Interfaces",
         authors: "Helen Chen and Katy Gero",
         venue: "",
-        venueshort: "under review",
+        venueshort: "working paper",
         icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M183.89,153.34a57.6,57.6,0,0,1-46.56,46.55A8.75,8.75,0,0,1,136,200a8,8,0,0,1-1.32-15.89c16.57-2.79,30.63-16.85,33.44-33.45a8,8,0,0,1,15.78,2.68ZM216,144a88,88,0,0,1-176,0c0-27.92,11-56.47,32.66-84.85a8,8,0,0,1,11.93-.89l24.12,23.41,22-60.41a8,8,0,0,1,12.63-3.41C165.21,36,216,84.55,216,144Zm-16,0c0-46.09-35.79-85.92-58.21-106.33L119.52,98.74a8,8,0,0,1-13.09,3L80.06,76.16C64.09,99.21,56,122,56,144a72,72,0,0,0,144,0Z"></path></svg>`,
         avatar: `<svg viewBox="0 0 80 80" fill="none" role="img" xmlns="http://www.w3.org/2000/svg" width="80" height="80"><mask id="_r_1iq_" maskUnits="userSpaceOnUse" x="0" y="0" width="80" height="80"><rect width="80" height="80" rx="160" fill="#FFFFFF"></rect></mask><g mask="url(#_r_1iq_)"><rect width="80" height="80" fill="#ff7d10"></rect><path filter="url(#filter__r_1iq_)" d="M32.414 59.35L50.376 70.5H72.5v-71H33.728L26.5 13.381l19.057 27.08L32.414 59.35z" fill="#ffb238" transform="translate(0 0) rotate(336 40 40) scale(1.2)"></path><path filter="url(#filter__r_1iq_)" style="mix-blend-mode: overlay;" d="M22.216 24L0 46.75l14.108 38.129L78 86l-3.081-59.276-22.378 4.005 12.972 20.186-23.35 27.395L22.215 24z" fill="#0a0310" transform="translate(0 0) rotate(-144 40 40) scale(1.2)"></path></g><defs><filter id="filter__r_1iq_" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend><feGaussianBlur stdDeviation="7" result="effect1_foregroundBlur"></feGaussianBlur></filter></defs></svg>`
       },
@@ -553,7 +599,7 @@
         authors: "Katy Gero, Tao Long, Carly Schnitzler, and Paramveer Dhillon",
         venue: "2026 ACM Designing Interactive Systems Conference",
         venueshort: "DIS 26",
-        pdf: "https://www.katygero.com/papers/2026_FromPlanningToRevision.pdf",
+        pdf: "https://dl.acm.org/doi/pdf/10.1145/3800645.3813003",
         icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M227.32,73.37,182.63,28.69a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31l83.67-83.66,3.48,13.9-36.8,36.79a8,8,0,0,0,11.31,11.32l40-40a8,8,0,0,0,2.11-7.6l-6.9-27.61L227.32,96A16,16,0,0,0,227.32,73.37ZM48,179.31,76.69,208H48Zm48,25.38L51.31,160,136,75.31,180.69,120Zm96-96L147.32,64l24-24L216,84.69Z"></path></svg>`
       },
       {
@@ -561,8 +607,19 @@
         authors: "Alicia Guo, Carly Schnitzler, and Katy Gero",
         venue: "2026 ACM Creativity and Cognition Conference",
         venueshort: "C&C 26",
-        pdf: "https://arxiv.org/pdf/2605.12888",
+        badge: "Honorable Mention Award",
+        website: "https://www.writefutureslab.com/little-free-language-models/",
+        pdf: "https://dl.acm.org/doi/pdf/10.1145/3803784.3807550",
         icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M232,104a56.06,56.06,0,0,0-56-56H136a24,24,0,0,1,24-24,8,8,0,0,0,0-16,40,40,0,0,0-40,40H80a56.06,56.06,0,0,0-56,56,16,16,0,0,0,8,13.83V128c0,35.53,33.12,62.12,59.74,83.49C103.66,221.07,120,234.18,120,240a8,8,0,0,0,16,0c0-5.82,16.34-18.93,28.26-28.51C190.88,190.12,224,163.53,224,128V117.83A16,16,0,0,0,232,104ZM80,64h96a40.06,40.06,0,0,1,40,40H40A40,40,0,0,1,80,64Zm74.25,135c-10.62,8.52-20,16-26.25,23.37-6.25-7.32-15.63-14.85-26.25-23.37C77.8,179.79,48,155.86,48,128v-8H208v8C208,155.86,178.2,179.79,154.25,199Z"></path></svg>`,
+      },
+      {
+        title: "Creative Writers' Attitudes on Writing as Training Data for Large Language Models",
+        authors: "Katy Gero, Meera Desai, Carly Schnitzler, Nayun Eom, Jack Cushman, and Elena Glassman",
+        venue: "2025 Conference on Human Factors in Computing Systems",
+        venueshort: "CHI 2025",
+        badge: "Best Paper Award",
+        pdf: "https://www.katygero.com/papers/2025_CreativeWritersAttitudes.pdf",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M231.65,194.55,198.46,36.75a16,16,0,0,0-19-12.39L132.65,34.42a16.08,16.08,0,0,0-12.3,19l33.19,157.8A16,16,0,0,0,169.16,224a16.25,16.25,0,0,0,3.38-.36l46.81-10.06A16.09,16.09,0,0,0,231.65,194.55ZM136,50.15c0-.06,0-.09,0-.09l46.8-10,3.33,15.87L139.33,66Zm6.62,31.47,46.82-10.05,3.34,15.9L146,97.53Zm6.64,31.57,46.82-10.06,13.3,63.24-46.82,10.06ZM216,197.94l-46.8,10-3.33-15.87L212.67,182,216,197.85C216,197.91,216,197.94,216,197.94ZM104,32H56A16,16,0,0,0,40,48V208a16,16,0,0,0,16,16h48a16,16,0,0,0,16-16V48A16,16,0,0,0,104,32ZM56,48h48V64H56Zm0,32h48v96H56Zm48,128H56V192h48v16Z"></path></svg>`,
       }
     ];
 
@@ -570,19 +627,36 @@
       return svg.replace(/\s(width|height)="[^"]*"/g, '');
     }
 
+    function renderPaperLinks(paper) {
+      const items = [];
+      if (paper.badge) items.push({ type: 'badge', label: paper.badge });
+      if (paper.pdf) items.push({ type: 'link', href: paper.pdf, label: 'pdf' });
+      if (paper.website) items.push({ type: 'link', href: paper.website, label: 'website' });
+      
+      if (!items.length) return '';
+      return `<div class="paper-links">${items.map((item, i) => {
+        const sep = i > 0 ? '<span class="paper-sep">·</span>' : '';
+        if (item.type === 'link') {
+          return `${sep}<a href="${item.href}" target="_blank" rel="noopener">${item.label}</a>`;
+        }
+        return `${sep}<span class="paper-badge">${item.label}</span>`;
+      }).join('')}</div>`;
+    }
+
     function renderPapers() {
       const list = document.getElementById('papers-list');
       list.innerHTML = papers.map(paper => {
-        const title = paper.pdf
-          ? `<a href="${paper.pdf}" target="_blank" rel="noopener">${paper.title}</a>`
-          : paper.title;
+        const venueLine = paper.venue
+          ? `${paper.venue} <span class="venueshort">(${paper.venueshort})</span>`
+          : `<span class="venueshort">${paper.venueshort}</span>`;
         return `
         <li>
           ${paperIcon(paper.icon)}
           <div>
-            <div>${title}</div>
+            <div class="paper-title">${paper.title}</div>
             <div>${paper.authors}</div>
-            <div>${paper.venue} <span class="venueshort">(${paper.venueshort})</span></div>
+            <div>${venueLine}</div>
+            ${renderPaperLinks(paper)}
           </div>
         </li>`;
       }).join('');
@@ -594,7 +668,8 @@
 
     function renderMembers() {
       const list = document.getElementById('members-list');
-      list.innerHTML = members.map(person => {
+      const visible = members.filter(person => person.status === 'current');
+      list.innerHTML = visible.map(person => {
         const name = person.website
           ? `<a href="${person.website}">${person.name}</a>`
           : `${person.name}`;
