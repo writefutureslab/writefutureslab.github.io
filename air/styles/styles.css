@@ -26,8 +26,8 @@ body {
 }
 
 .inner {
-    width: 100vw;
-    height: 700dvh;
+    width: 100dvw;
+    height: 800dvh;
     display: block;
     overflow: hidden;
 }
@@ -49,209 +49,291 @@ body {
 }
 
 @keyframes partAnimation {
-0.4975124378109453% {background-image: url(../assets/partA/0001.webp)} 
-0.9950248756218906% {background-image: url(../assets/partA/0002.webp)} 
-1.492537313432836% {background-image: url(../assets/partA/0003.webp)} 
-1.9900497512437811% {background-image: url(../assets/partA/0004.webp)} 
-2.4875621890547266% {background-image: url(../assets/partA/0005.webp)} 
-2.985074626865672% {background-image: url(../assets/partA/0006.webp)} 
-3.482587064676617% {background-image: url(../assets/partA/0007.webp)} 
-3.9800995024875623% {background-image: url(../assets/partA/0008.webp)} 
-4.477611940298508% {background-image: url(../assets/partA/0009.webp)} 
-4.975124378109453% {background-image: url(../assets/partA/0010.webp)} 
-5.472636815920398% {background-image: url(../assets/partA/0011.webp)} 
-5.970149253731344% {background-image: url(../assets/partA/0012.webp)} 
-6.467661691542289% {background-image: url(../assets/partA/0013.webp)} 
-6.965174129353234% {background-image: url(../assets/partA/0014.webp)} 
-7.462686567164179% {background-image: url(../assets/partA/0015.webp)} 
-7.960199004975125% {background-image: url(../assets/partA/0016.webp)} 
-8.45771144278607% {background-image: url(../assets/partA/0017.webp)} 
-8.955223880597016% {background-image: url(../assets/partA/0018.webp)} 
-9.452736318407961% {background-image: url(../assets/partA/0019.webp)} 
-9.950248756218906% {background-image: url(../assets/partA/0020.webp)} 
-10.447761194029852% {background-image: url(../assets/partA/0021.webp)} 
-10.945273631840797% {background-image: url(../assets/partA/0022.webp)} 
-11.442786069651742% {background-image: url(../assets/partA/0023.webp)} 
-11.940298507462687% {background-image: url(../assets/partA/0024.webp)} 
-12.437810945273633% {background-image: url(../assets/partA/0025.webp)} 
-12.935323383084578% {background-image: url(../assets/partA/0026.webp)} 
-13.432835820895523% {background-image: url(../assets/partA/0027.webp)} 
-13.930348258706468% {background-image: url(../assets/partA/0028.webp)} 
-14.427860696517413% {background-image: url(../assets/partA/0029.webp)} 
-14.925373134328359% {background-image: url(../assets/partA/0030.webp)} 
-15.422885572139304% {background-image: url(../assets/partA/0031.webp)} 
-15.92039800995025% {background-image: url(../assets/partA/0032.webp)} 
-16.417910447761194% {background-image: url(../assets/partA/0033.webp)} 
-16.91542288557214% {background-image: url(../assets/partA/0034.webp)} 
-17.412935323383085% {background-image: url(../assets/partA/0035.webp)} 
-17.910447761194032% {background-image: url(../assets/partA/0036.webp)} 
-18.407960199004975% {background-image: url(../assets/partA/0037.webp)} 
-18.905472636815922% {background-image: url(../assets/partA/0038.webp)} 
-19.402985074626866% {background-image: url(../assets/partA/0039.webp)} 
-19.900497512437813% {background-image: url(../assets/partA/0040.webp)} 
-20.398009950248756% {background-image: url(../assets/partA/0041.webp)} 
-20.895522388059703% {background-image: url(../assets/partA/0021.webp)} 
-21.393034825870647% {background-image: url(../assets/partA/0022.webp)} 
-21.890547263681594% {background-image: url(../assets/partA/0023.webp)} 
-22.388059701492537% {background-image: url(../assets/partA/0024.webp)} 
-22.885572139303484% {background-image: url(../assets/partA/0025.webp)} 
-23.383084577114428% {background-image: url(../assets/partA/0026.webp)} 
-23.880597014925375% {background-image: url(../assets/partA/0027.webp)} 
-24.378109452736318% {background-image: url(../assets/partA/0028.webp)} 
-24.875621890547265% {background-image: url(../assets/partA/0029.webp)} 
-25.37313432835821% {background-image: url(../assets/partA/0030.webp)} 
-25.870646766169155% {background-image: url(../assets/partA/0031.webp)} 
-26.3681592039801% {background-image: url(../assets/partA/0032.webp)} 
-26.865671641791046% {background-image: url(../assets/partA/0033.webp)} 
-27.36318407960199% {background-image: url(../assets/partA/0034.webp)} 
-27.860696517412936% {background-image: url(../assets/partA/0035.webp)} 
-28.35820895522388% {background-image: url(../assets/partA/0036.webp)} 
-28.855721393034827% {background-image: url(../assets/partA/0037.webp)} 
-29.35323383084577% {background-image: url(../assets/partA/0038.webp)} 
-29.850746268656717% {background-image: url(../assets/partA/0039.webp)} 
-30.34825870646766% {background-image: url(../assets/partA/0040.webp)} 
-30.845771144278608% {background-image: url(../assets/partA/0041.webp)} 
-31.34328358208955% {background-image: url(../assets/partA/0021.webp)} 
-31.8407960199005% {background-image: url(../assets/partA/0022.webp)} 
-32.33830845771144% {background-image: url(../assets/partA/0023.webp)} 
-32.83582089552239% {background-image: url(../assets/partA/0024.webp)} 
-33.333333333333336% {background-image: url(../assets/partA/0025.webp)} 
-33.83084577114428% {background-image: url(../assets/partA/0026.webp)} 
-34.32835820895522% {background-image: url(../assets/partA/0027.webp)} 
-34.82587064676617% {background-image: url(../assets/partA/0028.webp)} 
-35.32338308457712% {background-image: url(../assets/partA/0029.webp)} 
-35.820895522388064% {background-image: url(../assets/partA/0030.webp)} 
-36.318407960199% {background-image: url(../assets/partA/0031.webp)} 
-36.81592039800995% {background-image: url(../assets/partA/0032.webp)} 
-37.3134328358209% {background-image: url(../assets/partA/0033.webp)} 
-37.810945273631845% {background-image: url(../assets/partA/0034.webp)} 
-38.308457711442784% {background-image: url(../assets/partA/0035.webp)} 
-38.80597014925373% {background-image: url(../assets/partA/0036.webp)} 
-39.30348258706468% {background-image: url(../assets/partA/0037.webp)} 
-39.800995024875625% {background-image: url(../assets/partA/0038.webp)} 
-40.298507462686565% {background-image: url(../assets/partA/0039.webp)} 
-40.79601990049751% {background-image: url(../assets/partA/0040.webp)} 
-41.29353233830846% {background-image: url(../assets/partA/0041.webp)} 
-41.791044776119406% {background-image: url(../assets/partA/0021.webp)} 
-42.288557213930346% {background-image: url(../assets/partA/0022.webp)} 
-42.78606965174129% {background-image: url(../assets/partA/0023.webp)} 
-43.28358208955224% {background-image: url(../assets/partA/0024.webp)} 
-43.78109452736319% {background-image: url(../assets/partA/0025.webp)} 
-44.27860696517413% {background-image: url(../assets/partA/0026.webp)} 
-44.776119402985074% {background-image: url(../assets/partA/0027.webp)} 
-45.27363184079602% {background-image: url(../assets/partA/0028.webp)} 
-45.77114427860697% {background-image: url(../assets/partA/0029.webp)} 
-46.26865671641791% {background-image: url(../assets/partA/0030.webp)} 
-46.766169154228855% {background-image: url(../assets/partA/0031.webp)} 
-47.2636815920398% {background-image: url(../assets/partA/0032.webp)} 
-47.76119402985075% {background-image: url(../assets/partA/0033.webp)} 
-48.258706467661696% {background-image: url(../assets/partA/0034.webp)} 
-48.756218905472636% {background-image: url(../assets/partA/0035.webp)} 
-49.25373134328358% {background-image: url(../assets/partA/0036.webp)} 
-49.75124378109453% {background-image: url(../assets/partA/0037.webp)} 
-50.24875621890548% {background-image: url(../assets/partA/0038.webp)} 
-50.74626865671642% {background-image: url(../assets/partA/0039.webp)} 
-51.243781094527364% {background-image: url(../assets/partA/0040.webp)} 
-51.74129353233831% {background-image: url(../assets/partA/0041.webp)} 
-52.23880597014926% {background-image: url(../assets/partA/0021.webp)} 
-52.7363184079602% {background-image: url(../assets/partA/0022.webp)} 
-53.233830845771145% {background-image: url(../assets/partA/0023.webp)} 
-53.73134328358209% {background-image: url(../assets/partA/0024.webp)} 
-54.22885572139304% {background-image: url(../assets/partA/0025.webp)} 
-54.72636815920398% {background-image: url(../assets/partA/0026.webp)} 
-55.223880597014926% {background-image: url(../assets/partA/0027.webp)} 
-55.72139303482587% {background-image: url(../assets/partA/0028.webp)} 
-56.21890547263682% {background-image: url(../assets/partA/0029.webp)} 
-56.71641791044776% {background-image: url(../assets/partA/0030.webp)} 
-57.21393034825871% {background-image: url(../assets/partA/0031.webp)} 
-57.711442786069654% {background-image: url(../assets/partA/0032.webp)} 
-58.2089552238806% {background-image: url(../assets/partA/0033.webp)} 
-58.70646766169154% {background-image: url(../assets/partA/0034.webp)} 
-59.20398009950249% {background-image: url(../assets/partA/0035.webp)} 
-59.701492537313435% {background-image: url(../assets/partA/0036.webp)} 
-60.19900497512438% {background-image: url(../assets/partA/0037.webp)} 
-60.69651741293532% {background-image: url(../assets/partA/0038.webp)} 
-61.19402985074627% {background-image: url(../assets/partA/0039.webp)} 
-61.691542288557216% {background-image: url(../assets/partA/0040.webp)} 
-62.18905472636816% {background-image: url(../assets/partA/0041.webp)} 
-62.6865671641791% {background-image: url(../assets/partA/0021.webp)} 
-63.18407960199005% {background-image: url(../assets/partA/0022.webp)} 
-63.681592039801% {background-image: url(../assets/partA/0023.webp)} 
-64.17910447761194% {background-image: url(../assets/partA/0024.webp)} 
-64.67661691542288% {background-image: url(../assets/partA/0025.webp)} 
-65.17412935323384% {background-image: url(../assets/partA/0026.webp)} 
-65.67164179104478% {background-image: url(../assets/partA/0027.webp)} 
-66.16915422885572% {background-image: url(../assets/partA/0028.webp)} 
-66.66666666666667% {background-image: url(../assets/partA/0029.webp)} 
-67.16417910447761% {background-image: url(../assets/partA/0030.webp)} 
-67.66169154228857% {background-image: url(../assets/partA/0031.webp)} 
-68.1592039800995% {background-image: url(../assets/partA/0032.webp)} 
-68.65671641791045% {background-image: url(../assets/partA/0033.webp)} 
-69.1542288557214% {background-image: url(../assets/partA/0034.webp)} 
-69.65174129353234% {background-image: url(../assets/partA/0035.webp)} 
-70.14925373134328% {background-image: url(../assets/partA/0036.webp)} 
-70.64676616915423% {background-image: url(../assets/partA/0037.webp)} 
-71.14427860696517% {background-image: url(../assets/partA/0038.webp)} 
-71.64179104477613% {background-image: url(../assets/partA/0039.webp)} 
-72.13930348258707% {background-image: url(../assets/partA/0040.webp)} 
-72.636815920398% {background-image: url(../assets/partA/0041.webp)} 
-73.13432835820896% {background-image: url(../assets/partA/0021.webp)} 
-73.6318407960199% {background-image: url(../assets/partA/0022.webp)} 
-74.12935323383084% {background-image: url(../assets/partA/0023.webp)} 
-74.6268656716418% {background-image: url(../assets/partA/0024.webp)} 
-75.12437810945273% {background-image: url(../assets/partA/0025.webp)} 
-75.62189054726369% {background-image: url(../assets/partA/0026.webp)} 
-76.11940298507463% {background-image: url(../assets/partA/0027.webp)} 
-76.61691542288557% {background-image: url(../assets/partA/0028.webp)} 
-77.11442786069652% {background-image: url(../assets/partA/0029.webp)} 
-77.61194029850746% {background-image: url(../assets/partA/0030.webp)} 
-78.1094527363184% {background-image: url(../assets/partA/0031.webp)} 
-78.60696517412936% {background-image: url(../assets/partA/0032.webp)} 
-79.1044776119403% {background-image: url(../assets/partA/0033.webp)} 
-79.60199004975125% {background-image: url(../assets/partA/0034.webp)} 
-80.09950248756219% {background-image: url(../assets/partA/0035.webp)} 
-80.59701492537313% {background-image: url(../assets/partA/0036.webp)} 
-81.09452736318408% {background-image: url(../assets/partA/0037.webp)} 
-81.59203980099502% {background-image: url(../assets/partA/0038.webp)} 
-82.08955223880598% {background-image: url(../assets/partA/0039.webp)} 
-82.58706467661692% {background-image: url(../assets/partA/0040.webp)} 
-83.08457711442786% {background-image: url(../assets/partA/0041.webp)} 
-83.58208955223881% {background-image: url(../assets/partA/0021.webp)} 
-84.07960199004975% {background-image: url(../assets/partA/0022.webp)} 
-84.57711442786069% {background-image: url(../assets/partA/0023.webp)} 
-85.07462686567165% {background-image: url(../assets/partA/0024.webp)} 
-85.57213930348259% {background-image: url(../assets/partA/0025.webp)} 
-86.06965174129354% {background-image: url(../assets/partA/0026.webp)} 
-86.56716417910448% {background-image: url(../assets/partA/0027.webp)} 
-87.06467661691542% {background-image: url(../assets/partA/0028.webp)} 
-87.56218905472637% {background-image: url(../assets/partA/0029.webp)} 
-88.05970149253731% {background-image: url(../assets/partA/0030.webp)} 
-88.55721393034825% {background-image: url(../assets/partA/0031.webp)} 
-89.05472636815921% {background-image: url(../assets/partA/0032.webp)} 
-89.55223880597015% {background-image: url(../assets/partA/0033.webp)} 
-90.0497512437811% {background-image: url(../assets/partA/0034.webp)} 
-90.54726368159204% {background-image: url(../assets/partA/0035.webp)} 
-91.04477611940298% {background-image: url(../assets/partA/0036.webp)} 
-91.54228855721394% {background-image: url(../assets/partA/0037.webp)} 
-92.03980099502488% {background-image: url(../assets/partA/0038.webp)} 
-92.53731343283582% {background-image: url(../assets/partA/0039.webp)} 
-93.03482587064677% {background-image: url(../assets/partA/0040.webp)} 
-93.53233830845771% {background-image: url(../assets/partA/0041.webp)} 
-94.02985074626866% {background-image: url(../assets/partA/0042.webp)} 
-94.5273631840796% {background-image: url(../assets/partA/0043.webp)} 
-95.02487562189054% {background-image: url(../assets/partA/0044.webp)} 
-95.5223880597015% {background-image: url(../assets/partA/0045.webp)} 
-96.01990049751244% {background-image: url(../assets/partA/0046.webp)} 
-96.51741293532339% {background-image: url(../assets/partA/0047.webp)} 
-97.01492537313433% {background-image: url(../assets/partA/0048.webp)} 
-97.51243781094527% {background-image: url(../assets/partA/0049.webp)} 
-98.00995024875623% {background-image: url(../assets/partA/0050.webp)} 
-98.50746268656717% {background-image: url(../assets/partA/0051.webp)} 
-99.0049751243781% {background-image: url(../assets/partA/0052.webp)} 
-99.50248756218906% {background-image: url(../assets/partA/0053.webp)} 
-100.0% {background-image: url(../assets/partA/0054.webp)} 
-
-}
+0.3508771929824561% {background-image: url(../assets/partA/0001.webp)} 
+0.7017543859649122% {background-image: url(../assets/partA/0002.webp)} 
+1.0526315789473684% {background-image: url(../assets/partA/0003.webp)} 
+1.4035087719298245% {background-image: url(../assets/partA/0004.webp)} 
+1.7543859649122806% {background-image: url(../assets/partA/0005.webp)} 
+2.1052631578947367% {background-image: url(../assets/partA/0006.webp)} 
+2.4561403508771926% {background-image: url(../assets/partA/0007.webp)} 
+2.807017543859649% {background-image: url(../assets/partA/0008.webp)} 
+3.1578947368421053% {background-image: url(../assets/partA/0009.webp)} 
+3.508771929824561% {background-image: url(../assets/partA/0010.webp)} 
+3.859649122807017% {background-image: url(../assets/partA/0011.webp)} 
+4.2105263157894735% {background-image: url(../assets/partA/0012.webp)} 
+4.56140350877193% {background-image: url(../assets/partA/0013.webp)} 
+4.912280701754385% {background-image: url(../assets/partA/0014.webp)} 
+5.263157894736842% {background-image: url(../assets/partA/0015.webp)} 
+5.614035087719298% {background-image: url(../assets/partA/0016.webp)} 
+5.964912280701754% {background-image: url(../assets/partA/0017.webp)} 
+6.315789473684211% {background-image: url(../assets/partA/0018.webp)} 
+6.666666666666666% {background-image: url(../assets/partA/0019.webp)} 
+7.017543859649122% {background-image: url(../assets/partA/0020.webp)} 
+7.368421052631579% {background-image: url(../assets/partA/0021.webp)} 
+7.719298245614034% {background-image: url(../assets/partA/0022.webp)} 
+8.070175438596491% {background-image: url(../assets/partA/0023.webp)} 
+8.421052631578947% {background-image: url(../assets/partA/0024.webp)} 
+8.771929824561402% {background-image: url(../assets/partA/0025.webp)} 
+9.12280701754386% {background-image: url(../assets/partA/0026.webp)} 
+9.473684210526315% {background-image: url(../assets/partA/0027.webp)} 
+9.82456140350877% {background-image: url(../assets/partA/0028.webp)} 
+10.175438596491228% {background-image: url(../assets/partA/0029.webp)} 
+10.526315789473683% {background-image: url(../assets/partA/0030.webp)} 
+10.87719298245614% {background-image: url(../assets/partA/0031.webp)} 
+11.228070175438596% {background-image: url(../assets/partA/0032.webp)} 
+11.578947368421051% {background-image: url(../assets/partA/0033.webp)} 
+11.929824561403509% {background-image: url(../assets/partA/0034.webp)} 
+12.280701754385964% {background-image: url(../assets/partA/0035.webp)} 
+12.631578947368421% {background-image: url(../assets/partA/0036.webp)} 
+12.982456140350877% {background-image: url(../assets/partA/0037.webp)} 
+13.333333333333332% {background-image: url(../assets/partA/0038.webp)} 
+13.68421052631579% {background-image: url(../assets/partA/0039.webp)} 
+14.035087719298245% {background-image: url(../assets/partA/0040.webp)} 
+14.3859649122807% {background-image: url(../assets/partA/0041.webp)} 
+14.736842105263158% {background-image: url(../assets/partA/0021.webp)} 
+15.087719298245613% {background-image: url(../assets/partA/0022.webp)} 
+15.438596491228068% {background-image: url(../assets/partA/0023.webp)} 
+15.789473684210526% {background-image: url(../assets/partA/0024.webp)} 
+16.140350877192983% {background-image: url(../assets/partA/0025.webp)} 
+16.49122807017544% {background-image: url(../assets/partA/0026.webp)} 
+16.842105263157894% {background-image: url(../assets/partA/0027.webp)} 
+17.19298245614035% {background-image: url(../assets/partA/0028.webp)} 
+17.543859649122805% {background-image: url(../assets/partA/0029.webp)} 
+17.894736842105264% {background-image: url(../assets/partA/0030.webp)} 
+18.24561403508772% {background-image: url(../assets/partA/0031.webp)} 
+18.596491228070175% {background-image: url(../assets/partA/0032.webp)} 
+18.94736842105263% {background-image: url(../assets/partA/0033.webp)} 
+19.298245614035086% {background-image: url(../assets/partA/0034.webp)} 
+19.64912280701754% {background-image: url(../assets/partA/0035.webp)} 
+20.0% {background-image: url(../assets/partA/0036.webp)} 
+20.350877192982455% {background-image: url(../assets/partA/0037.webp)} 
+20.70175438596491% {background-image: url(../assets/partA/0038.webp)} 
+21.052631578947366% {background-image: url(../assets/partA/0039.webp)} 
+21.403508771929822% {background-image: url(../assets/partA/0040.webp)} 
+21.75438596491228% {background-image: url(../assets/partA/0041.webp)} 
+22.105263157894736% {background-image: url(../assets/partA/0021.webp)} 
+22.45614035087719% {background-image: url(../assets/partA/0022.webp)} 
+22.807017543859647% {background-image: url(../assets/partA/0023.webp)} 
+23.157894736842103% {background-image: url(../assets/partA/0024.webp)} 
+23.50877192982456% {background-image: url(../assets/partA/0025.webp)} 
+23.859649122807017% {background-image: url(../assets/partA/0026.webp)} 
+24.210526315789473% {background-image: url(../assets/partA/0027.webp)} 
+24.561403508771928% {background-image: url(../assets/partA/0028.webp)} 
+24.912280701754383% {background-image: url(../assets/partA/0029.webp)} 
+25.263157894736842% {background-image: url(../assets/partA/0030.webp)} 
+25.614035087719298% {background-image: url(../assets/partA/0031.webp)} 
+25.964912280701753% {background-image: url(../assets/partA/0032.webp)} 
+26.31578947368421% {background-image: url(../assets/partA/0033.webp)} 
+26.666666666666664% {background-image: url(../assets/partA/0034.webp)} 
+27.01754385964912% {background-image: url(../assets/partA/0035.webp)} 
+27.36842105263158% {background-image: url(../assets/partA/0036.webp)} 
+27.719298245614034% {background-image: url(../assets/partA/0037.webp)} 
+28.07017543859649% {background-image: url(../assets/partA/0038.webp)} 
+28.421052631578945% {background-image: url(../assets/partA/0039.webp)} 
+28.7719298245614% {background-image: url(../assets/partA/0040.webp)} 
+29.12280701754386% {background-image: url(../assets/partA/0041.webp)} 
+29.473684210526315% {background-image: url(../assets/partA/0021.webp)} 
+29.82456140350877% {background-image: url(../assets/partA/0022.webp)} 
+30.175438596491226% {background-image: url(../assets/partA/0023.webp)} 
+30.52631578947368% {background-image: url(../assets/partA/0024.webp)} 
+30.877192982456137% {background-image: url(../assets/partA/0025.webp)} 
+31.228070175438596% {background-image: url(../assets/partA/0026.webp)} 
+31.57894736842105% {background-image: url(../assets/partA/0027.webp)} 
+31.929824561403507% {background-image: url(../assets/partA/0028.webp)} 
+32.280701754385966% {background-image: url(../assets/partA/0029.webp)} 
+32.63157894736842% {background-image: url(../assets/partA/0030.webp)} 
+32.98245614035088% {background-image: url(../assets/partA/0031.webp)} 
+33.33333333333333% {background-image: url(../assets/partA/0032.webp)} 
+33.68421052631579% {background-image: url(../assets/partA/0033.webp)} 
+34.03508771929825% {background-image: url(../assets/partA/0034.webp)} 
+34.3859649122807% {background-image: url(../assets/partA/0035.webp)} 
+34.73684210526316% {background-image: url(../assets/partA/0036.webp)} 
+35.08771929824561% {background-image: url(../assets/partA/0037.webp)} 
+35.43859649122807% {background-image: url(../assets/partA/0038.webp)} 
+35.78947368421053% {background-image: url(../assets/partA/0039.webp)} 
+36.14035087719298% {background-image: url(../assets/partA/0040.webp)} 
+36.49122807017544% {background-image: url(../assets/partA/0041.webp)} 
+36.84210526315789% {background-image: url(../assets/partA/0021.webp)} 
+37.19298245614035% {background-image: url(../assets/partA/0022.webp)} 
+37.54385964912281% {background-image: url(../assets/partA/0023.webp)} 
+37.89473684210526% {background-image: url(../assets/partA/0024.webp)} 
+38.24561403508772% {background-image: url(../assets/partA/0025.webp)} 
+38.59649122807017% {background-image: url(../assets/partA/0026.webp)} 
+38.94736842105263% {background-image: url(../assets/partA/0027.webp)} 
+39.29824561403508% {background-image: url(../assets/partA/0028.webp)} 
+39.64912280701754% {background-image: url(../assets/partA/0029.webp)} 
+40.0% {background-image: url(../assets/partA/0030.webp)} 
+40.35087719298245% {background-image: url(../assets/partA/0031.webp)} 
+40.70175438596491% {background-image: url(../assets/partA/0032.webp)} 
+41.05263157894736% {background-image: url(../assets/partA/0033.webp)} 
+41.40350877192982% {background-image: url(../assets/partA/0034.webp)} 
+41.75438596491228% {background-image: url(../assets/partA/0035.webp)} 
+42.10526315789473% {background-image: url(../assets/partA/0036.webp)} 
+42.45614035087719% {background-image: url(../assets/partA/0037.webp)} 
+42.807017543859644% {background-image: url(../assets/partA/0038.webp)} 
+43.1578947368421% {background-image: url(../assets/partA/0039.webp)} 
+43.50877192982456% {background-image: url(../assets/partA/0040.webp)} 
+43.859649122807014% {background-image: url(../assets/partA/0041.webp)} 
+44.21052631578947% {background-image: url(../assets/partA/0021.webp)} 
+44.561403508771924% {background-image: url(../assets/partA/0022.webp)} 
+44.91228070175438% {background-image: url(../assets/partA/0023.webp)} 
+45.26315789473684% {background-image: url(../assets/partA/0024.webp)} 
+45.614035087719294% {background-image: url(../assets/partA/0025.webp)} 
+45.96491228070175% {background-image: url(../assets/partA/0026.webp)} 
+46.315789473684205% {background-image: url(../assets/partA/0027.webp)} 
+46.666666666666664% {background-image: url(../assets/partA/0028.webp)} 
+47.01754385964912% {background-image: url(../assets/partA/0029.webp)} 
+47.368421052631575% {background-image: url(../assets/partA/0030.webp)} 
+47.719298245614034% {background-image: url(../assets/partA/0031.webp)} 
+48.070175438596486% {background-image: url(../assets/partA/0032.webp)} 
+48.421052631578945% {background-image: url(../assets/partA/0033.webp)} 
+48.771929824561404% {background-image: url(../assets/partA/0034.webp)} 
+49.122807017543856% {background-image: url(../assets/partA/0035.webp)} 
+49.473684210526315% {background-image: url(../assets/partA/0036.webp)} 
+49.82456140350877% {background-image: url(../assets/partA/0037.webp)} 
+50.175438596491226% {background-image: url(../assets/partA/0038.webp)} 
+50.526315789473685% {background-image: url(../assets/partA/0039.webp)} 
+50.87719298245614% {background-image: url(../assets/partA/0040.webp)} 
+51.228070175438596% {background-image: url(../assets/partA/0041.webp)} 
+51.57894736842105% {background-image: url(../assets/partA/0021.webp)} 
+51.92982456140351% {background-image: url(../assets/partA/0022.webp)} 
+52.28070175438596% {background-image: url(../assets/partA/0023.webp)} 
+52.63157894736842% {background-image: url(../assets/partA/0024.webp)} 
+52.98245614035088% {background-image: url(../assets/partA/0025.webp)} 
+53.33333333333333% {background-image: url(../assets/partA/0026.webp)} 
+53.68421052631579% {background-image: url(../assets/partA/0027.webp)} 
+54.03508771929824% {background-image: url(../assets/partA/0028.webp)} 
+54.3859649122807% {background-image: url(../assets/partA/0029.webp)} 
+54.73684210526316% {background-image: url(../assets/partA/0030.webp)} 
+55.08771929824561% {background-image: url(../assets/partA/0031.webp)} 
+55.43859649122807% {background-image: url(../assets/partA/0032.webp)} 
+55.78947368421052% {background-image: url(../assets/partA/0033.webp)} 
+56.14035087719298% {background-image: url(../assets/partA/0034.webp)} 
+56.49122807017544% {background-image: url(../assets/partA/0035.webp)} 
+56.84210526315789% {background-image: url(../assets/partA/0036.webp)} 
+57.19298245614035% {background-image: url(../assets/partA/0037.webp)} 
+57.5438596491228% {background-image: url(../assets/partA/0038.webp)} 
+57.89473684210526% {background-image: url(../assets/partA/0039.webp)} 
+58.24561403508772% {background-image: url(../assets/partA/0040.webp)} 
+58.59649122807017% {background-image: url(../assets/partA/0041.webp)} 
+58.94736842105263% {background-image: url(../assets/partA/0021.webp)} 
+59.29824561403508% {background-image: url(../assets/partA/0022.webp)} 
+59.64912280701754% {background-image: url(../assets/partA/0023.webp)} 
+60.0% {background-image: url(../assets/partA/0024.webp)} 
+60.35087719298245% {background-image: url(../assets/partA/0025.webp)} 
+60.70175438596491% {background-image: url(../assets/partA/0026.webp)} 
+61.05263157894736% {background-image: url(../assets/partA/0027.webp)} 
+61.40350877192982% {background-image: url(../assets/partA/0028.webp)} 
+61.754385964912274% {background-image: url(../assets/partA/0029.webp)} 
+62.10526315789473% {background-image: url(../assets/partA/0030.webp)} 
+62.45614035087719% {background-image: url(../assets/partA/0031.webp)} 
+62.807017543859644% {background-image: url(../assets/partA/0032.webp)} 
+63.1578947368421% {background-image: url(../assets/partA/0033.webp)} 
+63.508771929824555% {background-image: url(../assets/partA/0034.webp)} 
+63.859649122807014% {background-image: url(../assets/partA/0035.webp)} 
+64.21052631578947% {background-image: url(../assets/partA/0036.webp)} 
+64.56140350877193% {background-image: url(../assets/partA/0037.webp)} 
+64.91228070175438% {background-image: url(../assets/partA/0038.webp)} 
+65.26315789473684% {background-image: url(../assets/partA/0039.webp)} 
+65.6140350877193% {background-image: url(../assets/partA/0040.webp)} 
+65.96491228070175% {background-image: url(../assets/partA/0041.webp)} 
+66.3157894736842% {background-image: url(../assets/partA/0021.webp)} 
+66.66666666666666% {background-image: url(../assets/partA/0022.webp)} 
+67.01754385964912% {background-image: url(../assets/partA/0023.webp)} 
+67.36842105263158% {background-image: url(../assets/partA/0024.webp)} 
+67.71929824561403% {background-image: url(../assets/partA/0025.webp)} 
+68.0701754385965% {background-image: url(../assets/partA/0026.webp)} 
+68.42105263157895% {background-image: url(../assets/partA/0027.webp)} 
+68.7719298245614% {background-image: url(../assets/partA/0028.webp)} 
+69.12280701754385% {background-image: url(../assets/partA/0029.webp)} 
+69.47368421052632% {background-image: url(../assets/partA/0030.webp)} 
+69.82456140350877% {background-image: url(../assets/partA/0031.webp)} 
+70.17543859649122% {background-image: url(../assets/partA/0032.webp)} 
+70.52631578947368% {background-image: url(../assets/partA/0033.webp)} 
+70.87719298245614% {background-image: url(../assets/partA/0034.webp)} 
+71.22807017543859% {background-image: url(../assets/partA/0035.webp)} 
+71.57894736842105% {background-image: url(../assets/partA/0036.webp)} 
+71.9298245614035% {background-image: url(../assets/partA/0037.webp)} 
+72.28070175438596% {background-image: url(../assets/partA/0038.webp)} 
+72.63157894736841% {background-image: url(../assets/partA/0039.webp)} 
+72.98245614035088% {background-image: url(../assets/partA/0040.webp)} 
+73.33333333333333% {background-image: url(../assets/partA/0041.webp)} 
+73.68421052631578% {background-image: url(../assets/partA/0021.webp)} 
+74.03508771929825% {background-image: url(../assets/partA/0022.webp)} 
+74.3859649122807% {background-image: url(../assets/partA/0023.webp)} 
+74.73684210526315% {background-image: url(../assets/partA/0024.webp)} 
+75.08771929824562% {background-image: url(../assets/partA/0025.webp)} 
+75.43859649122807% {background-image: url(../assets/partA/0026.webp)} 
+75.78947368421052% {background-image: url(../assets/partA/0027.webp)} 
+76.14035087719297% {background-image: url(../assets/partA/0028.webp)} 
+76.49122807017544% {background-image: url(../assets/partA/0029.webp)} 
+76.84210526315789% {background-image: url(../assets/partA/0030.webp)} 
+77.19298245614034% {background-image: url(../assets/partA/0031.webp)} 
+77.54385964912281% {background-image: url(../assets/partA/0032.webp)} 
+77.89473684210526% {background-image: url(../assets/partA/0033.webp)} 
+78.24561403508771% {background-image: url(../assets/partA/0034.webp)} 
+78.59649122807016% {background-image: url(../assets/partA/0035.webp)} 
+78.94736842105263% {background-image: url(../assets/partA/0036.webp)} 
+79.29824561403508% {background-image: url(../assets/partA/0037.webp)} 
+79.64912280701753% {background-image: url(../assets/partA/0038.webp)} 
+80.0% {background-image: url(../assets/partA/0039.webp)} 
+80.35087719298245% {background-image: url(../assets/partA/0040.webp)} 
+80.7017543859649% {background-image: url(../assets/partA/0041.webp)} 
+81.05263157894737% {background-image: url(../assets/partA/0021.webp)} 
+81.40350877192982% {background-image: url(../assets/partA/0022.webp)} 
+81.75438596491227% {background-image: url(../assets/partA/0023.webp)} 
+82.10526315789473% {background-image: url(../assets/partA/0024.webp)} 
+82.45614035087719% {background-image: url(../assets/partA/0025.webp)} 
+82.80701754385964% {background-image: url(../assets/partA/0026.webp)} 
+83.1578947368421% {background-image: url(../assets/partA/0027.webp)} 
+83.50877192982456% {background-image: url(../assets/partA/0028.webp)} 
+83.85964912280701% {background-image: url(../assets/partA/0029.webp)} 
+84.21052631578947% {background-image: url(../assets/partA/0030.webp)} 
+84.56140350877193% {background-image: url(../assets/partA/0031.webp)} 
+84.91228070175438% {background-image: url(../assets/partA/0032.webp)} 
+85.26315789473684% {background-image: url(../assets/partA/0033.webp)} 
+85.61403508771929% {background-image: url(../assets/partA/0034.webp)} 
+85.96491228070175% {background-image: url(../assets/partA/0035.webp)} 
+86.3157894736842% {background-image: url(../assets/partA/0036.webp)} 
+86.66666666666666% {background-image: url(../assets/partA/0037.webp)} 
+87.01754385964912% {background-image: url(../assets/partA/0038.webp)} 
+87.36842105263158% {background-image: url(../assets/partA/0039.webp)} 
+87.71929824561403% {background-image: url(../assets/partA/0040.webp)} 
+88.0701754385965% {background-image: url(../assets/partA/0041.webp)} 
+88.42105263157895% {background-image: url(../assets/partA/0021.webp)} 
+88.7719298245614% {background-image: url(../assets/partA/0022.webp)} 
+89.12280701754385% {background-image: url(../assets/partA/0023.webp)} 
+89.47368421052632% {background-image: url(../assets/partA/0024.webp)} 
+89.82456140350877% {background-image: url(../assets/partA/0025.webp)} 
+90.17543859649122% {background-image: url(../assets/partA/0026.webp)} 
+90.52631578947368% {background-image: url(../assets/partA/0027.webp)} 
+90.87719298245614% {background-image: url(../assets/partA/0028.webp)} 
+91.22807017543859% {background-image: url(../assets/partA/0029.webp)} 
+91.57894736842104% {background-image: url(../assets/partA/0030.webp)} 
+91.9298245614035% {background-image: url(../assets/partA/0031.webp)} 
+92.28070175438596% {background-image: url(../assets/partA/0032.webp)} 
+92.63157894736841% {background-image: url(../assets/partA/0033.webp)} 
+92.98245614035088% {background-image: url(../assets/partA/0034.webp)} 
+93.33333333333333% {background-image: url(../assets/partA/0035.webp)} 
+93.68421052631578% {background-image: url(../assets/partA/0036.webp)} 
+94.03508771929825% {background-image: url(../assets/partA/0037.webp)} 
+94.3859649122807% {background-image: url(../assets/partA/0038.webp)} 
+94.73684210526315% {background-image: url(../assets/partA/0039.webp)} 
+95.0877192982456% {background-image: url(../assets/partA/0040.webp)} 
+95.43859649122807% {background-image: url(../assets/partA/0041.webp)} 
+95.78947368421052% {background-image: url(../assets/partA/0042.webp)} 
+96.14035087719297% {background-image: url(../assets/partA/0043.webp)} 
+96.49122807017544% {background-image: url(../assets/partA/0044.webp)} 
+96.84210526315789% {background-image: url(../assets/partA/0045.webp)} 
+97.19298245614034% {background-image: url(../assets/partA/0046.webp)} 
+97.54385964912281% {background-image: url(../assets/partA/0047.webp)} 
+97.89473684210526% {background-image: url(../assets/partA/0048.webp)} 
+98.24561403508771% {background-image: url(../assets/partA/0049.webp)} 
+98.59649122807016% {background-image: url(../assets/partA/0050.webp)} 
+98.94736842105263% {background-image: url(../assets/partA/0051.webp)} 
+99.29824561403508% {background-image: url(../assets/partA/0052.webp)} 
+99.64912280701753% {background-image: url(../assets/partA/0053.webp)} 
+100.0% {background-image: url(../assets/partA/0054.webp)} }
 
 @font-face {
     font-family: Archivo;
@@ -273,28 +355,6 @@ p {
     color: black;
 }
 
-a:hover {
-    text-decoration:underline
-}
-
-@keyframes slideLeft {
-    from { transform: translateX(200%); opacity: 0}
-    to { transform: translateX(0%); opacity: 1}
-}
-
-@keyframes fadeOut {
-    0% { opacity: 1}
-    50% {opacity: 0}
-    100% {opacity: 0}
-}
-
-@keyframes fadeInOut {
-    0% {opacity: 0}
-    20% {opacity: 1; transform: translateX(0%)}
-    80% {opacity: 1; transform: translateX(0%)}
-    100% {opacity: 0; transform: translateX(0%)}
-}
-
 /* idea: have everything move along wheel */
 .content {
   width: 100%;
@@ -303,9 +363,11 @@ a:hover {
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 100dvh;
-  /* gap: 40dvh; */
+  top: 105dvh;
+  gap: 40dvh;
+  flex-wrap: nowrap;
   left:0;
+  padding-left:50dvw;
 }
 
 .block {
@@ -313,17 +375,26 @@ a:hover {
   display: flex;
   flex-direction: column;
   left: 50dvw;
-  position: relative;
   top: 0;
 }
 
 .block p, ul {
   font-family: 'Archivo';
-  font-size: max(15px, 1.3dvw);
+  font-size: max(14px, 1.2dvw);
   font-weight: normal;
   color: black;
   padding: 0;
   top: 0;
+  line-height: 150%;
+  margin-block-start: -1dvh;
+}
+
+.block ul {
+  margin-left: 1.5dvw;
+}
+
+.block li {
+  padding-left: .8dvw;
 }
 
 .block h2 {
@@ -335,63 +406,33 @@ a:hover {
   top: 0;
 }
 
+.minimised {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 100dvh;
+}
+
 @keyframes shrink-slide-1 {
-  from { transform: scale(100%); left: 50dvw; position: absolute}
-  50% { transform: scale(100%); left: 50dvw; position: absolute}
-  50% { transform: scale(100%); left: 50dvw; top: -20vh; position: absolute; opacity: 1}
-  70.5% {transform: scale(100%); left: 50dvw; top: -40vh; position: absolute; opacity: 1}
-  70.5% { opacity: 0}
-  78% {ransform: scale(50%); left: 40dvw; top: 90dvh; position: fixed; opacity: 0}
-  78.1% {transform: scale(50%); left: 40dvw; top: 90dvh; position: fixed; opacity: 0}
-  to { transform: scale(25%); left: -8dvw; top: -13vh; position: fixed; opacity: 1}
+  from { transform: scale(40%); left: 70dvh; top: 100dvh; position: fixed;}
+  to { transform: scale(20%); left: -18dvh; top: -12dvh; position: fixed;}
 }
 
 @keyframes shrink-slide-2 {
-  from { transform: scale(100%); left: 50dvw; position: absolute}
-  50% { transform: scale(100%); left: 50dvw; position: absolute}
-  70% { transform: scale(100%); left: 50dvw; top: 0vh; position: absolute; opacity: 1}
-  70.5% { opacity: 0}
-  78% {ransform: scale(50%); left: 40dvw; top: 90dvh; position: fixed; opacity: 0}
-  78.1% {transform: scale(50%); left: 40dvw; top: 90dvh; position: fixed; opacity: 0}
-  to { transform: scale(25%); left: -4dvw; top: 4vh; position: fixed; opacity: 1}
+  from { transform: scale(40%); left: 60dvh; top: 100dvh; position: fixed;}
+  to { transform: scale(20%); left: -12dvh; top: -5dvh; position: fixed;}
 }
 
 @keyframes shrink-slide-3 {
-  from { transform: scale(100%); left: 50dvw; position: absolute}
-  50% { transform: scale(100%); left: 50dvw; position: absolute}
-  70% { transform: scale(100%); left: 50dvw; top: 0vh; position: absolute; opacity: 1}
-  70.5% { opacity: 0}
-  78% {ransform: scale(50%); left: 40dvw; top: 90dvh; position: fixed; opacity: 0}
-  78.1% {transform: scale(50%); left: 40dvw; top: 90dvh; position: fixed; opacity: 0}
-  to { transform: scale(25%); left: 0dvw; top: 20vh; position: fixed; opacity: 1}
+  from { transform: scale(40%); left: 60dvh; top: 100dvh; position: fixed;}
+  to { transform: scale(20%); left: -2dvh; top: 15dvh; position: fixed;}
 }
-
 
 @keyframes shrink-slide-4 {
-  from { transform: scale(100%); left: 50dvw; position: absolute}
-  50% { transform: scale(100%); left: 50dvw; position: absolute}
-  65% { transform: scale(100%); left: 50dvw; top: 0vh; position: absolute; opacity: 1}
-  65.5% { opacity: 0}
-  72% {ransform: scale(50%); left: 40dvw; top: 90dvh; position: absolute; opacity: 0}
-  72.1% {transform: scale(50%); left: 40dvw; top: 90dvh; position: fixed; opacity: 0}
-  to { transform: scale(25%); left: 6dvw; top: 36vh; position: fixed; opacity: 1}
-}
-
-
-@keyframes shrink-slide-5 {
-  from { transform: scale(100%); left: 50dvw; position: absolute}
-  50% { transform: scale(100%); left: 50dvw; position: absolute}
-  70% { transform: scale(100%); left: 50dvw; top: 0vh; position: absolute; opacity: 1}
-  70.5% { opacity: 0}
-  78% {ransform: scale(50%); left: 40dvw; top: 90dvh; position: fixed; opacity: 0}
-  78.1% {transform: scale(50%); left: 40dvw; top: 90dvh; position: fixed; opacity: 0}
-  to { transform: scale(25%); left: 11dvw; top: 61vh; position: fixed; opacity: 1}
-}
-
-
-@keyframes header-wheel {
-  from {offset-distance: 0%}
-  to {offset-distance: 100%}
+  from { transform: scale(40%); left: 60dvh; top: 100dvh; position: fixed;}
+  to { transform: scale(20%); left: 14dvh; top: 24dvh; position: fixed;}
 }
 
 body::before {position: absolute; width: 0; height: 0; overflow: hidden; z-index: -9999; content: url(../assets/partA/0001.webp)
