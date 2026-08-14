@@ -45,7 +45,7 @@ body {
     background-position: center;
     animation: partAnimation 1ms steps(1) forwards;
     animation-timeline: scroll(root);
-    animation-range: 0% 80%;
+    animation-range: 0% 90%;
 }
 
 @keyframes partAnimation {
@@ -340,53 +340,62 @@ body {
     src: url(./fonts/Archivo-VariableFont_wdth\,wght.ttf);
 }
 
-h2, a {
-    font-family: 'Archivo';
-    font-size: max(12px, 1.2dvw);
-    font-weight: bold;
-    color: black;
-    text-decoration: none
-}
-
-p {
-    font-family: 'Archivo';
-    font-size: max(15px, 1.3dvw);
-    font-weight: normal;
-    color: black;
-}
-
-/* idea: have everything move along wheel */
 .content {
-  width: 100%;
+  width: 50dvw;
   height: 600dvh;
   overflow: hidden;
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 105dvh;
-  gap: 40dvh;
+  top: 80dvh;
   flex-wrap: nowrap;
-  left:0;
-  padding-left:50dvw;
+  left:50dvw;
 }
 
 .block {
   width: 40dvw;
+  height: min(80dvh);
   display: flex;
   flex-direction: column;
-  left: 50dvw;
+  left: 60dvw;
   top: 0;
+  justify-content: center
 }
 
-.block p, ul {
+.block p, ul, details, a {
   font-family: 'Archivo';
-  font-size: max(14px, 1.2dvw);
+  font-size: max(12px, 2vh);
   font-weight: normal;
   color: black;
   padding: 0;
   top: 0;
   line-height: 150%;
   margin-block-start: -1dvh;
+}
+
+.block a {
+  text-decoration: underline;
+}
+
+.block a:hover {
+  font-weight: bold;
+}
+
+.block summary, summary::-webkit-details-marker {
+  margin-bottom: 1.2dvh;
+  list-style: none;
+}
+
+summary::before {
+  content: "→"; 
+  display: inline-block;
+  margin-right: 8px;
+  transition: transform 0.2s ease;
+}
+
+details[open] summary::before {
+  transform: rotate(90deg);
+  /* content: "↯" */
 }
 
 .block ul {
@@ -399,40 +408,51 @@ p {
 
 .block h2 {
   font-family: 'Archivo';
-  font-size: max(24px, 2dvw);
+  font-size: max(18px, 2.6dvh);
   font-weight: bold;
   color: black;
   padding: 0;
   top: 0;
 }
 
-.minimised {
+.headers {
   position: fixed;
-  left: 0;
+  width: 30dvh;
+  height: 90dvh;
   top: 0;
-  width: 100%;
-  height: 100%;
-  padding-top: 100dvh;
+  padding-left: 5dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  z-index: 100000;
+  animation: sticky linear forwards;
+  animation-range: 0% 90%;
+  animation-timeline: scroll(root);
 }
 
-@keyframes shrink-slide-1 {
-  from { transform: scale(40%); left: 70dvh; top: 100dvh; position: fixed;}
-  to { transform: scale(20%); left: -18dvh; top: -12dvh; position: fixed;}
+.headers a {
+  font-family: 'Archivo';
+  font-size: max(10px, 0.9dvw);
+  font-weight: bold;
+  color: black;
+  line-height: 150%;
+  text-decoration: none;
 }
 
-@keyframes shrink-slide-2 {
-  from { transform: scale(40%); left: 60dvh; top: 100dvh; position: fixed;}
-  to { transform: scale(20%); left: -12dvh; top: -5dvh; position: fixed;}
+.headers a:hover {
+  text-decoration: underline;
 }
 
-@keyframes shrink-slide-3 {
-  from { transform: scale(40%); left: 60dvh; top: 100dvh; position: fixed;}
-  to { transform: scale(20%); left: -2dvh; top: 15dvh; position: fixed;}
+@keyframes sticky {
+  from { top: 100vh; left: 20dvw; transform: rotate(-50deg) translateX(65%) translateY(20%); position: fixed;}
+  10% { top: 5vh; left: 0; transform: rotate(0) translateX(0%) translateY(0%); position: fixed;}
+  90% { top: 5vh; left: 0; position: fixed;}
+  to { top: -100dvh; left: 0; position: fixed;}
 }
 
-@keyframes shrink-slide-4 {
-  from { transform: scale(40%); left: 60dvh; top: 100dvh; position: fixed;}
-  to { transform: scale(20%); left: 14dvh; top: 24dvh; position: fixed;}
+@keyframes show {
+  from { opacity: 0}
+  to { opacity: 1}
 }
 
 body::before {position: absolute; width: 0; height: 0; overflow: hidden; z-index: -9999; content: url(../assets/partA/0001.webp)
