@@ -45,7 +45,7 @@ body {
     background-position: center;
     animation: partAnimation 1ms steps(1) forwards;
     animation-timeline: scroll(root);
-    animation-range: 0% 90%;
+    animation-range: 0% 95%;
 }
 
 @keyframes partAnimation {
@@ -347,30 +347,40 @@ body {
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 80dvh;
+  top: 100dvh;
   flex-wrap: nowrap;
   left:50dvw;
+  justify-content: space-around;
 }
 
 .block {
   width: 40dvw;
-  height: min(80dvh);
+  /* height: 50%; */
   display: flex;
   flex-direction: column;
   left: 60dvw;
   top: 0;
-  justify-content: center
+  justify-content: center;
+  /* border: 1px solid black; */
+}
+
+.content img {
+  float: right;
+  width: 20%;
+  height: auto;
+  object-fit: contain;
 }
 
 .block p, ul, details, a {
   font-family: 'Archivo';
-  font-size: max(12px, 2vh);
+  font-size: max(12px, 1.1dvw);
   font-weight: normal;
   color: black;
   padding: 0;
   top: 0;
   line-height: 150%;
   margin-block-start: -1dvh;
+  display: block;
 }
 
 .block a {
@@ -408,11 +418,12 @@ details[open] summary::before {
 
 .block h2 {
   font-family: 'Archivo';
-  font-size: max(18px, 2.6dvh);
+  font-size: max(18px, 1.6dvw);
   font-weight: bold;
   color: black;
   padding: 0;
   top: 0;
+  display: block;
 }
 
 .headers {
@@ -426,13 +437,13 @@ details[open] summary::before {
   justify-content: space-around;
   z-index: 100000;
   animation: sticky linear forwards;
-  animation-range: 0% 90%;
+  animation-range: 0% 100%;
   animation-timeline: scroll(root);
 }
 
 .headers a {
   font-family: 'Archivo';
-  font-size: max(10px, 0.9dvw);
+  font-size: max(10px, 1.1dvw);
   font-weight: bold;
   color: black;
   line-height: 150%;
