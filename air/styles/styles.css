@@ -306,407 +306,6 @@ body {
 to { background-image: url(../assets/partA/0048.webp); filter: brightness(114%)}
 }
 
-@-moz-keyframes partAnimation {
-0.0% { background-image: url(../assets/partA/0001.webp); filter: brightness(114%)} 
-0.5050505050505051% { background-image: url(../assets/partA/0002.webp); filter: brightness(114%)} 
-1.0101010101010102% { background-image: url(../assets/partA/0003.webp); filter: brightness(114%)} 
-1.5151515151515151% { background-image: url(../assets/partA/0004.webp); filter: brightness(114%)} 
-2.0202020202020203% { background-image: url(../assets/partA/0005.webp); filter: brightness(114%)} 
-2.5252525252525255% { background-image: url(../assets/partA/0006.webp); filter: brightness(114%)} 
-3.0303030303030303% { background-image: url(../assets/partA/0007.webp); filter: brightness(114%)} 
-3.5353535353535355% { background-image: url(../assets/partA/0008.webp); filter: brightness(114%)} 
-4.040404040404041% { background-image: url(../assets/partA/0009.webp); filter: brightness(114%)} 
-4.545454545454546% { background-image: url(../assets/partA/0010.webp); filter: brightness(114%)} 
-5.050505050505051% { background-image: url(../assets/partA/0011.webp); filter: brightness(114%)} 
-5.555555555555556% { background-image: url(../assets/partA/0012.webp); filter: brightness(114%)} 
-6.0606060606060606% { background-image: url(../assets/partA/0013.webp); filter: brightness(114%)} 
-6.565656565656566% { background-image: url(../assets/partA/0014.webp); filter: brightness(114%)} 
-7.070707070707071% { background-image: url(../assets/partA/0015.webp); filter: brightness(114%)} 
-7.575757575757576% { background-image: url(../assets/partA/0016.webp); filter: brightness(114%)} 
-8.080808080808081% { background-image: url(../assets/partA/0017.webp); filter: brightness(114%)} 
-8.585858585858587% { background-image: url(../assets/partA/0018.webp); filter: brightness(114%)} 
-9.090909090909092% { background-image: url(../assets/partA/0019.webp); filter: brightness(114%)} 
-9.595959595959597% { background-image: url(../assets/partA/0020.webp); filter: brightness(114%)} 
-10.101010101010102% { background-image: url(../assets/partA/0021.webp); filter: brightness(114%)} 
-10.606060606060607% { background-image: url(../assets/partA/0022.webp); filter: brightness(114%)} 
-11.111111111111112% { background-image: url(../assets/partA/0023.webp); filter: brightness(114%)} 
-11.616161616161618% { background-image: url(../assets/partA/0024.webp); filter: brightness(114%)} 
-12.121212121212121% { background-image: url(../assets/partA/0025.webp); filter: brightness(114%)} 
-12.626262626262626% { background-image: url(../assets/partA/0026.webp); filter: brightness(114%)} 
-13.131313131313131% { background-image: url(../assets/partA/0027.webp); filter: brightness(114%)} 
-13.636363636363637% { background-image: url(../assets/partA/0028.webp); filter: brightness(114%)} 
-14.141414141414142% { background-image: url(../assets/partA/0029.webp); filter: brightness(114%)} 
-14.646464646464647% { background-image: url(../assets/partA/0030.webp); filter: brightness(114%)} 
-15.151515151515152% { background-image: url(../assets/partA/0031.webp); filter: brightness(114%)} 
-15.656565656565657% { background-image: url(../assets/partA/0032.webp); filter: brightness(114%)} 
-16.161616161616163% { background-image: url(../assets/partA/0033.webp); filter: brightness(114%)} 
-16.666666666666668% { background-image: url(../assets/partA/0034.webp); filter: brightness(114%)} 
-17.171717171717173% { background-image: url(../assets/partA/0035.webp); filter: brightness(114%)} 
-17.67676767676768% { background-image: url(../assets/partA/0036.webp); filter: brightness(114%)} 
-18.181818181818183% { background-image: url(../assets/partA/0037.webp); filter: brightness(114%)} 
-18.68686868686869% { background-image: url(../assets/partA/0013.webp); filter: brightness(114%)} 
-19.191919191919194% { background-image: url(../assets/partA/0014.webp); filter: brightness(114%)} 
-19.6969696969697% { background-image: url(../assets/partA/0015.webp); filter: brightness(114%)} 
-20.202020202020204% { background-image: url(../assets/partA/0016.webp); filter: brightness(114%)} 
-20.70707070707071% { background-image: url(../assets/partA/0017.webp); filter: brightness(114%)} 
-21.212121212121215% { background-image: url(../assets/partA/0018.webp); filter: brightness(114%)} 
-21.71717171717172% { background-image: url(../assets/partA/0019.webp); filter: brightness(114%)} 
-22.222222222222225% { background-image: url(../assets/partA/0020.webp); filter: brightness(114%)} 
-22.72727272727273% { background-image: url(../assets/partA/0021.webp); filter: brightness(114%)} 
-23.232323232323235% { background-image: url(../assets/partA/0022.webp); filter: brightness(114%)} 
-23.73737373737374% { background-image: url(../assets/partA/0023.webp); filter: brightness(114%)} 
-24.242424242424242% { background-image: url(../assets/partA/0024.webp); filter: brightness(114%)} 
-24.747474747474747% { background-image: url(../assets/partA/0025.webp); filter: brightness(114%)} 
-25.252525252525253% { background-image: url(../assets/partA/0026.webp); filter: brightness(114%)} 
-25.757575757575758% { background-image: url(../assets/partA/0027.webp); filter: brightness(114%)} 
-26.262626262626263% { background-image: url(../assets/partA/0028.webp); filter: brightness(114%)} 
-26.767676767676768% { background-image: url(../assets/partA/0029.webp); filter: brightness(114%)} 
-27.272727272727273% { background-image: url(../assets/partA/0030.webp); filter: brightness(114%)} 
-27.77777777777778% { background-image: url(../assets/partA/0031.webp); filter: brightness(114%)} 
-28.282828282828284% { background-image: url(../assets/partA/0032.webp); filter: brightness(114%)} 
-28.78787878787879% { background-image: url(../assets/partA/0033.webp); filter: brightness(114%)} 
-29.292929292929294% { background-image: url(../assets/partA/0034.webp); filter: brightness(114%)} 
-29.7979797979798% { background-image: url(../assets/partA/0035.webp); filter: brightness(114%)} 
-30.303030303030305% { background-image: url(../assets/partA/0036.webp); filter: brightness(114%)} 
-30.80808080808081% { background-image: url(../assets/partA/0037.webp); filter: brightness(114%)} 
-31.313131313131315% { background-image: url(../assets/partA/0013.webp); filter: brightness(114%)} 
-31.81818181818182% { background-image: url(../assets/partA/0014.webp); filter: brightness(114%)} 
-32.323232323232325% { background-image: url(../assets/partA/0015.webp); filter: brightness(114%)} 
-32.82828282828283% { background-image: url(../assets/partA/0016.webp); filter: brightness(114%)} 
-33.333333333333336% { background-image: url(../assets/partA/0017.webp); filter: brightness(114%)} 
-33.83838383838384% { background-image: url(../assets/partA/0018.webp); filter: brightness(114%)} 
-34.343434343434346% { background-image: url(../assets/partA/0019.webp); filter: brightness(114%)} 
-34.84848484848485% { background-image: url(../assets/partA/0020.webp); filter: brightness(114%)} 
-35.35353535353536% { background-image: url(../assets/partA/0021.webp); filter: brightness(114%)} 
-35.85858585858586% { background-image: url(../assets/partA/0022.webp); filter: brightness(114%)} 
-36.36363636363637% { background-image: url(../assets/partA/0023.webp); filter: brightness(114%)} 
-36.86868686868687% { background-image: url(../assets/partA/0024.webp); filter: brightness(114%)} 
-37.37373737373738% { background-image: url(../assets/partA/0025.webp); filter: brightness(114%)} 
-37.87878787878788% { background-image: url(../assets/partA/0026.webp); filter: brightness(114%)} 
-38.38383838383839% { background-image: url(../assets/partA/0027.webp); filter: brightness(114%)} 
-38.88888888888889% { background-image: url(../assets/partA/0028.webp); filter: brightness(114%)} 
-39.3939393939394% { background-image: url(../assets/partA/0029.webp); filter: brightness(114%)} 
-39.8989898989899% { background-image: url(../assets/partA/0030.webp); filter: brightness(114%)} 
-40.40404040404041% { background-image: url(../assets/partA/0031.webp); filter: brightness(114%)} 
-40.909090909090914% { background-image: url(../assets/partA/0032.webp); filter: brightness(114%)} 
-41.41414141414142% { background-image: url(../assets/partA/0033.webp); filter: brightness(114%)} 
-41.919191919191924% { background-image: url(../assets/partA/0034.webp); filter: brightness(114%)} 
-42.42424242424243% { background-image: url(../assets/partA/0035.webp); filter: brightness(114%)} 
-42.929292929292934% { background-image: url(../assets/partA/0036.webp); filter: brightness(114%)} 
-43.43434343434344% { background-image: url(../assets/partA/0037.webp); filter: brightness(114%)} 
-43.939393939393945% { background-image: url(../assets/partA/0013.webp); filter: brightness(114%)} 
-44.44444444444445% { background-image: url(../assets/partA/0014.webp); filter: brightness(114%)} 
-44.949494949494955% { background-image: url(../assets/partA/0015.webp); filter: brightness(114%)} 
-45.45454545454546% { background-image: url(../assets/partA/0016.webp); filter: brightness(114%)} 
-45.959595959595966% { background-image: url(../assets/partA/0017.webp); filter: brightness(114%)} 
-46.46464646464647% { background-image: url(../assets/partA/0018.webp); filter: brightness(114%)} 
-46.969696969696976% { background-image: url(../assets/partA/0019.webp); filter: brightness(114%)} 
-47.47474747474748% { background-image: url(../assets/partA/0020.webp); filter: brightness(114%)} 
-47.979797979797986% { background-image: url(../assets/partA/0021.webp); filter: brightness(114%)} 
-48.484848484848484% { background-image: url(../assets/partA/0022.webp); filter: brightness(114%)} 
-48.98989898989899% { background-image: url(../assets/partA/0023.webp); filter: brightness(114%)} 
-49.494949494949495% { background-image: url(../assets/partA/0024.webp); filter: brightness(114%)} 
-50.0% { background-image: url(../assets/partA/0025.webp); filter: brightness(114%)} 
-50.505050505050505% { background-image: url(../assets/partA/0026.webp); filter: brightness(114%)} 
-51.01010101010101% { background-image: url(../assets/partA/0027.webp); filter: brightness(114%)} 
-51.515151515151516% { background-image: url(../assets/partA/0028.webp); filter: brightness(114%)} 
-52.02020202020202% { background-image: url(../assets/partA/0029.webp); filter: brightness(114%)} 
-52.525252525252526% { background-image: url(../assets/partA/0030.webp); filter: brightness(114%)} 
-53.03030303030303% { background-image: url(../assets/partA/0031.webp); filter: brightness(114%)} 
-53.535353535353536% { background-image: url(../assets/partA/0032.webp); filter: brightness(114%)} 
-54.04040404040404% { background-image: url(../assets/partA/0033.webp); filter: brightness(114%)} 
-54.54545454545455% { background-image: url(../assets/partA/0034.webp); filter: brightness(114%)} 
-55.05050505050505% { background-image: url(../assets/partA/0035.webp); filter: brightness(114%)} 
-55.55555555555556% { background-image: url(../assets/partA/0036.webp); filter: brightness(114%)} 
-56.06060606060606% { background-image: url(../assets/partA/0037.webp); filter: brightness(114%)} 
-56.56565656565657% { background-image: url(../assets/partA/0013.webp); filter: brightness(114%)} 
-57.07070707070707% { background-image: url(../assets/partA/0014.webp); filter: brightness(114%)} 
-57.57575757575758% { background-image: url(../assets/partA/0015.webp); filter: brightness(114%)} 
-58.08080808080808% { background-image: url(../assets/partA/0016.webp); filter: brightness(114%)} 
-58.58585858585859% { background-image: url(../assets/partA/0017.webp); filter: brightness(114%)} 
-59.09090909090909% { background-image: url(../assets/partA/0018.webp); filter: brightness(114%)} 
-59.5959595959596% { background-image: url(../assets/partA/0019.webp); filter: brightness(114%)} 
-60.101010101010104% { background-image: url(../assets/partA/0020.webp); filter: brightness(114%)} 
-60.60606060606061% { background-image: url(../assets/partA/0021.webp); filter: brightness(114%)} 
-61.111111111111114% { background-image: url(../assets/partA/0022.webp); filter: brightness(114%)} 
-61.61616161616162% { background-image: url(../assets/partA/0023.webp); filter: brightness(114%)} 
-62.121212121212125% { background-image: url(../assets/partA/0024.webp); filter: brightness(114%)} 
-62.62626262626263% { background-image: url(../assets/partA/0025.webp); filter: brightness(114%)} 
-63.131313131313135% { background-image: url(../assets/partA/0026.webp); filter: brightness(114%)} 
-63.63636363636364% { background-image: url(../assets/partA/0027.webp); filter: brightness(114%)} 
-64.14141414141415% { background-image: url(../assets/partA/0028.webp); filter: brightness(114%)} 
-64.64646464646465% { background-image: url(../assets/partA/0029.webp); filter: brightness(114%)} 
-65.15151515151516% { background-image: url(../assets/partA/0030.webp); filter: brightness(114%)} 
-65.65656565656566% { background-image: url(../assets/partA/0031.webp); filter: brightness(114%)} 
-66.16161616161617% { background-image: url(../assets/partA/0032.webp); filter: brightness(114%)} 
-66.66666666666667% { background-image: url(../assets/partA/0033.webp); filter: brightness(114%)} 
-67.17171717171718% { background-image: url(../assets/partA/0034.webp); filter: brightness(114%)} 
-67.67676767676768% { background-image: url(../assets/partA/0035.webp); filter: brightness(114%)} 
-68.18181818181819% { background-image: url(../assets/partA/0036.webp); filter: brightness(114%)} 
-68.68686868686869% { background-image: url(../assets/partA/0037.webp); filter: brightness(114%)} 
-69.1919191919192% { background-image: url(../assets/partA/0013.webp); filter: brightness(114%)} 
-69.6969696969697% { background-image: url(../assets/partA/0014.webp); filter: brightness(114%)} 
-70.20202020202021% { background-image: url(../assets/partA/0015.webp); filter: brightness(114%)} 
-70.70707070707071% { background-image: url(../assets/partA/0016.webp); filter: brightness(114%)} 
-71.21212121212122% { background-image: url(../assets/partA/0017.webp); filter: brightness(114%)} 
-71.71717171717172% { background-image: url(../assets/partA/0018.webp); filter: brightness(114%)} 
-72.22222222222223% { background-image: url(../assets/partA/0019.webp); filter: brightness(114%)} 
-72.72727272727273% { background-image: url(../assets/partA/0020.webp); filter: brightness(114%)} 
-73.23232323232324% { background-image: url(../assets/partA/0021.webp); filter: brightness(114%)} 
-73.73737373737374% { background-image: url(../assets/partA/0022.webp); filter: brightness(114%)} 
-74.24242424242425% { background-image: url(../assets/partA/0023.webp); filter: brightness(114%)} 
-74.74747474747475% { background-image: url(../assets/partA/0024.webp); filter: brightness(114%)} 
-75.25252525252526% { background-image: url(../assets/partA/0025.webp); filter: brightness(114%)} 
-75.75757575757576% { background-image: url(../assets/partA/0026.webp); filter: brightness(114%)} 
-76.26262626262627% { background-image: url(../assets/partA/0027.webp); filter: brightness(114%)} 
-76.76767676767678% { background-image: url(../assets/partA/0028.webp); filter: brightness(114%)} 
-77.27272727272728% { background-image: url(../assets/partA/0029.webp); filter: brightness(114%)} 
-77.77777777777779% { background-image: url(../assets/partA/0030.webp); filter: brightness(114%)} 
-78.28282828282829% { background-image: url(../assets/partA/0031.webp); filter: brightness(114%)} 
-78.7878787878788% { background-image: url(../assets/partA/0032.webp); filter: brightness(114%)} 
-79.2929292929293% { background-image: url(../assets/partA/0033.webp); filter: brightness(114%)} 
-79.7979797979798% { background-image: url(../assets/partA/0034.webp); filter: brightness(114%)} 
-80.30303030303031% { background-image: url(../assets/partA/0035.webp); filter: brightness(114%)} 
-80.80808080808082% { background-image: url(../assets/partA/0036.webp); filter: brightness(114%)} 
-81.31313131313132% { background-image: url(../assets/partA/0037.webp); filter: brightness(114%)} 
-81.81818181818183% { background-image: url(../assets/partA/0013.webp); filter: brightness(114%)} 
-82.32323232323233% { background-image: url(../assets/partA/0014.webp); filter: brightness(114%)} 
-82.82828282828284% { background-image: url(../assets/partA/0015.webp); filter: brightness(114%)} 
-83.33333333333334% { background-image: url(../assets/partA/0016.webp); filter: brightness(114%)} 
-83.83838383838385% { background-image: url(../assets/partA/0017.webp); filter: brightness(114%)} 
-84.34343434343435% { background-image: url(../assets/partA/0018.webp); filter: brightness(114%)} 
-84.84848484848486% { background-image: url(../assets/partA/0019.webp); filter: brightness(114%)} 
-85.35353535353536% { background-image: url(../assets/partA/0020.webp); filter: brightness(114%)} 
-85.85858585858587% { background-image: url(../assets/partA/0021.webp); filter: brightness(114%)} 
-86.36363636363637% { background-image: url(../assets/partA/0022.webp); filter: brightness(114%)} 
-86.86868686868688% { background-image: url(../assets/partA/0023.webp); filter: brightness(114%)} 
-87.37373737373738% { background-image: url(../assets/partA/0024.webp); filter: brightness(114%)} 
-87.87878787878789% { background-image: url(../assets/partA/0025.webp); filter: brightness(114%)} 
-88.3838383838384% { background-image: url(../assets/partA/0026.webp); filter: brightness(114%)} 
-88.8888888888889% { background-image: url(../assets/partA/0027.webp); filter: brightness(114%)} 
-89.3939393939394% { background-image: url(../assets/partA/0028.webp); filter: brightness(114%)} 
-89.89898989898991% { background-image: url(../assets/partA/0029.webp); filter: brightness(114%)} 
-90.40404040404042% { background-image: url(../assets/partA/0030.webp); filter: brightness(114%)} 
-90.90909090909092% { background-image: url(../assets/partA/0031.webp); filter: brightness(114%)} 
-91.41414141414143% { background-image: url(../assets/partA/0032.webp); filter: brightness(114%)} 
-91.91919191919193% { background-image: url(../assets/partA/0033.webp); filter: brightness(114%)} 
-92.42424242424244% { background-image: url(../assets/partA/0034.webp); filter: brightness(114%)} 
-92.92929292929294% { background-image: url(../assets/partA/0035.webp); filter: brightness(114%)} 
-93.43434343434345% { background-image: url(../assets/partA/0036.webp); filter: brightness(114%)} 
-93.93939393939395% { background-image: url(../assets/partA/0037.webp); filter: brightness(114%)} 
-94.44444444444446% { background-image: url(../assets/partA/0038.webp); filter: brightness(114%)} 
-94.94949494949496% { background-image: url(../assets/partA/0039.webp); filter: brightness(114%)} 
-95.45454545454547% { background-image: url(../assets/partA/0040.webp); filter: brightness(114%)} 
-95.95959595959597% { background-image: url(../assets/partA/0041.webp); filter: brightness(114%)} 
-96.46464646464648% { background-image: url(../assets/partA/0042.webp); filter: brightness(114%)} 
-96.96969696969697% { background-image: url(../assets/partA/0043.webp); filter: brightness(114%)} 
-97.47474747474747% { background-image: url(../assets/partA/0044.webp); filter: brightness(114%)} 
-97.97979797979798% { background-image: url(../assets/partA/0045.webp); filter: brightness(114%)} 
-98.48484848484848% { background-image: url(../assets/partA/0046.webp); filter: brightness(114%)} 
-98.98989898989899% { background-image: url(../assets/partA/0047.webp); filter: brightness(114%)} 
-to { background-image: url(../assets/partA/0048.webp); filter: brightness(114%)}
-}
-
-@-webkit-keyframes partAnimation {
-0.0% { background-image: url(../assets/partA/0001.webp); filter: brightness(114%)} 
-0.5050505050505051% { background-image: url(../assets/partA/0002.webp); filter: brightness(114%)} 
-1.0101010101010102% { background-image: url(../assets/partA/0003.webp); filter: brightness(114%)} 
-1.5151515151515151% { background-image: url(../assets/partA/0004.webp); filter: brightness(114%)} 
-2.0202020202020203% { background-image: url(../assets/partA/0005.webp); filter: brightness(114%)} 
-2.5252525252525255% { background-image: url(../assets/partA/0006.webp); filter: brightness(114%)} 
-3.0303030303030303% { background-image: url(../assets/partA/0007.webp); filter: brightness(114%)} 
-3.5353535353535355% { background-image: url(../assets/partA/0008.webp); filter: brightness(114%)} 
-4.040404040404041% { background-image: url(../assets/partA/0009.webp); filter: brightness(114%)} 
-4.545454545454546% { background-image: url(../assets/partA/0010.webp); filter: brightness(114%)} 
-5.050505050505051% { background-image: url(../assets/partA/0011.webp); filter: brightness(114%)} 
-5.555555555555556% { background-image: url(../assets/partA/0012.webp); filter: brightness(114%)} 
-6.0606060606060606% { background-image: url(../assets/partA/0013.webp); filter: brightness(114%)} 
-6.565656565656566% { background-image: url(../assets/partA/0014.webp); filter: brightness(114%)} 
-7.070707070707071% { background-image: url(../assets/partA/0015.webp); filter: brightness(114%)} 
-7.575757575757576% { background-image: url(../assets/partA/0016.webp); filter: brightness(114%)} 
-8.080808080808081% { background-image: url(../assets/partA/0017.webp); filter: brightness(114%)} 
-8.585858585858587% { background-image: url(../assets/partA/0018.webp); filter: brightness(114%)} 
-9.090909090909092% { background-image: url(../assets/partA/0019.webp); filter: brightness(114%)} 
-9.595959595959597% { background-image: url(../assets/partA/0020.webp); filter: brightness(114%)} 
-10.101010101010102% { background-image: url(../assets/partA/0021.webp); filter: brightness(114%)} 
-10.606060606060607% { background-image: url(../assets/partA/0022.webp); filter: brightness(114%)} 
-11.111111111111112% { background-image: url(../assets/partA/0023.webp); filter: brightness(114%)} 
-11.616161616161618% { background-image: url(../assets/partA/0024.webp); filter: brightness(114%)} 
-12.121212121212121% { background-image: url(../assets/partA/0025.webp); filter: brightness(114%)} 
-12.626262626262626% { background-image: url(../assets/partA/0026.webp); filter: brightness(114%)} 
-13.131313131313131% { background-image: url(../assets/partA/0027.webp); filter: brightness(114%)} 
-13.636363636363637% { background-image: url(../assets/partA/0028.webp); filter: brightness(114%)} 
-14.141414141414142% { background-image: url(../assets/partA/0029.webp); filter: brightness(114%)} 
-14.646464646464647% { background-image: url(../assets/partA/0030.webp); filter: brightness(114%)} 
-15.151515151515152% { background-image: url(../assets/partA/0031.webp); filter: brightness(114%)} 
-15.656565656565657% { background-image: url(../assets/partA/0032.webp); filter: brightness(114%)} 
-16.161616161616163% { background-image: url(../assets/partA/0033.webp); filter: brightness(114%)} 
-16.666666666666668% { background-image: url(../assets/partA/0034.webp); filter: brightness(114%)} 
-17.171717171717173% { background-image: url(../assets/partA/0035.webp); filter: brightness(114%)} 
-17.67676767676768% { background-image: url(../assets/partA/0036.webp); filter: brightness(114%)} 
-18.181818181818183% { background-image: url(../assets/partA/0037.webp); filter: brightness(114%)} 
-18.68686868686869% { background-image: url(../assets/partA/0013.webp); filter: brightness(114%)} 
-19.191919191919194% { background-image: url(../assets/partA/0014.webp); filter: brightness(114%)} 
-19.6969696969697% { background-image: url(../assets/partA/0015.webp); filter: brightness(114%)} 
-20.202020202020204% { background-image: url(../assets/partA/0016.webp); filter: brightness(114%)} 
-20.70707070707071% { background-image: url(../assets/partA/0017.webp); filter: brightness(114%)} 
-21.212121212121215% { background-image: url(../assets/partA/0018.webp); filter: brightness(114%)} 
-21.71717171717172% { background-image: url(../assets/partA/0019.webp); filter: brightness(114%)} 
-22.222222222222225% { background-image: url(../assets/partA/0020.webp); filter: brightness(114%)} 
-22.72727272727273% { background-image: url(../assets/partA/0021.webp); filter: brightness(114%)} 
-23.232323232323235% { background-image: url(../assets/partA/0022.webp); filter: brightness(114%)} 
-23.73737373737374% { background-image: url(../assets/partA/0023.webp); filter: brightness(114%)} 
-24.242424242424242% { background-image: url(../assets/partA/0024.webp); filter: brightness(114%)} 
-24.747474747474747% { background-image: url(../assets/partA/0025.webp); filter: brightness(114%)} 
-25.252525252525253% { background-image: url(../assets/partA/0026.webp); filter: brightness(114%)} 
-25.757575757575758% { background-image: url(../assets/partA/0027.webp); filter: brightness(114%)} 
-26.262626262626263% { background-image: url(../assets/partA/0028.webp); filter: brightness(114%)} 
-26.767676767676768% { background-image: url(../assets/partA/0029.webp); filter: brightness(114%)} 
-27.272727272727273% { background-image: url(../assets/partA/0030.webp); filter: brightness(114%)} 
-27.77777777777778% { background-image: url(../assets/partA/0031.webp); filter: brightness(114%)} 
-28.282828282828284% { background-image: url(../assets/partA/0032.webp); filter: brightness(114%)} 
-28.78787878787879% { background-image: url(../assets/partA/0033.webp); filter: brightness(114%)} 
-29.292929292929294% { background-image: url(../assets/partA/0034.webp); filter: brightness(114%)} 
-29.7979797979798% { background-image: url(../assets/partA/0035.webp); filter: brightness(114%)} 
-30.303030303030305% { background-image: url(../assets/partA/0036.webp); filter: brightness(114%)} 
-30.80808080808081% { background-image: url(../assets/partA/0037.webp); filter: brightness(114%)} 
-31.313131313131315% { background-image: url(../assets/partA/0013.webp); filter: brightness(114%)} 
-31.81818181818182% { background-image: url(../assets/partA/0014.webp); filter: brightness(114%)} 
-32.323232323232325% { background-image: url(../assets/partA/0015.webp); filter: brightness(114%)} 
-32.82828282828283% { background-image: url(../assets/partA/0016.webp); filter: brightness(114%)} 
-33.333333333333336% { background-image: url(../assets/partA/0017.webp); filter: brightness(114%)} 
-33.83838383838384% { background-image: url(../assets/partA/0018.webp); filter: brightness(114%)} 
-34.343434343434346% { background-image: url(../assets/partA/0019.webp); filter: brightness(114%)} 
-34.84848484848485% { background-image: url(../assets/partA/0020.webp); filter: brightness(114%)} 
-35.35353535353536% { background-image: url(../assets/partA/0021.webp); filter: brightness(114%)} 
-35.85858585858586% { background-image: url(../assets/partA/0022.webp); filter: brightness(114%)} 
-36.36363636363637% { background-image: url(../assets/partA/0023.webp); filter: brightness(114%)} 
-36.86868686868687% { background-image: url(../assets/partA/0024.webp); filter: brightness(114%)} 
-37.37373737373738% { background-image: url(../assets/partA/0025.webp); filter: brightness(114%)} 
-37.87878787878788% { background-image: url(../assets/partA/0026.webp); filter: brightness(114%)} 
-38.38383838383839% { background-image: url(../assets/partA/0027.webp); filter: brightness(114%)} 
-38.88888888888889% { background-image: url(../assets/partA/0028.webp); filter: brightness(114%)} 
-39.3939393939394% { background-image: url(../assets/partA/0029.webp); filter: brightness(114%)} 
-39.8989898989899% { background-image: url(../assets/partA/0030.webp); filter: brightness(114%)} 
-40.40404040404041% { background-image: url(../assets/partA/0031.webp); filter: brightness(114%)} 
-40.909090909090914% { background-image: url(../assets/partA/0032.webp); filter: brightness(114%)} 
-41.41414141414142% { background-image: url(../assets/partA/0033.webp); filter: brightness(114%)} 
-41.919191919191924% { background-image: url(../assets/partA/0034.webp); filter: brightness(114%)} 
-42.42424242424243% { background-image: url(../assets/partA/0035.webp); filter: brightness(114%)} 
-42.929292929292934% { background-image: url(../assets/partA/0036.webp); filter: brightness(114%)} 
-43.43434343434344% { background-image: url(../assets/partA/0037.webp); filter: brightness(114%)} 
-43.939393939393945% { background-image: url(../assets/partA/0013.webp); filter: brightness(114%)} 
-44.44444444444445% { background-image: url(../assets/partA/0014.webp); filter: brightness(114%)} 
-44.949494949494955% { background-image: url(../assets/partA/0015.webp); filter: brightness(114%)} 
-45.45454545454546% { background-image: url(../assets/partA/0016.webp); filter: brightness(114%)} 
-45.959595959595966% { background-image: url(../assets/partA/0017.webp); filter: brightness(114%)} 
-46.46464646464647% { background-image: url(../assets/partA/0018.webp); filter: brightness(114%)} 
-46.969696969696976% { background-image: url(../assets/partA/0019.webp); filter: brightness(114%)} 
-47.47474747474748% { background-image: url(../assets/partA/0020.webp); filter: brightness(114%)} 
-47.979797979797986% { background-image: url(../assets/partA/0021.webp); filter: brightness(114%)} 
-48.484848484848484% { background-image: url(../assets/partA/0022.webp); filter: brightness(114%)} 
-48.98989898989899% { background-image: url(../assets/partA/0023.webp); filter: brightness(114%)} 
-49.494949494949495% { background-image: url(../assets/partA/0024.webp); filter: brightness(114%)} 
-50.0% { background-image: url(../assets/partA/0025.webp); filter: brightness(114%)} 
-50.505050505050505% { background-image: url(../assets/partA/0026.webp); filter: brightness(114%)} 
-51.01010101010101% { background-image: url(../assets/partA/0027.webp); filter: brightness(114%)} 
-51.515151515151516% { background-image: url(../assets/partA/0028.webp); filter: brightness(114%)} 
-52.02020202020202% { background-image: url(../assets/partA/0029.webp); filter: brightness(114%)} 
-52.525252525252526% { background-image: url(../assets/partA/0030.webp); filter: brightness(114%)} 
-53.03030303030303% { background-image: url(../assets/partA/0031.webp); filter: brightness(114%)} 
-53.535353535353536% { background-image: url(../assets/partA/0032.webp); filter: brightness(114%)} 
-54.04040404040404% { background-image: url(../assets/partA/0033.webp); filter: brightness(114%)} 
-54.54545454545455% { background-image: url(../assets/partA/0034.webp); filter: brightness(114%)} 
-55.05050505050505% { background-image: url(../assets/partA/0035.webp); filter: brightness(114%)} 
-55.55555555555556% { background-image: url(../assets/partA/0036.webp); filter: brightness(114%)} 
-56.06060606060606% { background-image: url(../assets/partA/0037.webp); filter: brightness(114%)} 
-56.56565656565657% { background-image: url(../assets/partA/0013.webp); filter: brightness(114%)} 
-57.07070707070707% { background-image: url(../assets/partA/0014.webp); filter: brightness(114%)} 
-57.57575757575758% { background-image: url(../assets/partA/0015.webp); filter: brightness(114%)} 
-58.08080808080808% { background-image: url(../assets/partA/0016.webp); filter: brightness(114%)} 
-58.58585858585859% { background-image: url(../assets/partA/0017.webp); filter: brightness(114%)} 
-59.09090909090909% { background-image: url(../assets/partA/0018.webp); filter: brightness(114%)} 
-59.5959595959596% { background-image: url(../assets/partA/0019.webp); filter: brightness(114%)} 
-60.101010101010104% { background-image: url(../assets/partA/0020.webp); filter: brightness(114%)} 
-60.60606060606061% { background-image: url(../assets/partA/0021.webp); filter: brightness(114%)} 
-61.111111111111114% { background-image: url(../assets/partA/0022.webp); filter: brightness(114%)} 
-61.61616161616162% { background-image: url(../assets/partA/0023.webp); filter: brightness(114%)} 
-62.121212121212125% { background-image: url(../assets/partA/0024.webp); filter: brightness(114%)} 
-62.62626262626263% { background-image: url(../assets/partA/0025.webp); filter: brightness(114%)} 
-63.131313131313135% { background-image: url(../assets/partA/0026.webp); filter: brightness(114%)} 
-63.63636363636364% { background-image: url(../assets/partA/0027.webp); filter: brightness(114%)} 
-64.14141414141415% { background-image: url(../assets/partA/0028.webp); filter: brightness(114%)} 
-64.64646464646465% { background-image: url(../assets/partA/0029.webp); filter: brightness(114%)} 
-65.15151515151516% { background-image: url(../assets/partA/0030.webp); filter: brightness(114%)} 
-65.65656565656566% { background-image: url(../assets/partA/0031.webp); filter: brightness(114%)} 
-66.16161616161617% { background-image: url(../assets/partA/0032.webp); filter: brightness(114%)} 
-66.66666666666667% { background-image: url(../assets/partA/0033.webp); filter: brightness(114%)} 
-67.17171717171718% { background-image: url(../assets/partA/0034.webp); filter: brightness(114%)} 
-67.67676767676768% { background-image: url(../assets/partA/0035.webp); filter: brightness(114%)} 
-68.18181818181819% { background-image: url(../assets/partA/0036.webp); filter: brightness(114%)} 
-68.68686868686869% { background-image: url(../assets/partA/0037.webp); filter: brightness(114%)} 
-69.1919191919192% { background-image: url(../assets/partA/0013.webp); filter: brightness(114%)} 
-69.6969696969697% { background-image: url(../assets/partA/0014.webp); filter: brightness(114%)} 
-70.20202020202021% { background-image: url(../assets/partA/0015.webp); filter: brightness(114%)} 
-70.70707070707071% { background-image: url(../assets/partA/0016.webp); filter: brightness(114%)} 
-71.21212121212122% { background-image: url(../assets/partA/0017.webp); filter: brightness(114%)} 
-71.71717171717172% { background-image: url(../assets/partA/0018.webp); filter: brightness(114%)} 
-72.22222222222223% { background-image: url(../assets/partA/0019.webp); filter: brightness(114%)} 
-72.72727272727273% { background-image: url(../assets/partA/0020.webp); filter: brightness(114%)} 
-73.23232323232324% { background-image: url(../assets/partA/0021.webp); filter: brightness(114%)} 
-73.73737373737374% { background-image: url(../assets/partA/0022.webp); filter: brightness(114%)} 
-74.24242424242425% { background-image: url(../assets/partA/0023.webp); filter: brightness(114%)} 
-74.74747474747475% { background-image: url(../assets/partA/0024.webp); filter: brightness(114%)} 
-75.25252525252526% { background-image: url(../assets/partA/0025.webp); filter: brightness(114%)} 
-75.75757575757576% { background-image: url(../assets/partA/0026.webp); filter: brightness(114%)} 
-76.26262626262627% { background-image: url(../assets/partA/0027.webp); filter: brightness(114%)} 
-76.76767676767678% { background-image: url(../assets/partA/0028.webp); filter: brightness(114%)} 
-77.27272727272728% { background-image: url(../assets/partA/0029.webp); filter: brightness(114%)} 
-77.77777777777779% { background-image: url(../assets/partA/0030.webp); filter: brightness(114%)} 
-78.28282828282829% { background-image: url(../assets/partA/0031.webp); filter: brightness(114%)} 
-78.7878787878788% { background-image: url(../assets/partA/0032.webp); filter: brightness(114%)} 
-79.2929292929293% { background-image: url(../assets/partA/0033.webp); filter: brightness(114%)} 
-79.7979797979798% { background-image: url(../assets/partA/0034.webp); filter: brightness(114%)} 
-80.30303030303031% { background-image: url(../assets/partA/0035.webp); filter: brightness(114%)} 
-80.80808080808082% { background-image: url(../assets/partA/0036.webp); filter: brightness(114%)} 
-81.31313131313132% { background-image: url(../assets/partA/0037.webp); filter: brightness(114%)} 
-81.81818181818183% { background-image: url(../assets/partA/0013.webp); filter: brightness(114%)} 
-82.32323232323233% { background-image: url(../assets/partA/0014.webp); filter: brightness(114%)} 
-82.82828282828284% { background-image: url(../assets/partA/0015.webp); filter: brightness(114%)} 
-83.33333333333334% { background-image: url(../assets/partA/0016.webp); filter: brightness(114%)} 
-83.83838383838385% { background-image: url(../assets/partA/0017.webp); filter: brightness(114%)} 
-84.34343434343435% { background-image: url(../assets/partA/0018.webp); filter: brightness(114%)} 
-84.84848484848486% { background-image: url(../assets/partA/0019.webp); filter: brightness(114%)} 
-85.35353535353536% { background-image: url(../assets/partA/0020.webp); filter: brightness(114%)} 
-85.85858585858587% { background-image: url(../assets/partA/0021.webp); filter: brightness(114%)} 
-86.36363636363637% { background-image: url(../assets/partA/0022.webp); filter: brightness(114%)} 
-86.86868686868688% { background-image: url(../assets/partA/0023.webp); filter: brightness(114%)} 
-87.37373737373738% { background-image: url(../assets/partA/0024.webp); filter: brightness(114%)} 
-87.87878787878789% { background-image: url(../assets/partA/0025.webp); filter: brightness(114%)} 
-88.3838383838384% { background-image: url(../assets/partA/0026.webp); filter: brightness(114%)} 
-88.8888888888889% { background-image: url(../assets/partA/0027.webp); filter: brightness(114%)} 
-89.3939393939394% { background-image: url(../assets/partA/0028.webp); filter: brightness(114%)} 
-89.89898989898991% { background-image: url(../assets/partA/0029.webp); filter: brightness(114%)} 
-90.40404040404042% { background-image: url(../assets/partA/0030.webp); filter: brightness(114%)} 
-90.90909090909092% { background-image: url(../assets/partA/0031.webp); filter: brightness(114%)} 
-91.41414141414143% { background-image: url(../assets/partA/0032.webp); filter: brightness(114%)} 
-91.91919191919193% { background-image: url(../assets/partA/0033.webp); filter: brightness(114%)} 
-92.42424242424244% { background-image: url(../assets/partA/0034.webp); filter: brightness(114%)} 
-92.92929292929294% { background-image: url(../assets/partA/0035.webp); filter: brightness(114%)} 
-93.43434343434345% { background-image: url(../assets/partA/0036.webp); filter: brightness(114%)} 
-93.93939393939395% { background-image: url(../assets/partA/0037.webp); filter: brightness(114%)} 
-94.44444444444446% { background-image: url(../assets/partA/0038.webp); filter: brightness(114%)} 
-94.94949494949496% { background-image: url(../assets/partA/0039.webp); filter: brightness(114%)} 
-95.45454545454547% { background-image: url(../assets/partA/0040.webp); filter: brightness(114%)} 
-95.95959595959597% { background-image: url(../assets/partA/0041.webp); filter: brightness(114%)} 
-96.46464646464648% { background-image: url(../assets/partA/0042.webp); filter: brightness(114%)} 
-96.96969696969697% { background-image: url(../assets/partA/0043.webp); filter: brightness(114%)} 
-97.47474747474747% { background-image: url(../assets/partA/0044.webp); filter: brightness(114%)} 
-97.97979797979798% { background-image: url(../assets/partA/0045.webp); filter: brightness(114%)} 
-98.48484848484848% { background-image: url(../assets/partA/0046.webp); filter: brightness(114%)} 
-98.98989898989899% { background-image: url(../assets/partA/0047.webp); filter: brightness(114%)} 
-to { background-image: url(../assets/partA/0048.webp); filter: brightness(114%)}
-}
 
 @font-face {
     font-family: Archivo;
@@ -813,7 +412,7 @@ to { background-image: url(../assets/partA/0048.webp); filter: brightness(114%)}
   #mnm-ascii p {font-size:0.8svw; text-align: end; font-family:'Courier New', Courier, monospace; font-weight: bold; color: #000000; text-wrap: nowrap; margin: 0; padding: 0; letter-spacing: 0%}
 } 
 
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 800px) {
   .inner {
     height: 750svh;
   }
@@ -933,7 +532,6 @@ to { background-image: url(../assets/partA/0048.webp); filter: brightness(114%)}
   animation-range: 0% 100%;
   animation-timeline: scroll(root);
 } 
-
   .content {
     width: 60svw;
     height: fit-content;
@@ -978,7 +576,6 @@ to { background-image: url(../assets/partA/0048.webp); filter: brightness(114%)}
   #mnm-ascii {position: absolute; right: 0svw; top: 105svh; max-width: 60svw; height: 60svh; background-color: none; z-index: 3; white-space: pre-wrap; padding: 0; margin: 0;}
   #mnm-ascii p {font-size:0.7svw; text-align: end; font-family:'Courier New', Courier, monospace; font-weight: bold; color: #000000; text-wrap: nowrap; margin: 0; padding: 0; letter-spacing: 0%}
 }
-
 
 .block {
   height: fit-content;
@@ -1117,13 +714,6 @@ details[open] p {
   to { transform: rotate(0) translateX(0%) translateY(-300%)}
 }
 
-@-moz-keyframes sticky {
-  from {-moz-transform: rotate(-30deg) translateX(200%) translateY(100%);}
-  10% { -moz-transform: rotate(0) translateX(-75%) translateY(-115%)}
-  95% { -moz-transform: rotate(0) translateX(-75%) translateY(-115%)}
-  to { -moztransform: rotate(0) translateX(0%) translateY(-300%)}
-}
-
 @-webkit-keyframes sticky {
   from {-webkit-transform: rotate(-30deg) translateX(200%) translateY(100%);}
   10% { -webkit-transform: rotate(0) translateX(-75%) translateY(-115%)}
@@ -1169,6 +759,56 @@ details[open] p {
   40% { -webkit-transform: rotate(0deg) translateY(-700%)}
   to { -webkit-transform: rotate(0deg) translateY(-700%)}
 }
+
+@-moz-document url-prefix() {
+  .videoA {
+    position: absolute;
+    top: 0;
+    left: 0svw;
+    width: 102svw;
+    height: 100svh;
+    background-image: url('../assets/partA/0000.webp');
+    filter: brightness(114%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-position: center;
+    animation: none;
+  }
+  .content {right: 10svw}
+  .headers {display:none}
+  #inv {display:none}
+  @media screen and (min-width: 720px) {
+    .headers {
+      position: absolute;
+      height: 1000svh;
+      top: 100svh;
+      left: 2svw;
+      padding-left: 5svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 0;
+      padding-top: 10svh;
+      z-index: 100;
+      animation: none;
+    } 
+    #about-h {left: 0; top: 10svh; position: sticky; }
+    #ideal-applicants-h {left: 0; top: 22svh; position: sticky;}
+    #support-h {left: 0; top: 34svh; position: sticky;}
+    #application-process-h {left: 0; top: 46svh; position: sticky;}
+    #reading-list-h {left: 0; top: 60svh; position: sticky;}
+    #apply-h {left: 0; top: 72svh; position: sticky;}
+    #faq-h {left: 0; top: 84svh; position: sticky;}
+    .headers a:hover {
+      background-color:black;
+      color: white;
+      text-decoration:none
+    }
+  }
+  
+}
+
 
 body::before {position: absolute; width: 0; height: 0; overflow: hidden; z-index: -9999; 
 content: url(../assets/partA/0000.webp)
