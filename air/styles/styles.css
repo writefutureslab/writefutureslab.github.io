@@ -10,7 +10,6 @@ body {
   width: 100lvw;
   height: 100lvh;
   overflow-x: hidden;
-  background-color: white;
 }
 
 .progress-bar {
@@ -76,7 +75,7 @@ body {
   background-repeat: no-repeat;
   background-color: white;
   background-position: center center;
-  overflow: hidden;
+  overflow: none;
   padding: 0;
   margin: 0;
 }
@@ -86,7 +85,7 @@ body {
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 100lvh;
+  top: 100svh;
   flex-wrap: nowrap;
   align-items: center;
   overflow: hidden;
@@ -98,7 +97,7 @@ body {
 .headers {
   display: none;
 }
-#about { position: block; margin: 0; width: 70svw}
+#about { position: block; margin-top: 10svh; width: 70svw}
 #ideal-applicants {margin-top: -8svh; gap: 5svh; position: block; width: 90svw; border: none;}
 #support {position: block;  width: 70svw; margin-top: 10svh}
 #application-process {position: block; width: 70svw;}
@@ -109,7 +108,7 @@ body {
 #img2 { font-size:0.6svw; font-family:'Courier New', Courier, monospace; font-weight: bold; color: #000000; text-wrap: nowrap; overflow-x: hidden; overflow-y: hidden; margin: 0; padding: 0; letter-spacing: -1%; line-height:115%; background-color: none}
 #usyd-logo {display: none; position: absolute; bottom:40svw; right: calc(50vw - 30px); width: 60px;content: contain; }
 /* ascii */
-#mnm-ascii {margin-top: 0; position: absolute; top: 85svh; left: 10svw; overflow-x: hidden; width: 90svw; overflow-y: hidden; background-color: white; z-index: 80; white-space: pre-wrap; padding: 0; margin: 0;}
+#mnm-ascii {margin-top: 0; position: absolute; top: 90svh; left: 10svw; overflow-x: hidden; width: 90svw; overflow-y: hidden; background-color: none; z-index: 5; white-space: pre-wrap; padding: 0; margin: 0;}
 #mnm-ascii p {font-size:0.9svw; text-align: end; font-family:'Courier New', Courier, monospace; font-weight: bold; color: #000000; text-wrap: nowrap; margin: 0; padding: 0; letter-spacing: 0%}
 #thinkspace-ascii {position: absolute; left: 5svw; top: 275svh; width: 70svw; height: 55svw; background-color: none; z-index: 10; white-space: pre-wrap; padding: 0; margin: 0; overflow: hidden}
 #thinkspace-ascii p {font-size:0.42svw; font-family:'Courier New', Courier, monospace; font-weight: bold; color: #000000; text-wrap: nowrap; overflow-x: hidden; overflow-y: hidden; margin: 0; padding: 0; letter-spacing: -1%; text-align: right;}
