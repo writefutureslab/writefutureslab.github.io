@@ -71,7 +71,6 @@ body {
   width: 100lvw;
   height: 100lvh;
   background-image: url(../assets/partA/0000.webp);
-  filter: brightness(114%);
   background-size: 90%;
   background-repeat: no-repeat;
   background-color: white;
@@ -109,8 +108,8 @@ body {
 #img2 { font-size:0.6svw; font-family:'Courier New', Courier, monospace; font-weight: bold; color: #000000; text-wrap: nowrap; overflow-x: hidden; overflow-y: hidden; margin: 0; padding: 0; letter-spacing: -1%; line-height:115%; background-color: none}
 #usyd-logo {display: none; position: absolute; bottom:40svw; right: calc(50vw - 30px); width: 60px;content: contain; }
 /* ascii */
-#mnm-ascii {margin-top: 0; position: absolute; top: 85svh; left: 10svw; overflow-x: hidden; width: 90svw; overflow-y: hidden; background-color: white; z-index: 80; white-space: pre-wrap; padding: 0; margin: 0;}
-#mnm-ascii p {font-size:0.9svw; text-align: end; font-family:'Courier New', Courier, monospace; font-weight: bold; color: #000000; text-wrap: nowrap; margin: 0; padding: 0; letter-spacing: 0%}
+#mnm-ascii {margin-top: 0; position: absolute; top: 85svh; left: 10svw; overflow: hidden; width: 90svw; overflow-y: hidden; background-color: white; z-index: 80; white-space: pre-wrap; padding: 0; margin: 0;}
+#mnm-ascii p {font-size:0.75svw; text-align: end; font-family:'Courier New', Courier, monospace; font-weight: bold; color: #000000; text-wrap: nowrap; margin: 0; padding: 0; letter-spacing: 0%}
 #thinkspace-ascii {position: absolute; left: 5svw; top: 275svh; width: 70svw; height: 55svw; background-color: none; z-index: 10; white-space: pre-wrap; padding: 0; margin: 0; overflow: hidden}
 #thinkspace-ascii p {font-size:0.42svw; font-family:'Courier New', Courier, monospace; font-weight: bold; color: #000000; text-wrap: nowrap; overflow-x: hidden; overflow-y: hidden; margin: 0; padding: 0; letter-spacing: -1%; text-align: right;}
 #air-perspective-ascii {position: absolute; right: 0svw; top: 430svh; width: 90svw; height: fit-content; background-color: none; z-index: 3; white-space: pre-wrap; padding: 0; margin: 0; margin-right: -5svw;}
@@ -256,7 +255,7 @@ body {
   #usyd-logo {position: absolute; top:90svh; right: -1svw; min-width: 120px; max-width: 10svw; content: contain; animation: slide-up ease-in forwards; animation-timeline: scroll(root); animation-range: 0% 10%}
   
   #mnm-ascii {position: absolute; left: 40svw; top: 105svh; width: 60svw; height: 60svh; background-color: none; z-index: 3; white-space: pre-wrap; padding: 0; margin: 0;}
-  #mnm-ascii p {font-size:0.7svw; text-align: end; font-family:'Courier New', Courier, monospace; font-weight: bold; color: #000000; text-wrap: nowrap; margin: 0; padding: 0; letter-spacing: 0%}
+  #mnm-ascii p {font-size:0.55svw; text-align: end; font-family:'Courier New', Courier, monospace; font-weight: bold; color: #000000; text-wrap: nowrap; margin: 0; padding: 0; letter-spacing: 0%}
   #thinkspace-ascii {position: absolute; left: 60svw; right: 0svw; top: 350svh; max-width: 40svw; background-color: none; z-index: 3; white-space: pre-wrap; padding: 0; margin: 0;} 
 }
 
@@ -338,8 +337,8 @@ body {
   #faq { width: 40svw; margin-top: 20svh; left: 0svw;}
 
   #usyd-logo {position: absolute; top:90svh; right: 1svw; min-width: 50px; max-width: 10svw; content: contain; animation: slide-up ease-in forwards; animation-timeline: scroll(root); animation-range: 0% 10%}
-  #mnm-ascii {position: absolute; right: 0svw; top: 105svh; max-width: 60svw; height: 60svh; background-color: none; z-index: 3; white-space: pre-wrap; padding: 0; margin: 0;}
-  #mnm-ascii p {font-size:0.7svw; text-align: end; font-family:'Courier New', Courier, monospace; font-weight: bold; color: #000000; text-wrap: nowrap; margin: 0; padding: 0; letter-spacing: 0%}
+  #mnm-ascii {position: absolute; right: 0svw; top: 105svh; max-width: 60svw; height: fit-content; background-color: none; z-index: 3; white-space: pre-wrap; padding: 0; margin: 0;}
+  #mnm-ascii p {font-size:0.5svw; text-align: end; font-family:'Courier New', Courier, monospace; font-weight: bold; color: #000000; text-wrap: nowrap; margin: 0; padding: 0; letter-spacing: 0%}
   #thinkspace-ascii {position: absolute; right: 0svw; top: 340svh; max-width: 40svw; background-color: none; z-index: 3; white-space: pre-wrap; padding: 0; margin: 0;}
   #thinkspace-ascii p {font-size:0.22svw; font-family:'Courier New', Courier, monospace; font-weight: bold; color: #000000; text-wrap: nowrap; overflow-x: hidden; overflow-y: hidden; margin: 0; padding: 0; letter-spacing: -1%; text-align: left;}
   #air-perspective-ascii {position: absolute; right: 0svw; top: 490svh; max-width: 65svw; height: 60svh; background-color: none; z-index: 3; white-space: pre-wrap; padding: 0; margin: 0; margin-right: -5svw;}
