@@ -10,7 +10,6 @@ body {
   width: 100lvw;
   height: 100lvh;
   overflow-x: hidden;
-  background-color: white;
 }
 
 .progress-bar {
@@ -75,7 +74,7 @@ body {
   background-repeat: no-repeat;
   background-color: white;
   background-position: center center;
-  overflow: hidden;
+  overflow: none;
   padding: 0;
   margin: 0;
 }
@@ -85,7 +84,7 @@ body {
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 100lvh;
+  top: 100svh;
   flex-wrap: nowrap;
   align-items: center;
   overflow: hidden;
@@ -97,7 +96,7 @@ body {
 .headers {
   display: none;
 }
-#about { position: block; margin: 0; width: 70svw}
+#about { position: block; margin-top: 10svh; width: 70svw}
 #ideal-applicants {margin-top: -8svh; gap: 5svh; position: block; width: 90svw; border: none;}
 #support {position: block;  width: 70svw; margin-top: 10svh}
 #application-process {position: block; width: 70svw;}
