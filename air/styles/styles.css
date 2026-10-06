@@ -96,6 +96,10 @@ body {
 .headers {
   display: none;
 }
+#eoi-button {position: absolute; z-index: 200; top: 88svh; right: 0; margin-right: 2svw; max-width: 30svw; font-family: 'Archivo'; font-size: max(14px, 1.1svw); text-align: justify; background-color: black; color: white; text-decoration: none; padding: max(1%, 1svh); border-radius: 1svh; }
+#eoi-button:hover {text-decoration: underline}
+
+
 #about { position: block; margin-top: 10svh; width: 70svw}
 #ideal-applicants {margin-top: -8svh; gap: 5svh; position: block; width: 90svw; border: none;}
 #support {position: block;  width: 70svw; margin-top: 10svh}
@@ -262,7 +266,7 @@ body {
   .inner {
     height: 920svh;
   }
-    .videoA {
+  .videoA {
     position: fixed;
     top: 0;
     left: 0;
